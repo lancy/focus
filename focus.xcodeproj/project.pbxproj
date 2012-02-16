@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		32D004D214ED294A00F1E150 /* AppleClubLogo_sm.png in Resources */ = {isa = PBXBuildFile; fileRef = 32D004D114ED294A00F1E150 /* AppleClubLogo_sm.png */; };
 		BF9724B114ECEA2800C42892 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF9724B014ECEA2800C42892 /* UIKit.framework */; };
 		BF9724B314ECEA2800C42892 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF9724B214ECEA2800C42892 /* Foundation.framework */; };
 		BF9724B514ECEA2800C42892 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF9724B414ECEA2800C42892 /* CoreGraphics.framework */; };
@@ -35,6 +36,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		32D004D114ED294A00F1E150 /* AppleClubLogo_sm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppleClubLogo_sm.png; sourceTree = "<group>"; };
 		BF9724AC14ECEA2800C42892 /* focus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = focus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF9724B014ECEA2800C42892 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BF9724B214ECEA2800C42892 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -186,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				BF9724F814ECEED500C42892 /* point.png */,
+				32D004D114ED294A00F1E150 /* AppleClubLogo_sm.png */,
 				BF9724F914ECEED500C42892 /* icon4.png */,
 				BF9724FA14ECEED500C42892 /* icon3.png */,
 				BF9724FB14ECEED500C42892 /* icon2.png */,
@@ -251,6 +254,7 @@
 				BF9724FF14ECEED500C42892 /* icon3.png in Resources */,
 				BF97250014ECEED500C42892 /* icon2.png in Resources */,
 				BF97250114ECEED500C42892 /* icon1.png in Resources */,
+				32D004D214ED294A00F1E150 /* AppleClubLogo_sm.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,6 +382,7 @@
 				BF9724CB14ECEA2800C42892 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

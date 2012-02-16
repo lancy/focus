@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RootViewController : UIViewController<UIScrollViewDelegate> {
+@interface RootViewController : UIViewController<UIScrollViewDelegate, UIGestureRecognizerDelegate> {
     UIScrollView *scrollView;
     UIPageControl *pageControl;
+    
+    UIImageView *dragView;
 }
 
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
@@ -21,6 +23,14 @@
 @property (weak, nonatomic) IBOutlet UIImageView *TodayIcon;
 
 @property (weak, nonatomic) IBOutlet UIImageView *pointer;
+
+
+@property (nonatomic, strong) UILabel *rangeStateLabel;
+@property (nonatomic, strong) IBOutlet UIImageView *inboxBarImageView;
+@property (nonatomic, strong) IBOutlet UIImageView *todayBarImageView;
+@property (nonatomic, strong) IBOutlet UIImageView *afterBarImageView;
+@property (nonatomic, strong) IBOutlet UIImageView *somedayBarImageView;
+
 
 
 - (void)updateBadge;

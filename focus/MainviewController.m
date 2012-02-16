@@ -11,7 +11,13 @@
 #import "DetailViewController.h"
 
 @interface MainViewController ()
+{
+    UIView *dragView;
+    UILabel *pointStateLabel;
+}
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
+- (void)addGestureRecgonizerToView:(UIView*)view;
+
 @end
 
 @implementation MainViewController
@@ -19,6 +25,9 @@
 @synthesize detailViewController = _detailViewController;
 @synthesize fetchedResultsController = __fetchedResultsController;
 @synthesize managedObjectContext = __managedObjectContext;
+@synthesize dragIssueDelegate;
+@synthesize pointStateLabel;
+@synthesize inboxTableView;
 
 - (id)init
 {
@@ -53,11 +62,18 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     // Set up the edit and add buttons.
+        longPressDetected = NO;
+    
     [self.parentViewController.navigationController setTitle:@"Main"];
     self.parentViewController.navigationItem.leftBarButtonItem = self.editButtonItem;
     
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject)];
     self.parentViewController.navigationItem.rightBarButtonItem = addButton;
+    pointStateLabel = [[UILabel alloc] initWithFrame:CGRectMake(30,350,260,20)];
+    [self.parentViewController.view addSubview:pointStateLabel];
+    [pointStateLabel setText:@"Power"];
+    
+
 }
 
 - (void)viewDidUnload
@@ -100,6 +116,9 @@
     return [[self.fetchedResultsController sections] count];
 }
 
+# pragma mark Tabel View Deleate Methods
+
+
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     // Display title as section headings.
@@ -125,6 +144,7 @@
     
     // Configure the cell.
     [self configureCell:cell atIndexPath:indexPath];
+    [self addGestureRecgonizerToView:cell];
     return cell;
 }
 
@@ -322,5 +342,116 @@
         abort();
     }
 }
+
+
+#pragma mark view adding and anmiation issues handles here
+
+-(void)initDragViewAtPoint: (CGPoint)point WithTheEclipseOf:(UIView *)originalView
+{
+    
+    //insert the animations and inititalzing codes here
+    
+    //UIView *dragView = [[recognizer view]copy];
+    
+    UIImage *dragImage = [UIImage imageNamed:@"AppleClubLogo_sm.png"];
+    dragView = [[UIImageView alloc]initWithImage:dragImage];
+    [dragView setCenter:point];
+    [dragView setFrame:CGRectMake(dragView.frame.origin.x, dragView.frame.origin.y, dragView.frame.size.width, dragView.frame.size.height)];
+    
+    NSLog(@"%@，%f", dragView, dragView.frame.size.width);    
+    
+    //    [UIView transitionWithView:self.view
+    //                      duration:1.0
+    //                       options:UIViewAnimationOptionCurveEaseInOut
+    //                    animations:^{ 
+    [self.view addSubview:dragView];
+    //                    }
+    //                    completion:nil];
+    
+}
+
+
+#pragma Mark Drag Issues Methods
+
+- (void)addGestureRecgonizerToView:(UIView*)view
+{
+    UILongPressGestureRecognizer *longPressRecognizer = 
+    [[UILongPressGestureRecognizer alloc] initWithTarget:self 
+                                                  action:@selector(handleLongPressFrom:)];
+    [view addGestureRecognizer:longPressRecognizer];
+    
+    UIPanGestureRecognizer *panRecognizer = 
+    [[UIPanGestureRecognizer alloc] initWithTarget:self
+                                            action:@selector(handlePanFrom:)];
+    [view addGestureRecognizer:panRecognizer];
+    
+}
+
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
+{
+    return YES;
+}
+
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
+{
+    if ([gestureRecognizer isKindOfClass:[UIPanGestureRecognizer class]]) {
+        if (longPressDetected == NO) {
+            return NO;
+        }
+    }
+    return YES;
+}
+
+
+-(void)handleLongPressFrom:(UIPanGestureRecognizer *)recognizer
+{
+    //   NSLog(@"%@",[recognizer view]);
+    
+    CGPoint touchPoint = [recognizer locationInView:self.view];
+    NSString *pointState = [NSString stringWithFormat:@"x: %f, y: %f", touchPoint.x, touchPoint.y];
+    [pointStateLabel setText:pointState];
+    
+    if(recognizer.state == UIGestureRecognizerStateBegan )
+    {
+        longPressDetected = YES;
+        self.inboxTableView.scrollEnabled = NO;
+        [self initDragViewAtPoint:touchPoint WithTheEclipseOf:[recognizer view]];        
+        [dragIssueDelegate respondToRangeState:touchPoint ofEclipseView:[recognizer view] WithExpiringLine:NO];
+        [dragIssueDelegate showScrollBar];
+    }
+    
+}
+
+
+-(void)handlePanFrom:(UIPanGestureRecognizer *)recognizer
+{
+    
+    //  Do you need to insert sth to disable Multi-touch?    
+    //  NSSet *alltouches = [event allTouches];
+    //	if ([alltouches count] >= 2) return;
+    
+    CGPoint touchPoint = [recognizer locationInView:self.view ];
+    NSString *pointState = [NSString stringWithFormat:@"x: %f, y: %f",touchPoint.x, touchPoint.y];
+    [pointStateLabel setText:pointState];
+    if (recognizer.state == UIGestureRecognizerStateChanged)
+    {
+        [dragView setCenter: CGPointMake(touchPoint.x, touchPoint.y)];
+        [dragIssueDelegate respondToRangeState:touchPoint ofEclipseView:[recognizer view] WithExpiringLine:NO];
+    }
+    else if (recognizer.state == UIGestureRecognizerStateEnded)
+    {
+        longPressDetected = NO; 
+        if (longPressDetected == YES) [dragIssueDelegate respondToTouchUpState:touchPoint ofEclipseView:[recognizer view] WithExpiringLine:NO];
+        [dragIssueDelegate hideScrollBar];
+        [dragView removeFromSuperview];
+        inboxTableView.scrollEnabled = YES;
+        
+    }
+    
+    
+}
+
+
 
 @end
