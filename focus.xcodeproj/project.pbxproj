@@ -13,8 +13,25 @@
 		BF9724B714ECEA2800C42892 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF9724B614ECEA2800C42892 /* CoreData.framework */; };
 		BF9724BD14ECEA2800C42892 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BF9724BB14ECEA2800C42892 /* InfoPlist.strings */; };
 		BF9724BF14ECEA2800C42892 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BF9724BE14ECEA2800C42892 /* main.m */; };
-		BF9724C314ECEA2800C42892 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF9724C214ECEA2800C42892 /* AppDelegate.m */; };
 		BF9724C614ECEA2800C42892 /* focus.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BF9724C414ECEA2800C42892 /* focus.xcdatamodeld */; };
+		BF9724DC14ECEA8600C42892 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF9724DB14ECEA8600C42892 /* AppDelegate.m */; };
+		BF9724E414ECEAB800C42892 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF9724DE14ECEAB800C42892 /* RootViewController.m */; };
+		BF9724E514ECEAB800C42892 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF9724DF14ECEAB800C42892 /* MainStoryboard.storyboard */; };
+		BF9724E614ECEAB800C42892 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF9724E114ECEAB800C42892 /* DetailViewController.m */; };
+		BF9724E714ECEAB800C42892 /* UIView+Badge.m in Sources */ = {isa = PBXBuildFile; fileRef = BF9724E314ECEAB800C42892 /* UIView+Badge.m */; };
+		BF9724F314ECEADC00C42892 /* InboxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF9724EA14ECEADC00C42892 /* InboxViewController.m */; };
+		BF9724F414ECEADC00C42892 /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF9724EC14ECEADC00C42892 /* TodayViewController.m */; };
+		BF9724F514ECEADC00C42892 /* AfterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF9724EE14ECEADC00C42892 /* AfterViewController.m */; };
+		BF9724F614ECEADC00C42892 /* SomedayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF9724F014ECEADC00C42892 /* SomedayViewController.m */; };
+		BF9724F714ECEADC00C42892 /* MainviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF9724F214ECEADC00C42892 /* MainviewController.m */; };
+		BF9724FD14ECEED500C42892 /* point.png in Resources */ = {isa = PBXBuildFile; fileRef = BF9724F814ECEED500C42892 /* point.png */; };
+		BF9724FE14ECEED500C42892 /* icon4.png in Resources */ = {isa = PBXBuildFile; fileRef = BF9724F914ECEED500C42892 /* icon4.png */; };
+		BF9724FF14ECEED500C42892 /* icon3.png in Resources */ = {isa = PBXBuildFile; fileRef = BF9724FA14ECEED500C42892 /* icon3.png */; };
+		BF97250014ECEED500C42892 /* icon2.png in Resources */ = {isa = PBXBuildFile; fileRef = BF9724FB14ECEED500C42892 /* icon2.png */; };
+		BF97250114ECEED500C42892 /* icon1.png in Resources */ = {isa = PBXBuildFile; fileRef = BF9724FC14ECEED500C42892 /* icon1.png */; };
+		BF97250514ECEFA000C42892 /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = BF97250414ECEFA000C42892 /* Item.m */; };
+		BF97250814ECF00400C42892 /* Project.m in Sources */ = {isa = PBXBuildFile; fileRef = BF97250714ECF00400C42892 /* Project.m */; };
+		BF97250B14ECF00400C42892 /* Tag.m in Sources */ = {isa = PBXBuildFile; fileRef = BF97250A14ECF00400C42892 /* Tag.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,13 +40,41 @@
 		BF9724B214ECEA2800C42892 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BF9724B414ECEA2800C42892 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		BF9724B614ECEA2800C42892 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		BF9724BA14ECEA2800C42892 /* focus-Info.plist */ = {isa = PBXFileReference; path = "focus-Info.plist"; sourceTree = "<group>"; };
+		BF9724BA14ECEA2800C42892 /* focus-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "focus-Info.plist"; sourceTree = "<group>"; };
 		BF9724BC14ECEA2800C42892 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		BF9724BE14ECEA2800C42892 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		BF9724C014ECEA2800C42892 /* focus-Prefix.pch */ = {isa = PBXFileReference; path = "focus-Prefix.pch"; sourceTree = "<group>"; };
-		BF9724C114ECEA2800C42892 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
-		BF9724C214ECEA2800C42892 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		BF9724C014ECEA2800C42892 /* focus-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "focus-Prefix.pch"; sourceTree = "<group>"; };
 		BF9724C514ECEA2800C42892 /* focus.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = focus.xcdatamodel; sourceTree = "<group>"; };
+		BF9724DA14ECEA8600C42892 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		BF9724DB14ECEA8600C42892 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		BF9724DD14ECEAB800C42892 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		BF9724DE14ECEAB800C42892 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		BF9724DF14ECEAB800C42892 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
+		BF9724E014ECEAB800C42892 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		BF9724E114ECEAB800C42892 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		BF9724E214ECEAB800C42892 /* UIView+Badge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Badge.h"; sourceTree = "<group>"; };
+		BF9724E314ECEAB800C42892 /* UIView+Badge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Badge.m"; sourceTree = "<group>"; };
+		BF9724E914ECEADC00C42892 /* InboxViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InboxViewController.h; sourceTree = "<group>"; };
+		BF9724EA14ECEADC00C42892 /* InboxViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InboxViewController.m; sourceTree = "<group>"; };
+		BF9724EB14ECEADC00C42892 /* TodayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodayViewController.h; sourceTree = "<group>"; };
+		BF9724EC14ECEADC00C42892 /* TodayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodayViewController.m; sourceTree = "<group>"; };
+		BF9724ED14ECEADC00C42892 /* AfterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AfterViewController.h; sourceTree = "<group>"; };
+		BF9724EE14ECEADC00C42892 /* AfterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AfterViewController.m; sourceTree = "<group>"; };
+		BF9724EF14ECEADC00C42892 /* SomedayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SomedayViewController.h; sourceTree = "<group>"; };
+		BF9724F014ECEADC00C42892 /* SomedayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SomedayViewController.m; sourceTree = "<group>"; };
+		BF9724F114ECEADC00C42892 /* MainviewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainviewController.h; sourceTree = "<group>"; };
+		BF9724F214ECEADC00C42892 /* MainviewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainviewController.m; sourceTree = "<group>"; };
+		BF9724F814ECEED500C42892 /* point.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = point.png; sourceTree = "<group>"; };
+		BF9724F914ECEED500C42892 /* icon4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon4.png; sourceTree = "<group>"; };
+		BF9724FA14ECEED500C42892 /* icon3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon3.png; sourceTree = "<group>"; };
+		BF9724FB14ECEED500C42892 /* icon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon2.png; sourceTree = "<group>"; };
+		BF9724FC14ECEED500C42892 /* icon1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon1.png; sourceTree = "<group>"; };
+		BF97250314ECEFA000C42892 /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
+		BF97250414ECEFA000C42892 /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
+		BF97250614ECF00400C42892 /* Project.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Project.h; sourceTree = "<group>"; };
+		BF97250714ECF00400C42892 /* Project.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Project.m; sourceTree = "<group>"; };
+		BF97250914ECF00400C42892 /* Tag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tag.h; sourceTree = "<group>"; };
+		BF97250A14ECF00400C42892 /* Tag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tag.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,9 +123,17 @@
 		BF9724B814ECEA2800C42892 /* focus */ = {
 			isa = PBXGroup;
 			children = (
-				BF9724C114ECEA2800C42892 /* AppDelegate.h */,
-				BF9724C214ECEA2800C42892 /* AppDelegate.m */,
-				BF9724C414ECEA2800C42892 /* focus.xcdatamodeld */,
+				BF9724E814ECEACA00C42892 /* MainViewController */,
+				BF9724D014ECEA4D00C42892 /* Model Classes */,
+				BF9724DA14ECEA8600C42892 /* AppDelegate.h */,
+				BF9724DB14ECEA8600C42892 /* AppDelegate.m */,
+				BF9724DD14ECEAB800C42892 /* RootViewController.h */,
+				BF9724DE14ECEAB800C42892 /* RootViewController.m */,
+				BF9724DF14ECEAB800C42892 /* MainStoryboard.storyboard */,
+				BF9724E014ECEAB800C42892 /* DetailViewController.h */,
+				BF9724E114ECEAB800C42892 /* DetailViewController.m */,
+				BF9724E214ECEAB800C42892 /* UIView+Badge.h */,
+				BF9724E314ECEAB800C42892 /* UIView+Badge.m */,
 				BF9724B914ECEA2800C42892 /* Supporting Files */,
 			);
 			path = focus;
@@ -89,12 +142,56 @@
 		BF9724B914ECEA2800C42892 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				BF97250214ECEEDA00C42892 /* image */,
 				BF9724BA14ECEA2800C42892 /* focus-Info.plist */,
 				BF9724BB14ECEA2800C42892 /* InfoPlist.strings */,
 				BF9724BE14ECEA2800C42892 /* main.m */,
 				BF9724C014ECEA2800C42892 /* focus-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BF9724D014ECEA4D00C42892 /* Model Classes */ = {
+			isa = PBXGroup;
+			children = (
+				BF9724C414ECEA2800C42892 /* focus.xcdatamodeld */,
+				BF97250914ECF00400C42892 /* Tag.h */,
+				BF97250A14ECF00400C42892 /* Tag.m */,
+				BF97250614ECF00400C42892 /* Project.h */,
+				BF97250714ECF00400C42892 /* Project.m */,
+				BF97250314ECEFA000C42892 /* Item.h */,
+				BF97250414ECEFA000C42892 /* Item.m */,
+			);
+			name = "Model Classes";
+			sourceTree = "<group>";
+		};
+		BF9724E814ECEACA00C42892 /* MainViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BF9724E914ECEADC00C42892 /* InboxViewController.h */,
+				BF9724EA14ECEADC00C42892 /* InboxViewController.m */,
+				BF9724EB14ECEADC00C42892 /* TodayViewController.h */,
+				BF9724EC14ECEADC00C42892 /* TodayViewController.m */,
+				BF9724ED14ECEADC00C42892 /* AfterViewController.h */,
+				BF9724EE14ECEADC00C42892 /* AfterViewController.m */,
+				BF9724EF14ECEADC00C42892 /* SomedayViewController.h */,
+				BF9724F014ECEADC00C42892 /* SomedayViewController.m */,
+				BF9724F114ECEADC00C42892 /* MainviewController.h */,
+				BF9724F214ECEADC00C42892 /* MainviewController.m */,
+			);
+			name = MainViewController;
+			sourceTree = "<group>";
+		};
+		BF97250214ECEEDA00C42892 /* image */ = {
+			isa = PBXGroup;
+			children = (
+				BF9724F814ECEED500C42892 /* point.png */,
+				BF9724F914ECEED500C42892 /* icon4.png */,
+				BF9724FA14ECEED500C42892 /* icon3.png */,
+				BF9724FB14ECEED500C42892 /* icon2.png */,
+				BF9724FC14ECEED500C42892 /* icon1.png */,
+			);
+			name = image;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +245,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF9724BD14ECEA2800C42892 /* InfoPlist.strings in Resources */,
+				BF9724E514ECEAB800C42892 /* MainStoryboard.storyboard in Resources */,
+				BF9724FD14ECEED500C42892 /* point.png in Resources */,
+				BF9724FE14ECEED500C42892 /* icon4.png in Resources */,
+				BF9724FF14ECEED500C42892 /* icon3.png in Resources */,
+				BF97250014ECEED500C42892 /* icon2.png in Resources */,
+				BF97250114ECEED500C42892 /* icon1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,8 +262,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF9724BF14ECEA2800C42892 /* main.m in Sources */,
-				BF9724C314ECEA2800C42892 /* AppDelegate.m in Sources */,
 				BF9724C614ECEA2800C42892 /* focus.xcdatamodeld in Sources */,
+				BF9724DC14ECEA8600C42892 /* AppDelegate.m in Sources */,
+				BF9724E414ECEAB800C42892 /* RootViewController.m in Sources */,
+				BF9724E614ECEAB800C42892 /* DetailViewController.m in Sources */,
+				BF9724E714ECEAB800C42892 /* UIView+Badge.m in Sources */,
+				BF9724F314ECEADC00C42892 /* InboxViewController.m in Sources */,
+				BF9724F414ECEADC00C42892 /* TodayViewController.m in Sources */,
+				BF9724F514ECEADC00C42892 /* AfterViewController.m in Sources */,
+				BF9724F614ECEADC00C42892 /* SomedayViewController.m in Sources */,
+				BF9724F714ECEADC00C42892 /* MainviewController.m in Sources */,
+				BF97250514ECEFA000C42892 /* Item.m in Sources */,
+				BF97250814ECF00400C42892 /* Project.m in Sources */,
+				BF97250B14ECF00400C42892 /* Tag.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

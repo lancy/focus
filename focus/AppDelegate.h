@@ -1,9 +1,9 @@
 //
 //  AppDelegate.h
-//  focus
+//  test
 //
-//  Created by Lancy on 12-2-16.
-//  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
+//  Created by Lan Chenyu on 28/01/2012.
+//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

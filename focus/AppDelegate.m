@@ -1,9 +1,9 @@
 //
 //  AppDelegate.m
-//  focus
+//  test
 //
-//  Created by Lancy on 12-2-16.
-//  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
+//  Created by Lan Chenyu on 28/01/2012.
+//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
 #import "AppDelegate.h"
@@ -14,15 +14,6 @@
 @synthesize managedObjectContext = __managedObjectContext;
 @synthesize managedObjectModel = __managedObjectModel;
 @synthesize persistentStoreCoordinator = __persistentStoreCoordinator;
-
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
-    return YES;
-}
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {
@@ -71,7 +62,7 @@
             /*
              Replace this implementation with code to handle the error appropriately.
              
-             abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. 
+             abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. If it is not possible to recover from the error, display an alert panel that instructs the user to quit the application by pressing the Home button.
              */
             NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
             abort();
@@ -112,7 +103,7 @@
         return __managedObjectModel;
     }
     NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"focus" withExtension:@"momd"];
-    __managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
+    __managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];    
     return __managedObjectModel;
 }
 
@@ -136,7 +127,7 @@
         /*
          Replace this implementation with code to handle the error appropriately.
          
-         abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. 
+         abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. If it is not possible to recover from the error, display an alert panel that instructs the user to quit the application by pressing the Home button.
          
          Typical reasons for an error here include:
          * The persistent store is not accessible;
