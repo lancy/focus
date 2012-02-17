@@ -94,6 +94,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BF5DB6BB14EE44C000E2D774 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				BF9724DA14ECEA8600C42892 /* AppDelegate.h */,
+				BF9724DB14ECEA8600C42892 /* AppDelegate.m */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		BF5DB6BC14EE450E00E2D774 /* Root and Scroll Classes */ = {
+			isa = PBXGroup;
+			children = (
+				BF9724DD14ECEAB800C42892 /* RootViewController.h */,
+				BF9724DE14ECEAB800C42892 /* RootViewController.m */,
+				BF9724E214ECEAB800C42892 /* UIView+Badge.h */,
+				BF9724E314ECEAB800C42892 /* UIView+Badge.m */,
+			);
+			name = "Root and Scroll Classes";
+			sourceTree = "<group>";
+		};
+		BF5DB6BD14EE453000E2D774 /* Detail Classes */ = {
+			isa = PBXGroup;
+			children = (
+				BF9724E014ECEAB800C42892 /* DetailViewController.h */,
+				BF9724E114ECEAB800C42892 /* DetailViewController.m */,
+			);
+			name = "Detail Classes";
+			sourceTree = "<group>";
+		};
 		BF9724A114ECEA2800C42892 = {
 			isa = PBXGroup;
 			children = (
@@ -125,17 +154,12 @@
 		BF9724B814ECEA2800C42892 /* focus */ = {
 			isa = PBXGroup;
 			children = (
-				BF9724E814ECEACA00C42892 /* MainViewController */,
+				BF5DB6BB14EE44C000E2D774 /* AppDelegate */,
 				BF9724D014ECEA4D00C42892 /* Model Classes */,
-				BF9724DA14ECEA8600C42892 /* AppDelegate.h */,
-				BF9724DB14ECEA8600C42892 /* AppDelegate.m */,
-				BF9724DD14ECEAB800C42892 /* RootViewController.h */,
-				BF9724DE14ECEAB800C42892 /* RootViewController.m */,
+				BF9724E814ECEACA00C42892 /* Main View Controller */,
+				BF5DB6BC14EE450E00E2D774 /* Root and Scroll Classes */,
+				BF5DB6BD14EE453000E2D774 /* Detail Classes */,
 				BF9724DF14ECEAB800C42892 /* MainStoryboard.storyboard */,
-				BF9724E014ECEAB800C42892 /* DetailViewController.h */,
-				BF9724E114ECEAB800C42892 /* DetailViewController.m */,
-				BF9724E214ECEAB800C42892 /* UIView+Badge.h */,
-				BF9724E314ECEAB800C42892 /* UIView+Badge.m */,
 				BF9724B914ECEA2800C42892 /* Supporting Files */,
 			);
 			path = focus;
@@ -167,7 +191,7 @@
 			name = "Model Classes";
 			sourceTree = "<group>";
 		};
-		BF9724E814ECEACA00C42892 /* MainViewController */ = {
+		BF9724E814ECEACA00C42892 /* Main View Controller */ = {
 			isa = PBXGroup;
 			children = (
 				BF9724E914ECEADC00C42892 /* InboxViewController.h */,
@@ -181,7 +205,7 @@
 				BF9724F114ECEADC00C42892 /* MainviewController.h */,
 				BF9724F214ECEADC00C42892 /* MainviewController.m */,
 			);
-			name = MainViewController;
+			name = "Main View Controller";
 			sourceTree = "<group>";
 		};
 		BF97250214ECEEDA00C42892 /* image */ = {
