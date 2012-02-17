@@ -64,11 +64,13 @@
     // Set up the edit and add buttons.
         longPressDetected = NO;
     
-    [self.parentViewController.navigationController setTitle:@"Main"];
-    self.parentViewController.navigationItem.leftBarButtonItem = self.editButtonItem;
+//    [self.parentViewController.navigationController setTitle:@"Main"];
+//    self.parentViewController.navigationItem.leftBarButtonItem = self.editButtonItem;
+//    
+//    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject)];
+//    self.parentViewController.navigationItem.rightBarButtonItem = addButton;
     
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject)];
-    self.parentViewController.navigationItem.rightBarButtonItem = addButton;
+    
     pointStateLabel = [[UILabel alloc] initWithFrame:CGRectMake(30,350,260,20)];
     [self.parentViewController.view addSubview:pointStateLabel];
     [pointStateLabel setText:@"Power"];
