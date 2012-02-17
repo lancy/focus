@@ -55,8 +55,6 @@ const float GTRangeRightThreshold = 300.0;
 @synthesize scrollView;
 @synthesize pageControl;
 @synthesize scrollBar;
-@synthesize InboxIcon;
-@synthesize TodayIcon;
 @synthesize pointer;
 @synthesize rangeStateLabel;
 @synthesize inboxBarImageView,todayBarImageView,afterBarImageView,somedayBarImageView;
@@ -110,8 +108,6 @@ const float GTRangeRightThreshold = 300.0;
     [self setPageControl:nil];
     [self setScrollBar:nil];
     [self setPointer:nil];
-    [self setInboxIcon:nil];
-    [self setTodayIcon:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -132,6 +128,9 @@ const float GTRangeRightThreshold = 300.0;
        
     
     inboxViewController.dragIssueDelegate = self;
+    todayViewController.dragIssueDelegate = self;
+    afterViewController.dragIssueDelegate = self;
+    somedayViewController.dragIssueDelegate = self;
     [self addChildViewController:inboxViewController];
     [self addChildViewController:todayViewController];
     [self addChildViewController:afterViewController];
@@ -157,6 +156,8 @@ const float GTRangeRightThreshold = 300.0;
     [self updateBadge];
 }
 
+#pragma mark - Scroll Bar Methods
+
 - (void)hideScrollBar
 {
     [UIView animateWithDuration:0.3 animations:^{
@@ -176,8 +177,8 @@ const float GTRangeRightThreshold = 300.0;
 {
     InboxViewController *inboxVC = [self.childViewControllers objectAtIndex:0];
     TodayViewController *todayVC = [self.childViewControllers objectAtIndex:1];
-    [[self.InboxIcon badge] setBadgeValue:[inboxVC.fetchedResultsController.fetchedObjects count]];
-    [[self.TodayIcon badge] setBadgeValue:[todayVC.fetchedResultsController.fetchedObjects count]];
+    [[self.inboxBarImageView badge] setBadgeValue:[inboxVC.fetchedResultsController.fetchedObjects count]];
+    [[self.todayBarImageView badge] setBadgeValue:[todayVC.fetchedResultsController.fetchedObjects count]];
     
 }
 
@@ -205,7 +206,7 @@ const float GTRangeRightThreshold = 300.0;
     [self hideScrollBar];
 }
 
-#pragma mark Handle Drag Gestures
+#pragma mark - Handle Drag Gestures
 
 
 - (int)senseRange:(CGPoint)centerPoint WithExpiringLine:(BOOL)expiring

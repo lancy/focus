@@ -344,7 +344,7 @@
 }
 
 
-#pragma mark view adding and anmiation issues handles here
+#pragma mark - view adding and anmiation issues handles here
 
 -(void)initDragViewAtPoint: (CGPoint)point WithTheEclipseOf:(UIView *)originalView
 {
@@ -371,7 +371,7 @@
 }
 
 
-#pragma Mark Drag Issues Methods
+#pragma Mark - Drag Issues Methods
 
 - (void)addGestureRecgonizerToView:(UIView*)view
 {

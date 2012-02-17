@@ -19,9 +19,6 @@
 @property (strong, nonatomic) IBOutlet UIPageControl *pageControl;
 
 @property (weak, nonatomic) IBOutlet UIView *scrollBar;
-@property (weak, nonatomic) IBOutlet UIImageView *InboxIcon;
-@property (weak, nonatomic) IBOutlet UIImageView *TodayIcon;
-
 @property (weak, nonatomic) IBOutlet UIImageView *pointer;
 
 
