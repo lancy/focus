@@ -62,7 +62,7 @@
     
     [checkbox addTarget:self action:@selector(changeCheckbox:) forControlEvents:UIControlEventTouchUpInside];
     self.finishCheckbox = checkbox;
-    _checkboxSelected = NO;
+    _checkboxSelected = [[self.detailItem finished] boolValue];
 }
 
 - (IBAction)changeCheckbox:(id)sender
