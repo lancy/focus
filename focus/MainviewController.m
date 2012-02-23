@@ -146,7 +146,7 @@
     
     // Configure the cell.
     [self configureCell:cell atIndexPath:indexPath];
-    [self addGestureRecgonizerToView:cell];
+    //[self addGestureRecgonizerToView:cell];
     return cell;
 }
 

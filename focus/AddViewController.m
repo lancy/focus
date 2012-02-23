@@ -11,6 +11,7 @@
 @implementation AddViewController
 
 @synthesize managedObjectContext;
+@synthesize delegate = _delegate;
 
 - (id)init
 {
@@ -97,6 +98,8 @@
 
 - (IBAction)saveItem:(id)sender {
     [self insertNewObject];
+    [self.delegate AddViewControllerDidFinish:self];
+
 }
 
 

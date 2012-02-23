@@ -321,6 +321,17 @@ const float GTRangeRightThreshold = 300.0;
     currentRangeState = GTRangeNormal;
 }
 
+- (void)AddViewControllerDidFinish:(AddViewController *)controller
+{
+    [self dismissModalViewControllerAnimated:YES];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"showAdd"]) {
+        [[segue destinationViewController] setDelegate:self];
+    }
+}
 
 
 

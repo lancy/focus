@@ -6,9 +6,10 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
+#import "AddViewController.h"
 #import <UIKit/UIKit.h>
 
-@interface RootViewController : UIViewController<UIScrollViewDelegate, UIGestureRecognizerDelegate> {
+@interface RootViewController : UIViewController<UIScrollViewDelegate, UIGestureRecognizerDelegate, AddViewControllerDelegate> {
     UIScrollView *scrollView;
     UIPageControl *pageControl;
     
