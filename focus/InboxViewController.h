@@ -15,5 +15,4 @@
 
 @interface InboxViewController : MainViewController
 
-
 @end

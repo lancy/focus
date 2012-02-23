@@ -10,12 +10,16 @@
 
 #import "DetailViewController.h"
 
+#import "ItemCell.h"
+
+#import "Item.h"
+
 @interface MainViewController ()
 {
     UIView *dragView;
     UILabel *pointStateLabel;
 }
-- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
+- (void)configureCell:(ItemCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 - (void)addGestureRecgonizerToView:(UIView*)view;
 
 @end
@@ -136,13 +140,9 @@
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"ItemCell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    }
+    ItemCell *cell = (ItemCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     // Configure the cell.
     [self configureCell:cell atIndexPath:indexPath];
@@ -314,10 +314,16 @@
  }
  */
 
-- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
+#pragma mark - configure cell
+
+- (void)configureCell:(ItemCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
     NSManagedObject *managedObject = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = [[managedObject valueForKey:@"creatTime"] description];
+    
+    cell.titleLabel.text = [[managedObject valueForKey:@"title"] description];
+    cell.infoLabel.text = [[managedObject valueForKey:@"note"] description];
+    [cell configureDuedateLabelFromDate:[managedObject valueForKey:@"dueDate"]];
+    [cell configurePriority:[managedObject valueForKey:@"priority"]];
 }
 
 - (void)insertNewObject
