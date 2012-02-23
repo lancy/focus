@@ -319,6 +319,11 @@
 - (void)configureCell:(ItemCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
     NSManagedObject *managedObject = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    cell.detailItem = (Item *) managedObject;   
+    
+    if ([[cell.detailItem finished] boolValue]) {
+        [cell setFinishCheckboxSelected];
+    }
     
     cell.titleLabel.text = [[managedObject valueForKey:@"title"] description];
     cell.infoLabel.text = [[managedObject valueForKey:@"note"] description];

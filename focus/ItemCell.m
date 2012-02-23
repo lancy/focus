@@ -62,14 +62,21 @@
     
     [checkbox addTarget:self action:@selector(changeCheckbox:) forControlEvents:UIControlEventTouchUpInside];
     self.finishCheckbox = checkbox;
-    _checkboxSelected = [[self.detailItem finished] boolValue];
+    _checkboxSelected = NO;
+    [self.finishCheckbox setSelected:_checkboxSelected];
+}
+
+- (void)setFinishCheckboxSelected
+{
+    _checkboxSelected = YES;
+    [self.finishCheckbox setSelected:YES];
 }
 
 - (IBAction)changeCheckbox:(id)sender
 {
-    [self.detailItem setFinished:[NSNumber numberWithBool:_checkboxSelected]];
     _checkboxSelected = !_checkboxSelected;
     [self.finishCheckbox setSelected:_checkboxSelected];
+    [self.detailItem setFinished:[NSNumber numberWithBool:_checkboxSelected]];
 }
 
 #pragma mark - duedate string

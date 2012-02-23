@@ -27,5 +27,6 @@
 
 - (void)configureDuedateLabelFromDate:(NSDate *)aDate;
 - (void)configurePriority:(NSNumber *)priorityNumber;
+- (void)setFinishCheckboxSelected;
 
 @end
