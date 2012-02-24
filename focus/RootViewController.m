@@ -184,6 +184,7 @@ const float GTRangeRightThreshold = 300.0;
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
+    
     [self updateBadge];
     CGFloat pageWidth = self.scrollView.frame.size.width;
     int page = floor((self.scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;

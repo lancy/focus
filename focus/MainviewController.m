@@ -124,32 +124,43 @@
 
 # pragma mark Tabel View Deleate Methods
 
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-{
-    UIImage *imgae = [UIImage imageNamed:@"sectionheader.png"];
-    UIImageView *sectionHeaderView = [[UIImageView alloc] initWithImage:imgae];
-    UILabel *sectionLabel = [[UILabel alloc] init];
-    sectionLabel.text = [[[self.fetchedResultsController sections] objectAtIndex:section] name];
-    NSLog(@"%@", sectionLabel.text);
-    [sectionHeaderView addSubview:sectionLabel];
-    return sectionHeaderView;
-}
-
-//- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 //{
-//    // Display title as section headings.
-//    return [[[self.fetchedResultsController sections] objectAtIndex:section] name];
+//    UIImage *imgae = [UIImage imageNamed:@"sectionheader.png"];
+//    UIImageView *sectionHeaderView = [[UIImageView alloc] initWithImage:imgae];
+//    UILabel *sectionLabel = [[UILabel alloc] init];
+//    sectionLabel.text = [[[self.fetchedResultsController sections] objectAtIndex:section] name];
+//    [sectionLabel setFrame:CGRectMake(10, 0, 200, 20)];
+//    [sectionLabel setBackgroundColor:[UIColor clearColor]];
+////    NSLog(@"%@", sectionLabel.text);
+//    [sectionHeaderView addSubview:sectionLabel];
+//    return sectionHeaderView;
 //}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    // Display title as section headings.
+    return [[[self.fetchedResultsController sections] objectAtIndex:section] name];
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    id <NSFetchedResultsSectionInfo> sectionInfo = [[self.fetchedResultsController sections] objectAtIndex:section];
+    id <NSFetchedResultsSectionInfo> sectionInfo = [[self.fetchedResultsController sections] objectAtIndex:section];    
+    if (section == [[self.fetchedResultsController sections] count] - 1) {
+        return [sectionInfo numberOfObjects] + 1;
+    }
     return [sectionInfo numberOfObjects];
 }
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if (([indexPath section] == [[self.fetchedResultsController sections] count] - 1)
+        && ([indexPath row] == [[[self.fetchedResultsController sections] objectAtIndex:[indexPath section]] numberOfObjects]))
+    {
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"quickCell"];
+        return cell;
+    }
     static NSString *CellIdentifier = @"ItemCell";
     
     ItemCell *cell = (ItemCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];

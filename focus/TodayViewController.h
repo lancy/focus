@@ -15,5 +15,6 @@
 
 @interface TodayViewController : MainViewController
 
+- (IBAction)quickAddItem:(id)sender;
 
 @end

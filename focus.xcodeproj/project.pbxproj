@@ -12,6 +12,7 @@
 		BF51D7A414F78F3F00B0BFC3 /* backg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BF51D7A314F78F3F00B0BFC3 /* backg.jpg */; };
 		BF51D7A614F7927800B0BFC3 /* navigationbg.png in Resources */ = {isa = PBXBuildFile; fileRef = BF51D7A514F7927800B0BFC3 /* navigationbg.png */; };
 		BF51D7A814F79D8200B0BFC3 /* sectionheader.png in Resources */ = {isa = PBXBuildFile; fileRef = BF51D7A714F79D8200B0BFC3 /* sectionheader.png */; };
+		BF51D7AA14F7C5D800B0BFC3 /* toolbar.png in Resources */ = {isa = PBXBuildFile; fileRef = BF51D7A914F7C5D800B0BFC3 /* toolbar.png */; };
 		BF5DB6C414EE4CBF00E2D774 /* AddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5DB6C314EE4CBF00E2D774 /* AddViewController.m */; };
 		BF9724B114ECEA2800C42892 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF9724B014ECEA2800C42892 /* UIKit.framework */; };
 		BF9724B314ECEA2800C42892 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF9724B214ECEA2800C42892 /* Foundation.framework */; };
@@ -53,6 +54,7 @@
 		BF51D7A314F78F3F00B0BFC3 /* backg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = backg.jpg; sourceTree = "<group>"; };
 		BF51D7A514F7927800B0BFC3 /* navigationbg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navigationbg.png; sourceTree = "<group>"; };
 		BF51D7A714F79D8200B0BFC3 /* sectionheader.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sectionheader.png; sourceTree = "<group>"; };
+		BF51D7A914F7C5D800B0BFC3 /* toolbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toolbar.png; sourceTree = "<group>"; };
 		BF5DB6C214EE4CBF00E2D774 /* AddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddViewController.h; sourceTree = "<group>"; };
 		BF5DB6C314EE4CBF00E2D774 /* AddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddViewController.m; sourceTree = "<group>"; };
 		BF9724AC14ECEA2800C42892 /* focus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = focus.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -239,6 +241,7 @@
 		BF97250214ECEEDA00C42892 /* image */ = {
 			isa = PBXGroup;
 			children = (
+				BF51D7A914F7C5D800B0BFC3 /* toolbar.png */,
 				BF51D7A714F79D8200B0BFC3 /* sectionheader.png */,
 				BF51D7A514F7927800B0BFC3 /* navigationbg.png */,
 				BF51D7A314F78F3F00B0BFC3 /* backg.jpg */,
@@ -325,6 +328,7 @@
 				BF51D7A414F78F3F00B0BFC3 /* backg.jpg in Resources */,
 				BF51D7A614F7927800B0BFC3 /* navigationbg.png in Resources */,
 				BF51D7A814F79D8200B0BFC3 /* sectionheader.png in Resources */,
+				BF51D7AA14F7C5D800B0BFC3 /* toolbar.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

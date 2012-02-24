@@ -14,5 +14,6 @@
 #import "MainviewController.h"
 
 @interface SomedayViewController : MainViewController
+- (IBAction)quickAddItem:(id)sender;
 
 @end

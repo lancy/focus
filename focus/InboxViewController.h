@@ -13,6 +13,8 @@
 #import <CoreData/CoreData.h>
 #import "MainviewController.h"
 
-@interface InboxViewController : MainViewController
+@interface InboxViewController : MainViewController <UITextFieldDelegate>
+
+- (IBAction)quickAddItem:(id)sender;
 
 @end

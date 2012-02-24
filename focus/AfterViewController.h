@@ -13,5 +13,6 @@
 #import <CoreData/CoreData.h>
 #import "MainviewController.h"
 @interface AfterViewController : MainViewController
+- (IBAction)quickAddItem:(id)sender;
 
 @end
