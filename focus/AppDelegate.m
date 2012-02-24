@@ -15,6 +15,20 @@
 @synthesize managedObjectModel = __managedObjectModel;
 @synthesize persistentStoreCoordinator = __persistentStoreCoordinator;
 
+
+- (void)customizeAppearance
+{
+    UIImage *navigationbg = [UIImage imageNamed:@"navigationbg.png"];
+    [[UINavigationBar appearance] setBackgroundImage:navigationbg forBarMetrics:UIBarMetricsDefault];
+    
+
+}
+
+- (void)applicationDidFinishLaunching:(UIApplication *)application
+{
+    [self customizeAppearance];
+}
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     /*

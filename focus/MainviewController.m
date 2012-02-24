@@ -75,9 +75,9 @@
 //    self.parentViewController.navigationItem.rightBarButtonItem = addButton;
     
     
-    pointStateLabel = [[UILabel alloc] initWithFrame:CGRectMake(30,350,260,20)];
-    [self.parentViewController.view addSubview:pointStateLabel];
-    [pointStateLabel setText:@"Power"];
+//    pointStateLabel = [[UILabel alloc] initWithFrame:CGRectMake(30,350,260,20)];
+//    [self.parentViewController.view addSubview:pointStateLabel];
+//    [pointStateLabel setText:@"Power"];
     
 
 }
@@ -124,12 +124,22 @@
 
 # pragma mark Tabel View Deleate Methods
 
-
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    // Display title as section headings.
-    return [[[self.fetchedResultsController sections] objectAtIndex:section] name];
+    UIImage *imgae = [UIImage imageNamed:@"sectionheader.png"];
+    UIImageView *sectionHeaderView = [[UIImageView alloc] initWithImage:imgae];
+    UILabel *sectionLabel = [[UILabel alloc] init];
+    sectionLabel.text = [[[self.fetchedResultsController sections] objectAtIndex:section] name];
+    NSLog(@"%@", sectionLabel.text);
+    [sectionHeaderView addSubview:sectionLabel];
+    return sectionHeaderView;
 }
+
+//- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+//{
+//    // Display title as section headings.
+//    return [[[self.fetchedResultsController sections] objectAtIndex:section] name];
+//}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {

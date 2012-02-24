@@ -95,11 +95,11 @@ const float GTRangeRightThreshold = 300.0;
     [self configureScrollView];
     [self configureScrollBar];
     
-    rangeStateLabel = [[UILabel alloc] initWithFrame:CGRectMake(30,250,260,20)];
-    [self.view addSubview:rangeStateLabel];
-    [rangeStateLabel setText:@"Range"];
-    previousRangeState = GTRangeInitial;
-    originalRangeState = GTRangeInitial;
+//    rangeStateLabel = [[UILabel alloc] initWithFrame:CGRectMake(30,250,260,20)];
+//    [self.view addSubview:rangeStateLabel];
+//    [rangeStateLabel setText:@"Range"];
+//    previousRangeState = GTRangeInitial;
+//    originalRangeState = GTRangeInitial;
 }
 
 - (void)viewDidUnload
