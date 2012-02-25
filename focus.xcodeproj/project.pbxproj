@@ -15,7 +15,6 @@
 		BF51D7AA14F7C5D800B0BFC3 /* toolbar.png in Resources */ = {isa = PBXBuildFile; fileRef = BF51D7A914F7C5D800B0BFC3 /* toolbar.png */; };
 		BF51D7B614F7C78D00B0BFC3 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF51D7B514F7C78D00B0BFC3 /* AboutViewController.m */; };
 		BF51D7B914F7C90D00B0BFC3 /* FinishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF51D7B814F7C90D00B0BFC3 /* FinishViewController.m */; };
-		BF5DB6C414EE4CBF00E2D774 /* AddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5DB6C314EE4CBF00E2D774 /* AddViewController.m */; };
 		BF9724B114ECEA2800C42892 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF9724B014ECEA2800C42892 /* UIKit.framework */; };
 		BF9724B314ECEA2800C42892 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF9724B214ECEA2800C42892 /* Foundation.framework */; };
 		BF9724B514ECEA2800C42892 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF9724B414ECEA2800C42892 /* CoreGraphics.framework */; };
@@ -61,8 +60,6 @@
 		BF51D7B514F7C78D00B0BFC3 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		BF51D7B714F7C90C00B0BFC3 /* FinishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinishViewController.h; sourceTree = "<group>"; };
 		BF51D7B814F7C90D00B0BFC3 /* FinishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinishViewController.m; sourceTree = "<group>"; };
-		BF5DB6C214EE4CBF00E2D774 /* AddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddViewController.h; sourceTree = "<group>"; };
-		BF5DB6C314EE4CBF00E2D774 /* AddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddViewController.m; sourceTree = "<group>"; };
 		BF9724AC14ECEA2800C42892 /* focus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = focus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF9724B014ECEA2800C42892 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BF9724B214ECEA2800C42892 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -160,8 +157,6 @@
 			children = (
 				BF9724E014ECEAB800C42892 /* DetailViewController.h */,
 				BF9724E114ECEAB800C42892 /* DetailViewController.m */,
-				BF5DB6C214EE4CBF00E2D774 /* AddViewController.h */,
-				BF5DB6C314EE4CBF00E2D774 /* AddViewController.m */,
 			);
 			name = "Detail Classes";
 			sourceTree = "<group>";
@@ -371,7 +366,6 @@
 				BF97250514ECEFA000C42892 /* Item.m in Sources */,
 				BF97250814ECF00400C42892 /* Project.m in Sources */,
 				BF97250B14ECF00400C42892 /* Tag.m in Sources */,
-				BF5DB6C414EE4CBF00E2D774 /* AddViewController.m in Sources */,
 				BF0B61B514F62C9C00A2FEF8 /* ItemCell.m in Sources */,
 				BF51D7B614F7C78D00B0BFC3 /* AboutViewController.m in Sources */,
 				BF51D7B914F7C90D00B0BFC3 /* FinishViewController.m in Sources */,
