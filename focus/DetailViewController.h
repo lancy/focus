@@ -10,72 +10,34 @@
 #import "item.h"
 
 
-#import <UIKit/UIKit.h>
-#import "item.h"
+@interface DetailViewController : UITableViewController <UITextFieldDelegate, UIAlertViewDelegate> {    
+    UIDatePicker *_datePicker;
 
-@interface DetailViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, UIAlertViewDelegate> {
-    // Labels
-    UILabel *titleLabel;
-    UILabel *noteLabel;
-    UILabel *startTimeLabel;
-    UILabel *dueTimeLabel;
-    UILabel *duringLabel;
-    UILabel *notificationLabel;
-    UILabel *repeatLabel;
-    UILabel *tagLabel;
-    
-    // Fields
-    UITextField *titleField;
-    UITextField *noteField;
-    
-    // Buttons
-    UIButton *priorityBtn;
-    UIButton *projectBtn;
-    UIButton *sendBtn;
-    UIButton *deleteBtn;
-    UIButton *pickerCancelBtn;
-    UIButton *pickerConfirmBtn;
-    
-    // Others
-    UIDatePicker *datePicker;
-    UIView *backgroundView;
-    NSInteger choiceSwitch;
-    NSString *textContent;
-    NSString *objectKey;
-    NSMutableDictionary *textContentHolder;
 }
 
-
 @property (strong, nonatomic) Item* detailItem;
-@property (retain, nonatomic) UILabel *titleLabel;
-@property (retain, nonatomic) UILabel *noteLabel;
-@property (retain, nonatomic) UILabel *startTimeLabel;
-@property (retain, nonatomic) UILabel *startTimeFetchLabel;
-@property (retain, nonatomic) UILabel *dueTimeLabel;
-@property (retain, nonatomic) UILabel *dueTimeFetchLabel;
-@property (retain, nonatomic) UILabel *duringLabel;
-@property (retain, nonatomic) UILabel *notificationLabel;
-@property (retain, nonatomic) UILabel *repeatLabel;
-@property (retain, nonatomic) UILabel *tagLabel;
-@property (retain, nonatomic) UITextField *titleField;
-@property (retain, nonatomic) UITextField *noteField;
-@property (retain, nonatomic) UIButton *priorityBtn;
-@property (retain, nonatomic) UIButton *projectBtn;
-@property (retain, nonatomic) UIButton *sendBtn;
-@property (retain, nonatomic) UIButton *deleteBtn;
-@property (retain, nonatomic) IBOutlet UIButton *pickerCancelBtn;
-@property (retain, nonatomic) IBOutlet UIButton *pickerConfirmBtn;
-@property (retain, nonatomic) IBOutlet UIDatePicker *datePicker;
-@property (retain, nonatomic) IBOutlet UIView *backgroundView;
 
-// IBAction函数集
-- (IBAction)Save:(id)sender;
-- (IBAction)PickerCancel:(id)sender;
-- (IBAction)PickerConfirm:(id)sender;
 
-// 自定义函数集
-- (void)SetLabelAttribution:(UILabel *)myLabel;
-- (void)SetTextAttribution:(UITextField *)myTextField;
-- (NSString *)SetDateFormat:(NSDate *)myDate;
+@property (weak, nonatomic) IBOutlet UITextField *titleTextField;
+@property (weak, nonatomic) IBOutlet UITextField *noteTextField;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *prioritySegment;
+@property (weak, nonatomic) IBOutlet UITextField *startDateTextField;
+@property (weak, nonatomic) IBOutlet UITextField *dueDateTextField;
+@property (weak, nonatomic) IBOutlet UITextField *durationTextField;
+
+@property (strong, nonatomic) IBOutlet UIDatePicker *datePicker;
+@property (strong, nonatomic) IBOutlet UIView *datePickerTool;
+
+- (IBAction)changePriority:(id)sender;
+- (IBAction)changeTitle:(id)sender;
+- (IBAction)changeNote:(id)sender;
+- (IBAction)changeDate:(id)sender;
+
+- (IBAction)pressPickerDoneButton:(id)sender;
+
+
+- (IBAction)didDoneButton:(id)sender;
+
+- (IBAction)pressSaveButton:(id)sender;
 
 @end
