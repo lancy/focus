@@ -180,7 +180,7 @@ const NSTimeInterval secondsPerDay = 24 * 60 * 60;
     
     //    NSLog(@"%@%@", [self dueDateStr], todayStr);
     
-    if ([[self dueDateStr] isEqualToString:todayStr]) {
+    if ([[self dueDateStr] compare:todayStr] == NSOrderedSame) {
         return @"Today";
     }
     else

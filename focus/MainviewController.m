@@ -120,7 +120,8 @@
 // Customize the number of sections in the table view.
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return [[self.fetchedResultsController sections] count];
+    // additional section for quick add type cell
+    return [[self.fetchedResultsController sections] count] + 1;
 }
 
 
@@ -140,23 +141,25 @@
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     // Display title as section headings.
+    if ([[self.fetchedResultsController sections] count] == section)
+        return nil;
+    
     return [[[self.fetchedResultsController sections] objectAtIndex:section] name];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    id <NSFetchedResultsSectionInfo> sectionInfo = [[self.fetchedResultsController sections] objectAtIndex:section];    
-    if (section == [[self.fetchedResultsController sections] count] - 1) {
-        return [sectionInfo numberOfObjects] + 1;
+    if (section == [[self.fetchedResultsController sections] count]) {
+        return 1;
     }
+    id <NSFetchedResultsSectionInfo> sectionInfo = [[self.fetchedResultsController sections] objectAtIndex:section];    
     return [sectionInfo numberOfObjects];
 }
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (([indexPath section] == [[self.fetchedResultsController sections] count] - 1)
-        && ([indexPath row] == [[[self.fetchedResultsController sections] objectAtIndex:[indexPath section]] numberOfObjects]))
+    if ([indexPath section] == [[self.fetchedResultsController sections] count])
     {
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"quickCell"];
         return cell;
