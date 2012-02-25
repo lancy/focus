@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SimpleViewController.h"
 
-@class DetailViewController;
+@class SimpleViewController;
 
 #import <CoreData/CoreData.h>
 
@@ -23,7 +24,7 @@
 
 @interface MainViewController : UITableViewController <NSFetchedResultsControllerDelegate,UIGestureRecognizerDelegate>
 {
-    DetailViewController *_detailViewController;
+    SimpleViewController *_simpleViewController;
     NSFetchedResultsController *__fetchedResultsController;
     NSManagedObjectContext *__managedObjectContext;
     
@@ -31,7 +32,7 @@
     id<handleDragIssue> dragIssueDelegate;
 }
 
-@property (strong, nonatomic) DetailViewController *detailViewController;
+@property (strong, nonatomic) SimpleViewController *simpleViewController;
 
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;

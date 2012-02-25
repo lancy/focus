@@ -1,32 +1,30 @@
 //
-//  DetailViewController.m
-//  test
+//  SimpleViewController.m
+//  focus
 //
-//  Created by Lan Chenyu on 28/01/2012.
-//  Modified by Palibox on 11/02/2012.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Created by Lancy on 12-2-25.
+//  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 
-#import "DetailViewController.h"
+#import "SimpleViewController.h"
 #import "Item.h"
 
-@interface DetailViewController ()
+@interface SimpleViewController ()
 - (void)configureItem;
 - (NSString *)dateStringFromNSDate:(NSDate *)date;
-- (void)updateDate;
+- (void)creatNewItem;
 - (void)deleteItem;
+- (void)updateDate;
 @end
 
-@implementation DetailViewController
+@implementation SimpleViewController
 
+@synthesize isAdd = _isAdd;
 @synthesize managedObjectContext;
 @synthesize detailItem = _detailItem;
 @synthesize titleTextField = _titleTextField;
-@synthesize noteTextField = _noteTextField;
 @synthesize prioritySegment = _prioritySegment;
-@synthesize startDateTextField = _startDateTextField;
 @synthesize dueDateTextField = _dueDateTextField;
-@synthesize durationTextField = _durationTextField;
 @synthesize datePicker = _datePicker;
 @synthesize datePickerTool = _datePickerTool;
 
@@ -60,6 +58,28 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
+- (void)creatNewItem
+{
+    NSManagedObjectContext *context = [self managedObjectContext];
+    NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:@"Item" inManagedObjectContext:context];
+    
+    [newManagedObject setValue:[NSDate date] forKey:@"creatTime"];
+    
+    NSError *error = nil;
+    if (![context save:&error])
+    {
+        /*
+         Replace this implementation with code to handle the error appropriately.
+         
+         abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. If it is not possible to recover from the error, display an alert panel that instructs the user to quit the application by pressing the Home button.
+         */
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        abort();
+    }
+    
+    self.detailItem =(Item* )newManagedObject;
+}
+
 - (void)deleteItem
 {
     // Delete the managed object for the given index path
@@ -83,7 +103,7 @@
 - (IBAction)pressDeleteButton:(id)sender {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Delete Item" message:@"Are You Sure?" delegate:self cancelButtonTitle:@"Cancle" otherButtonTitles:@"Delete", nil];
     [alert show];
-
+    
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
@@ -109,20 +129,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    NSLog(@"%@", self.datePicker);
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void)viewDidUnload
 {
-
+    
     [self setTitleTextField:nil];
-    [self setNoteTextField:nil];
     [self setPrioritySegment:nil];
-    [self setStartDateTextField:nil];
     [self setDueDateTextField:nil];
-    [self setDurationTextField:nil];
     [self setDatePicker:nil];
     [self setDatePickerTool:nil];
     [super viewDidUnload];
@@ -133,12 +148,19 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self configureItem];
+    NSLog(@"%d", self.isAdd);
+    if (self.isAdd == NO)
+    {
+        [self configureItem];
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    if (self.isAdd == YES) {
+        [self creatNewItem];
+    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -157,24 +179,15 @@
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
-#pragma mark - configure item
 - (void)updateDate
 {
-    [self.startDateTextField setText:[self dateStringFromNSDate:[self.detailItem startDate]]];
     [self.dueDateTextField setText:[self dateStringFromNSDate:[self.detailItem dueDate]]];
-    if ([self.detailItem duration] != nil) {
-        [self.durationTextField setText:[NSString stringWithFormat:@"%d days", [self.detailItem.duration intValue] + 1]];
-    } else 
-    {
-        [self.durationTextField setText:nil];
-    }
-    
 }
 
 - (void)configureItem
 {
     [self.titleTextField setText:[self.detailItem title]];
-    [self.noteTextField setText:[self.detailItem note]];
+//    [self.noteTextField setText:[self.detailItem note]];
     [self.prioritySegment setSelectedSegmentIndex:[self.detailItem.priority integerValue]];
     [self updateDate];
 }
@@ -192,21 +205,12 @@
     NSLog(@"%@", self.detailItem.title);
 }
 
-- (IBAction)changeNote:(id)sender {
-    [self.detailItem setNote:[self.noteTextField text]];
-    NSLog(@"%@", self.detailItem.note);
-}
 
 - (IBAction)changeDate:(id)sender {
     if ([self.dueDateTextField isFirstResponder]) {
         [self.detailItem setDueDate:[sender date]];
         self.dueDateTextField.text = [self dateStringFromNSDate:[sender date]];
     }
-    else if([self.startDateTextField isFirstResponder]) {
-        [self.detailItem setStartDate:[sender date]];
-        self.startDateTextField.text = [self dateStringFromNSDate:[sender date]];
-    }
-    [self updateDate];
 }
 
 - (IBAction)pressPickerDoneButton:(id)sender {
@@ -214,12 +218,6 @@
         [self.detailItem setDueDate:[self.datePicker date]];
         self.dueDateTextField.text = [self dateStringFromNSDate:[self.datePicker date]];
         [self.dueDateTextField resignFirstResponder];
-    }
-    else if([self.startDateTextField isFirstResponder])
-    {
-        [self.detailItem setStartDate:[self.datePicker date]];
-        self.startDateTextField.text = [self dateStringFromNSDate:[self.datePicker date]];
-        [self.startDateTextField resignFirstResponder];
     }
 }
 
@@ -244,19 +242,7 @@
             textField.inputAccessoryView = self.datePickerTool;
         }
     } 
-    else if (textField == [self startDateTextField])
-    {
-        if (textField.inputView == nil) {
-            textField.inputView = self.datePicker;
-        }
-        if ([self.detailItem startDate] != nil) {
-            [self.datePicker setDate:[self.detailItem startDate] animated:YES];
-        }
-        if (textField.inputAccessoryView == nil)
-        {
-            textField.inputAccessoryView = self.datePickerTool;
-        }
-    }
+
     return YES;
 }
 
@@ -273,16 +259,24 @@
 
 
 
-#pragma mark - back to root
+#pragma mark - view transition
 - (IBAction)pressSaveButton:(id)sender {
     if ([self.titleTextField isFirstResponder]) {
         [self.titleTextField resignFirstResponder];
     } 
-    else if ([self.noteTextField isFirstResponder])
+    if ([self.detailItem title] == nil)
     {
-        [self.noteTextField resignFirstResponder];
+        [self deleteItem];
     }
-    [self.navigationController popToRootViewControllerAnimated:YES];
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"moreOptions"])
+    {
+        [segue.destinationViewController setValue:self.detailItem forKey:@"detailItem"];
+    }
 }
 
 

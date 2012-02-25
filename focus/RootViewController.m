@@ -52,6 +52,7 @@ const float GTRangeRightThreshold = 300.0;
 @end
 
 @implementation RootViewController
+@synthesize simpleViewController = _simpleViewController;
 @synthesize scrollView;
 @synthesize pageControl;
 @synthesize scrollBar;
@@ -156,6 +157,15 @@ const float GTRangeRightThreshold = 300.0;
     [self updateBadge];
 }
 
+#pragma mark - view transition
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString: @"showAdd"]) {
+        SimpleViewController *svc = segue.destinationViewController;
+        svc.isAdd = YES;
+    }
+}
+
 #pragma mark - Scroll Bar Methods
 
 - (void)hideScrollBar
@@ -207,6 +217,8 @@ const float GTRangeRightThreshold = 300.0;
     [self hideScrollBar];
 }
 
+
+
 #pragma mark - Handle Drag Gestures
 
 
@@ -239,6 +251,8 @@ const float GTRangeRightThreshold = 300.0;
     
     return state;
 }
+
+
 
 
 - (void)respondToRangeState:(CGPoint)centerPoint ofEclipseView:(UIView *)view WithExpiringLine:(BOOL)expiring;

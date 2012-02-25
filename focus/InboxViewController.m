@@ -92,8 +92,12 @@
 
 
 - (IBAction)quickAddItem:(id)sender {
+    if ([sender valueForKey:@"text"] != nil) {
+        NSLog(@"%@aa", [sender valueForKey:@"text"]);
+    }
     [self insertNewObject:[sender valueForKey:@"text"]];
     [sender setValue:nil forKey:@"text"];
+
     [self resignFirstResponder];
 }
 

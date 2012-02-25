@@ -40,6 +40,8 @@
 		BF97250514ECEFA000C42892 /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = BF97250414ECEFA000C42892 /* Item.m */; };
 		BF97250814ECF00400C42892 /* Project.m in Sources */ = {isa = PBXBuildFile; fileRef = BF97250714ECF00400C42892 /* Project.m */; };
 		BF97250B14ECF00400C42892 /* Tag.m in Sources */ = {isa = PBXBuildFile; fileRef = BF97250A14ECF00400C42892 /* Tag.m */; };
+		BFD1947F14F8E10500031883 /* SimpleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD1947E14F8E10500031883 /* SimpleViewController.m */; };
+		BFD1948214F8FFDA00031883 /* FromSimpleToDetailSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD1948114F8FFDA00031883 /* FromSimpleToDetailSegue.m */; };
 		BFE18CAA14F65AB0008FAAD4 /* notselectedcheckbox.png in Resources */ = {isa = PBXBuildFile; fileRef = BFE18CA814F65AB0008FAAD4 /* notselectedcheckbox.png */; };
 		BFE18CAB14F65AB0008FAAD4 /* selectedcheckbox.png in Resources */ = {isa = PBXBuildFile; fileRef = BFE18CA914F65AB0008FAAD4 /* selectedcheckbox.png */; };
 		BFE18CEA14F67129008FAAD4 /* priority1.png in Resources */ = {isa = PBXBuildFile; fileRef = BFE18CE614F67129008FAAD4 /* priority1.png */; };
@@ -100,6 +102,10 @@
 		BF97250714ECF00400C42892 /* Project.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Project.m; sourceTree = "<group>"; };
 		BF97250914ECF00400C42892 /* Tag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tag.h; sourceTree = "<group>"; };
 		BF97250A14ECF00400C42892 /* Tag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tag.m; sourceTree = "<group>"; };
+		BFD1947D14F8E10500031883 /* SimpleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleViewController.h; sourceTree = "<group>"; };
+		BFD1947E14F8E10500031883 /* SimpleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleViewController.m; sourceTree = "<group>"; };
+		BFD1948014F8FFDA00031883 /* FromSimpleToDetailSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FromSimpleToDetailSegue.h; sourceTree = "<group>"; };
+		BFD1948114F8FFDA00031883 /* FromSimpleToDetailSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FromSimpleToDetailSegue.m; sourceTree = "<group>"; };
 		BFE18CA814F65AB0008FAAD4 /* notselectedcheckbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = notselectedcheckbox.png; sourceTree = "<group>"; };
 		BFE18CA914F65AB0008FAAD4 /* selectedcheckbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = selectedcheckbox.png; sourceTree = "<group>"; };
 		BFE18CE614F67129008FAAD4 /* priority1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = priority1.png; sourceTree = "<group>"; };
@@ -157,6 +163,10 @@
 			children = (
 				BF9724E014ECEAB800C42892 /* DetailViewController.h */,
 				BF9724E114ECEAB800C42892 /* DetailViewController.m */,
+				BFD1947D14F8E10500031883 /* SimpleViewController.h */,
+				BFD1947E14F8E10500031883 /* SimpleViewController.m */,
+				BFD1948014F8FFDA00031883 /* FromSimpleToDetailSegue.h */,
+				BFD1948114F8FFDA00031883 /* FromSimpleToDetailSegue.m */,
 			);
 			name = "Detail Classes";
 			sourceTree = "<group>";
@@ -369,6 +379,8 @@
 				BF0B61B514F62C9C00A2FEF8 /* ItemCell.m in Sources */,
 				BF51D7B614F7C78D00B0BFC3 /* AboutViewController.m in Sources */,
 				BF51D7B914F7C90D00B0BFC3 /* FinishViewController.m in Sources */,
+				BFD1947F14F8E10500031883 /* SimpleViewController.m in Sources */,
+				BFD1948214F8FFDA00031883 /* FromSimpleToDetailSegue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

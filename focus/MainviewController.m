@@ -8,7 +8,7 @@
 
 #import "MainViewController.h"
 
-#import "DetailViewController.h"
+#import "SimpleViewController.h"
 
 #import "ItemCell.h"
 
@@ -26,7 +26,7 @@
 
 @implementation MainViewController
 
-@synthesize detailViewController = _detailViewController;
+@synthesize simpleViewController = _simpleViewController;
 @synthesize fetchedResultsController = __fetchedResultsController;
 @synthesize managedObjectContext = __managedObjectContext;
 @synthesize dragIssueDelegate;
@@ -214,13 +214,13 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (!self.detailViewController) {   
-        self.detailViewController = [self.parentViewController.storyboard instantiateViewControllerWithIdentifier:@"detail"];
+    if (!self.simpleViewController) {   
+        self.simpleViewController = [self.parentViewController.storyboard instantiateViewControllerWithIdentifier:@"simple"];
     }
     NSManagedObject *selectedObject = [[self fetchedResultsController] objectAtIndexPath:indexPath];
-    self.detailViewController.detailItem = selectedObject;   
-    NSLog(@"%@", self.detailViewController);
-    [self.navigationController pushViewController:self.detailViewController animated:YES];
+    self.simpleViewController.isAdd = NO;
+    self.simpleViewController.detailItem = selectedObject;   
+    [self.navigationController pushViewController:self.simpleViewController animated:YES];
 }
 
 #pragma mark - Fetched results controller
