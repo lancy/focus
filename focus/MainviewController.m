@@ -115,6 +115,7 @@
     // Return YES for supported orientations
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
+# pragma mark Tabel View Deleate Methods
 
 // Customize the number of sections in the table view.
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -122,7 +123,6 @@
     return [[self.fetchedResultsController sections] count];
 }
 
-# pragma mark Tabel View Deleate Methods
 
 //- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 //{
@@ -217,7 +217,7 @@
     NSManagedObject *selectedObject = [[self fetchedResultsController] objectAtIndexPath:indexPath];
     self.detailViewController.detailItem = selectedObject;   
     NSLog(@"%@", self.detailViewController);
-    [self.parentViewController.navigationController pushViewController:self.detailViewController animated:YES];
+    [self.navigationController pushViewController:self.detailViewController animated:YES];
 }
 
 #pragma mark - Fetched results controller
@@ -342,9 +342,7 @@
     NSManagedObject *managedObject = [self.fetchedResultsController objectAtIndexPath:indexPath];
     cell.detailItem = (Item *) managedObject;   
     
-    if ([[cell.detailItem finished] boolValue]) {
-        [cell setFinishCheckboxSelected];
-    }
+    [cell setFinishCheckboxSelected:[[cell.detailItem finished] boolValue]];
     
     cell.titleLabel.text = [[managedObject valueForKey:@"title"] description];
     cell.infoLabel.text = [[managedObject valueForKey:@"note"] description];

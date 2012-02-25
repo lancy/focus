@@ -33,12 +33,13 @@
     [fetchRequest setFetchBatchSize:20];
     
     // Set the predicate
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(isSomeday == 0) && (startDate == nil) && (dueDate == nil)"];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(finished == 0) && (isSomeday == 0) && (startDate == nil) && (dueDate == nil)"];
     [fetchRequest setPredicate:predicate];
     
     // Edit the sort key as appropriate.
+//    NSSortDescriptor *finishDescriptor = [[NSSortDescriptor alloc] initWithKey:@"finished" ascending:YES];
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"creatTime" ascending:YES];
-    NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+    NSArray *sortDescriptors = [[NSArray alloc] initWithObjects: sortDescriptor, nil];
     
     [fetchRequest setSortDescriptors:sortDescriptors];
     

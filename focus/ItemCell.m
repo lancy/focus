@@ -66,17 +66,25 @@
     [self.finishCheckbox setSelected:_checkboxSelected];
 }
 
-- (void)setFinishCheckboxSelected
+- (void)setFinishCheckboxSelected:(BOOL) toggle
 {
-    _checkboxSelected = YES;
-    [self.finishCheckbox setSelected:YES];
+    _checkboxSelected = toggle;
+    [self.finishCheckbox setSelected:toggle];
 }
 
 - (IBAction)changeCheckbox:(id)sender
 {
-    _checkboxSelected = !_checkboxSelected;
-    [self.finishCheckbox setSelected:_checkboxSelected];
-    [self.detailItem setFinished:[NSNumber numberWithBool:_checkboxSelected]];
+    if ([[self.detailItem finished] boolValue] == NO)
+    {
+        [self setFinishCheckboxSelected:YES];
+        [self.detailItem setFinished:[NSNumber numberWithBool:YES]];
+    }
+    else
+    {
+        [self setFinishCheckboxSelected:NO];
+        [self.detailItem setFinished:[NSNumber numberWithBool:NO]];
+    }
+
 }
 
 #pragma mark - duedate string

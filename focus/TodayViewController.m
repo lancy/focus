@@ -45,10 +45,11 @@
     
     
     // Set the predicate
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"dueDate < %@", endOfToday];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(finished == 0) && (dueDate < %@)", endOfToday];
     [fetchRequest setPredicate:predicate];
     
     // Edit the sort key as appropriate.
+//    NSSortDescriptor *finishDescriptor = [[NSSortDescriptor alloc] initWithKey:@"finished" ascending:YES];
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"dueDate" ascending:YES];
     NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
     
