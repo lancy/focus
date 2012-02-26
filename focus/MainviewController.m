@@ -29,6 +29,8 @@
 @synthesize simpleViewController = _simpleViewController;
 @synthesize fetchedResultsController = __fetchedResultsController;
 @synthesize managedObjectContext = __managedObjectContext;
+@synthesize quickTextField = _quickTextField;
+
 @synthesize dragIssueDelegate;
 @synthesize pointStateLabel;
 @synthesize inboxTableView;
@@ -86,6 +88,7 @@
 {
     [super viewDidUnload];
     // Release any retained subviews of the main view.
+    [self setQuickTextField:nil];
     // e.g. self.myOutlet = nil;
 }
 
@@ -166,6 +169,7 @@
     if ([indexPath section] == [[self.fetchedResultsController sections] count])
     {
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"quickCell"];
+        self.quickTextField = (UITextField *)[cell viewWithTag:500];
         return cell;
     }
     static NSString *CellIdentifier = @"ItemCell";

@@ -32,10 +32,15 @@
     id<handleDragIssue> dragIssueDelegate;
 }
 
+
 @property (strong, nonatomic) SimpleViewController *simpleViewController;
 
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+
+
+@property (weak, nonatomic) UITextField *quickTextField;
+
 
 @property (nonatomic, retain) IBOutlet id<handleDragIssue>  dragIssueDelegate;
 @property (nonatomic, strong) UILabel *pointStateLabel; 

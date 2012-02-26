@@ -435,6 +435,10 @@
     {
         [self.noteTextField resignFirstResponder];
     }
+    if ([self.detailItem title] == nil)
+    {
+        [self deleteItem];
+    }
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 

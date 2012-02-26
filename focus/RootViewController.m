@@ -209,6 +209,7 @@ const float GTRangeRightThreshold = 300.0;
                              
                          }
          ];
+        [[[self.childViewControllers objectAtIndex:self.pageControl.currentPage] quickTextField] resignFirstResponder];
         switch (self.pageControl.currentPage) {
             case 0:
                 [self.inboxBarImageView setHighlighted:NO];
