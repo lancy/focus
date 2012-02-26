@@ -26,7 +26,7 @@
     dvc.view.frame = CGRectMake(svc.view.frame.origin.x, svc.view.frame.origin.y, dvc.view.frame.size.width, dvc.view.frame.size.height);
 
     
-    [UIView animateWithDuration:1 
+    [UIView animateWithDuration:0.5 
                      animations:^{
                          [dvc.view setAlpha:1];
                      }completion:^(BOOL finish){
