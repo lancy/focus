@@ -360,7 +360,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="yes" keyboardAppearance="alert" returnKeyType="done"/>
                                             <connections>
-                                                <action selector="quickAddItem:" destination="kfJ-DH-Pk6" eventType="editingDidEndOnExit" id="rQM-ln-nv5"/>
+                                                <action selector="quickAddItem:" destination="vyt-1W-05p" eventType="editingDidEndOnExit" id="kep-v6-8Xe"/>
                                             </connections>
                                         </textField>
                                     </subviews>
@@ -608,7 +608,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="yes" keyboardAppearance="alert" returnKeyType="done"/>
                                             <connections>
-                                                <action selector="quickAddItem:" destination="kfJ-DH-Pk6" eventType="editingDidEndOnExit" id="Ja2-bo-hI0"/>
+                                                <action selector="quickAddItem:" destination="LCJ-0L-GfV" eventType="editingDidEndOnExit" id="TgM-s8-Odj"/>
                                             </connections>
                                         </textField>
                                     </subviews>
@@ -706,7 +706,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="yes" keyboardAppearance="alert" returnKeyType="done"/>
                                             <connections>
-                                                <action selector="quickAddItem:" destination="kfJ-DH-Pk6" eventType="editingDidEndOnExit" id="IcJ-uJ-ZR5"/>
+                                                <action selector="quickAddItem:" destination="Wrt-cv-2Jg" eventType="editingDidEndOnExit" id="byE-0y-J47"/>
                                             </connections>
                                         </textField>
                                     </subviews>
