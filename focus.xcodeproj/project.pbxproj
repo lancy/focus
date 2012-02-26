@@ -61,6 +61,7 @@
 		BFE15F8F14FA0DFF00AF0114 /* today@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BFE15F7214FA0DFF00AF0114 /* today@2x.png */; };
 		BFE15F9014FA0DFF00AF0114 /* tool@x.png in Resources */ = {isa = PBXBuildFile; fileRef = BFE15F7314FA0DFF00AF0114 /* tool@x.png */; };
 		BFE15F9114FA0DFF00AF0114 /* type@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BFE15F7414FA0DFF00AF0114 /* type@2x.png */; };
+		BFE15F9C14FA27E400AF0114 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFE15F9B14FA27E400AF0114 /* MessageUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -138,6 +139,7 @@
 		BFE15F7214FA0DFF00AF0114 /* today@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "today@2x.png"; sourceTree = "<group>"; };
 		BFE15F7314FA0DFF00AF0114 /* tool@x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tool@x.png"; sourceTree = "<group>"; };
 		BFE15F7414FA0DFF00AF0114 /* type@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "type@2x.png"; sourceTree = "<group>"; };
+		BFE15F9B14FA27E400AF0114 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,7 +147,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				290613BC14FA1E61002EC3C0 /* MessageUI.framework in Frameworks */,
+				BFE15F9C14FA27E400AF0114 /* MessageUI.framework in Frameworks */,
 				BF9724B114ECEA2800C42892 /* UIKit.framework in Frameworks */,
 				BF9724B314ECEA2800C42892 /* Foundation.framework in Frameworks */,
 				BF9724B514ECEA2800C42892 /* CoreGraphics.framework in Frameworks */,
@@ -218,7 +220,7 @@
 		BF9724AF14ECEA2800C42892 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				290613BB14FA1E61002EC3C0 /* MessageUI.framework */,
+				BFE15F9B14FA27E400AF0114 /* MessageUI.framework */,
 				BF9724B014ECEA2800C42892 /* UIKit.framework */,
 				BF9724B214ECEA2800C42892 /* Foundation.framework */,
 				BF9724B414ECEA2800C42892 /* CoreGraphics.framework */,
