@@ -127,6 +127,10 @@
 
 //- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 //{
+//    if ([[self.fetchedResultsController sections] count] == section 
+//        || [[[[self.fetchedResultsController sections] objectAtIndex:section] name] isEqualToString:@""])
+//            return nil;
+//    
 //    UIImage *imgae = [UIImage imageNamed:@"sectionheader.png"];
 //    UIImageView *sectionHeaderView = [[UIImageView alloc] initWithImage:imgae];
 //    UILabel *sectionLabel = [[UILabel alloc] init];

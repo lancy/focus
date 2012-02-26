@@ -54,14 +54,14 @@
 
 - (void)configureFinishCheckbox
 {
-    UIButton *checkbox = [[UIButton alloc] init];
-    [checkbox setBackgroundImage:[UIImage imageNamed:@"notSelectedCheckbox.png"] forState:UIControlStateNormal];
-    [checkbox setBackgroundImage:[UIImage imageNamed:@"selectedCheckbox.png"] forState:UIControlStateSelected];
-    [checkbox setBackgroundImage:[UIImage imageNamed:@"selectedCheckbox.png"] forState:UIControlStateHighlighted];
-    checkbox.adjustsImageWhenHighlighted = YES;
-    
-    [checkbox addTarget:self action:@selector(changeCheckbox:) forControlEvents:UIControlEventTouchUpInside];
-    self.finishCheckbox = checkbox;
+//    UIButton *checkbox = [[UIButton alloc] init];
+//    [checkbox setBackgroundImage:[UIImage imageNamed:@"chechbox1.png"] forState:UIControlStateNormal];
+//    [checkbox setBackgroundImage:[UIImage imageNamed:@"chechbox2.png"] forState:UIControlStateSelected];
+//    [checkbox setBackgroundImage:[UIImage imageNamed:@"chechbox2.png"] forState:UIControlStateHighlighted];
+//    checkbox.adjustsImageWhenHighlighted = YES;
+//    
+//    [checkbox addTarget:self action:@selector(changeCheckbox:) forControlEvents:UIControlEventTouchUpInside];
+//    self.finishCheckbox = checkbox;
     _checkboxSelected = NO;
     [self.finishCheckbox setSelected:_checkboxSelected];
 }
@@ -112,16 +112,16 @@
 {
     switch ([priorityNumber intValue]) {
         case 0:
-            [self.priorityImageView setImage:[UIImage imageNamed:@"priority0"]];
+            [self.priorityImageView setImage:[UIImage imageNamed:@"Minimal"]];
             break;
         case 1:
-            [self.priorityImageView setImage:[UIImage imageNamed:@"priority1"]];
+            [self.priorityImageView setImage:[UIImage imageNamed:@"Mild"]];
             break;
         case 2:
-            [self.priorityImageView setImage:[UIImage imageNamed:@"priority2"]];
+            [self.priorityImageView setImage:[UIImage imageNamed:@"Moderate"]];
             break;
         case 3:
-            [self.priorityImageView setImage:[UIImage imageNamed:@"priority3"]];
+            [self.priorityImageView setImage:[UIImage imageNamed:@"Severe"]];
             break;
 
             

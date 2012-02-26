@@ -57,6 +57,7 @@ const float GTRangeRightThreshold = 300.0;
 @synthesize pageControl;
 @synthesize scrollBar;
 @synthesize pointer;
+@synthesize titleImageView;
 @synthesize rangeStateLabel;
 @synthesize inboxBarImageView,todayBarImageView,afterBarImageView,somedayBarImageView;
 
@@ -109,6 +110,7 @@ const float GTRangeRightThreshold = 300.0;
     [self setPageControl:nil];
     [self setScrollBar:nil];
     [self setPointer:nil];
+    [self setTitleImageView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -202,7 +204,47 @@ const float GTRangeRightThreshold = 300.0;
     {
         [UIView animateWithDuration:0.2 animations:^{
             [self.pointer setCenter:CGPointMake(self.pointer.center.x + (page - self.pageControl.currentPage) * 62, self.pointer.center.y)];
-             }];
+             } 
+                         completion:^(BOOL finish){
+                             
+                         }
+         ];
+        switch (self.pageControl.currentPage) {
+            case 0:
+                [self.inboxBarImageView setHighlighted:NO];
+                break;
+            case 1:
+                [self.todayBarImageView setHighlighted:NO];
+                break;
+            case 2:
+                [self.afterBarImageView setHighlighted:NO];
+                break;
+            case 3:
+                [self.somedayBarImageView setHighlighted:NO];
+                break;
+            default:
+                break;
+        }
+        switch (page) {
+            case 0:
+                [self.titleImageView setImage:[UIImage imageNamed:@"inbox"]];
+                [self.inboxBarImageView setHighlighted:YES];
+                break;
+            case 1:
+                [self.titleImageView setImage:[UIImage imageNamed:@"today"]];
+                [self.todayBarImageView setHighlighted:YES];
+                break;
+            case 2:
+                [self.titleImageView setImage:[UIImage imageNamed:@"after"]];
+                [self.afterBarImageView setHighlighted:YES];
+                break;
+            case 3:
+                [self.titleImageView setImage:[UIImage imageNamed:@"someday"]];
+                [self.somedayBarImageView setHighlighted:YES];
+                break;
+            default:
+                break;
+        }
         self.pageControl.currentPage = page;
         
     }

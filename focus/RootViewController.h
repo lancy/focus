@@ -25,6 +25,7 @@
 @property (weak, nonatomic) IBOutlet UIView *scrollBar;
 @property (weak, nonatomic) IBOutlet UIImageView *pointer;
 
+@property (weak, nonatomic) IBOutlet UIImageView *titleImageView;
 
 @property (nonatomic, strong) UILabel *rangeStateLabel;
 @property (nonatomic, strong) IBOutlet UIImageView *inboxBarImageView;
