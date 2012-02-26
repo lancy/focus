@@ -953,6 +953,9 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                                     <state key="highlighted">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="pressSendButton:" destination="JEb-oi-vvg" eventType="touchUpInside" id="RQI-mg-W2t"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="um7-e5-VEO">
                                                     <rect key="frame" x="197" y="0.0" width="103" height="43"/>
@@ -1322,6 +1325,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 <relationship kind="action" name="pressDeleteButton:"/>
                 <relationship kind="action" name="pressPickerDoneButton:"/>
                 <relationship kind="action" name="pressSaveButton:"/>
+                <relationship kind="action" name="pressSendButton:"/>
                 <relationship kind="outlet" name="datePicker" candidateClass="UIDatePicker"/>
                 <relationship kind="outlet" name="datePickerTool" candidateClass="UIView"/>
                 <relationship kind="outlet" name="dueDateTextField" candidateClass="UITextField"/>

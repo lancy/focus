@@ -45,5 +45,6 @@
 
 - (IBAction)pressSaveButton:(id)sender;
 - (IBAction)pressDeleteButton:(id)sender;
+- (IBAction)pressSendButton:(id)sender;
 
 @end

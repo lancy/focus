@@ -84,24 +84,50 @@
 
 - (IBAction)pressDeleteButton:(id)sender {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Delete Item" message:@"Are You Sure?" delegate:self cancelButtonTitle:@"Cancle" otherButtonTitles:@"Delete", nil];
+    [alert setTag:2000];
     [alert show];
+}
 
+- (IBAction)pressSendButton:(id)sender {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Send" message:@"msg" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"SMS", @"Facebook", nil];
+    [alert setTag:2001];
+    [alert show];
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    switch (buttonIndex) {
-        case 0:
-            //cancle
-            break;
-        case 1:
-            //delete item
-            [self deleteItem];
-            [self.navigationController popToRootViewControllerAnimated:YES];
-            break;
-            
-        default:
-            break;
+    int tag = alertView.tag;
+    if (tag == 2000) {
+        switch (buttonIndex) {
+            case 0:
+                //cancle
+                break;
+            case 1:
+                //delete item
+                [self deleteItem];
+                [self.navigationController popToRootViewControllerAnimated:YES];
+                break;
+                
+            default:
+                break;
+        }
+    }
+    if (tag == 2001) {
+        switch (buttonIndex) {
+            case 0:
+                // cancel
+                break;
+            case 1:
+                // send sms
+                break;
+            case 2:
+                // other
+                NSLog(@"Test alertview selection.");
+                break;
+                
+            default:
+                break;
+        }
     }
 }
 
