@@ -213,13 +213,20 @@
     [self.durationTextField setText:[self.durationPickerData objectAtIndex:row]];
 }
 
+
 #pragma mark - configure item
 - (void)updateDate
 {
     [self.startDateTextField setText:[self dateStringFromNSDate:[self.detailItem startDate]]];
     [self.dueDateTextField setText:[self dateStringFromNSDate:[self.detailItem dueDate]]];
     if ([self.detailItem duration] != nil) {
-        [self.durationTextField setText:[NSString stringWithFormat:@"%d days", [self.detailItem.duration intValue] + 1]];
+        if ([self.detailItem.duration intValue] == 0)
+            [self.durationTextField setText:@"less than one day"];
+        if ([self.detailItem.duration intValue] == 1)
+            [self.durationTextField setText:[NSString stringWithFormat:@"1 day", [self.detailItem.duration intValue]]];
+        else 
+            [self.durationTextField setText:[NSString stringWithFormat:@"%d days", [self.detailItem.duration intValue]]];
+
     } else 
     {
         [self.durationTextField setText:nil];
@@ -232,7 +239,7 @@
     [self.titleTextField setText:[self.detailItem title]];
     [self.noteTextField setText:[self.detailItem note]];
     [self.prioritySegment setSelectedSegmentIndex:[self.detailItem.priority integerValue]];
-    [self.detailItem setStartDate:[NSDate date]];  // set startdate to today once loaded
+    //[self.detailItem setStartDate:[NSDate date]];  // set startdate to today once loaded
     [self updateDate];
 }
 
@@ -279,51 +286,35 @@
         [self.startDateTextField resignFirstResponder];
     }
     else if ([self.durationTextField isFirstResponder]) {
-        if ([self.durationTextField text] == nil) {
-            if ([self.detailItem startDate] != nil && [self.detailItem dueDate] == nil) {
-                [self.detailItem setDueDate:[NSDate date]];
-                [self updateDate];
-                [self.durationTextField setText:[NSString stringWithFormat:@"%@ days",self.detailItem.duration]];
-            }
-            if ([self.detailItem startDate] == nil && [self.detailItem dueDate] != nil) {
-                [self.detailItem setStartDate:[NSDate date]];
-                [self updateDate];
-                [self.durationTextField setText:[NSString stringWithFormat:@"%@ days",self.detailItem.duration]];
-            }
-        } else {
-            //@"1 day", @"2 days", @"3 days", @"5 days", @"1 week", @"1 month", @"3 month"
-            if (self.detailItem.startDate != nil) {
-                NSString *duration = [[NSString alloc] initWithString:[self.durationTextField text]];
-                if ([duration isEqualToString:@"1 day"]) {
-                    self.detailItem.dueDate = [NSDate dateWithTimeInterval:86400-1 sinceDate:self.detailItem.startDate];
-                }
-                if ([duration isEqualToString:@"2 days"]) {
-                    self.detailItem.dueDate = [NSDate dateWithTimeInterval:86400*2-1 sinceDate:self.detailItem.startDate];
-                }
-                if ([duration isEqualToString:@"3 days"]) {
-                    self.detailItem.dueDate = [NSDate dateWithTimeInterval:86400*3-1 sinceDate:self.detailItem.startDate];
-                }
-                if ([duration isEqualToString:@"5 days"]) {
-                    self.detailItem.dueDate = [NSDate dateWithTimeInterval:86400*5-1 sinceDate:self.detailItem.startDate];
-                }
-                if ([duration isEqualToString:@"1 week"]) {
-                    self.detailItem.dueDate = [NSDate dateWithTimeInterval:86400*7-1 sinceDate:self.detailItem.startDate];
-                }
-                if ([duration isEqualToString:@"1 month"]) {
-                    self.detailItem.dueDate = [NSDate dateWithTimeInterval:86400*30-1 sinceDate:self.detailItem.startDate];
-                }
-                if ([duration isEqualToString:@"3 month"]) {
-                    self.detailItem.dueDate = [NSDate dateWithTimeInterval:86400*91-1 sinceDate:self.detailItem.startDate];
-                }
-                [self updateDate];
-            }
-            if (self.detailItem.startDate == nil) {
-                [self.durationTextField setText:@""];
-            }
+        //@"1 day", @"2 days", @"3 days", @"5 days", @"1 week", @"1 month", @"3 month"
+        NSString *duration = [[NSString alloc] initWithString:[self.durationTextField text]];
+        if ([duration isEqualToString:@"less than one day"]) {
+            [self.detailItem setDuration:[NSNumber numberWithInt:0]];
         }
-        
+        if ([duration isEqualToString:@"1 day"]) {
+            [self.detailItem setDuration:[NSNumber numberWithInt:1]];
+        }
+        if ([duration isEqualToString:@"2 days"]) {
+            [self.detailItem setDuration:[NSNumber numberWithInt:2]];
+        }
+        if ([duration isEqualToString:@"3 days"]) {
+            [self.detailItem setDuration:[NSNumber numberWithInt:3]];
+        }
+        if ([duration isEqualToString:@"5 days"]) {
+            [self.detailItem setDuration:[NSNumber numberWithInt:5]];
+        }
+        if ([duration isEqualToString:@"1 week"]) {
+            [self.detailItem setDuration:[NSNumber numberWithInt:7]];
+        }
+        if ([duration isEqualToString:@"1 month"]) {
+            [self.detailItem setDuration:[NSNumber numberWithInt:30]];
+        }
+        if ([duration isEqualToString:@"3 month"]) {
+            [self.detailItem setDuration:[NSNumber numberWithInt:90]];
+        }
         [self.durationTextField resignFirstResponder];
     }
+    [self updateDate];
 }
 
 - (IBAction)didDoneButton:(id)sender {
@@ -366,7 +357,8 @@
             self.durationPicker.delegate = self;
             self.durationPicker.dataSource = self;
             self.durationPicker.showsSelectionIndicator = YES;
-            [self.durationTextField setText:@"1 days"];
+            [self.durationPicker selectRow:0 inComponent:0 animated:YES];
+            [self.durationTextField setText:@"less than 1 day"];
             textField.inputView = self.durationPicker;
         }
         if (textField.inputAccessoryView == nil) {
