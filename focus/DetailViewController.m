@@ -219,7 +219,7 @@
     [self.startDateTextField setText:[self dateStringFromNSDate:[self.detailItem startDate]]];
     [self.dueDateTextField setText:[self dateStringFromNSDate:[self.detailItem dueDate]]];
     if ([self.detailItem duration] != nil) {
-        [self.durationTextField setText:[NSString stringWithFormat:@"%d days", [self.detailItem.duration intValue] + 1]];
+        [self.durationTextField setText:[NSString stringWithFormat:@"%d days", [self.detailItem.duration intValue]]];
     } else 
     {
         [self.durationTextField setText:nil];

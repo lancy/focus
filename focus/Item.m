@@ -50,7 +50,7 @@ const NSTimeInterval secondsPerDay = 24 * 60 * 60;
         // if startDate existed then change the primitive value of duration
     {
         // if dueDate early then startDate then change startDate to dueDate
-        if (dueDate < self.startDate)
+        if ([dueDate compare:self.startDate] == NSOrderedAscending)
         {
             [self willChangeValueForKey:@"startDate"];
             [self setPrimitiveValue:dueDate forKey:@"startDate"];
@@ -82,7 +82,7 @@ const NSTimeInterval secondsPerDay = 24 * 60 * 60;
     if (self.dueDate != nil)
     {
         // if dueDate early then startDate then change dueDate to startDate
-        if (self.dueDate < startDate)
+        if ([self.dueDate compare:startDate] == NSOrderedAscending)
         {
             [self willChangeValueForKey:@"dueDate"];
             [self setPrimitiveValue:startDate forKey:@"dueDate"];
