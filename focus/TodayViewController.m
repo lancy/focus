@@ -108,7 +108,9 @@
 
 
 - (IBAction)quickAddItem:(id)sender {
-    [self insertNewObject:[sender valueForKey:@"text"]];
+    if (![[sender valueForKey:@"text"] isEqualToString:@""]) {
+        [self insertNewObject:[sender valueForKey:@"text"]];
+    }
     [sender setValue:nil forKey:@"text"];
     [self resignFirstResponder];
 }
