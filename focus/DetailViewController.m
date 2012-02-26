@@ -265,7 +265,13 @@
     [self.startDateTextField setText:[self dateStringFromNSDate:[self.detailItem startDate]]];
     [self.dueDateTextField setText:[self dateStringFromNSDate:[self.detailItem dueDate]]];
     if ([self.detailItem duration] != nil) {
-        [self.durationTextField setText:[NSString stringWithFormat:@"%d days", [self.detailItem.duration intValue]]];
+        if ([self.detailItem.duration intValue] == 0)
+            [self.durationTextField setText:@"less than one day"];
+        else if ([self.detailItem.duration intValue] == 1)
+            [self.durationTextField setText:[NSString stringWithFormat:@"1 day", [self.detailItem.duration intValue]]];
+        else
+            [self.durationTextField setText:[NSString stringWithFormat:@"%d days", [self.detailItem.duration intValue]]];
+
     } else 
     {
         [self.durationTextField setText:nil];
