@@ -10,6 +10,12 @@
 
 @implementation FinishViewController
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
