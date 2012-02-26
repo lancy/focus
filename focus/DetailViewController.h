@@ -12,11 +12,12 @@
 
 
 
-@interface DetailViewController : UITableViewController <UITextFieldDelegate, UIAlertViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource, MFMailComposeViewControllerDelegate> {    
+@interface DetailViewController : UITableViewController <UITextFieldDelegate, UIAlertViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource, MFMailComposeViewControllerDelegate, MFMessageComposeViewControllerDelegate> {    
     UIDatePicker *_datePicker;
     UIPickerView *_durationPicker;
     NSArray *_durationPickerData;
     id <MFMailComposeViewControllerDelegate> _mailDelegate;
+    id <MFMessageComposeViewControllerDelegate> _msgDelegate;
 
 }
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
@@ -35,6 +36,8 @@
 @property (strong, nonatomic) IBOutlet UIPickerView *durationPicker;
 @property (strong, nonatomic) NSArray *durationPickerData;
 @property (nonatomic, strong) id<MFMailComposeViewControllerDelegate> mailDelegate;
+@property (nonatomic, strong) id<MFMessageComposeViewControllerDelegate> msgDelegate;
+
 
 
 - (IBAction)changePriority:(id)sender;
@@ -50,6 +53,6 @@
 - (IBAction)pressSaveButton:(id)sender;
 - (IBAction)pressDeleteButton:(id)sender;
 - (IBAction)pressSendButton:(id)sender;
-- (void)mailSent:(MFMailComposeResult)result;
+//- (void)mailSent:(MFMailComposeResult)result;
 
 @end

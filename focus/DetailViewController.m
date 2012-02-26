@@ -33,6 +33,7 @@
 @synthesize durationPicker = _durationPicker;
 @synthesize durationPickerData = _durationPickerData;
 @synthesize mailDelegate = _mailDelegate;
+@synthesize msgDelegate = _msgDelegate;
 
 
 
@@ -56,10 +57,15 @@
     return self;
 }
 
-#pragma mark - Alert methods
-#pragma mark Mail controller delegates
+
+#pragma mark Mail/SMS controller delegates
 
 - (void)mailSent:(MFMailComposeResult)result {
+    //manage mail result
+    NSLog(@"Mail %@ sent", (result == MFMailComposeResultSent)? @"" : @"NOT");
+}
+
+- (void)smsSent:(MessageComposeResult)result {
     //manage mail result
     NSLog(@"Mail %@ sent", (result == MFMailComposeResultSent)? @"" : @"NOT");
 }
@@ -72,13 +78,25 @@
     [controller dismissModalViewControllerAnimated:YES];
 }
 
+- (void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result {
+    if (self.msgDelegate && [self.msgDelegate respondsToSelector:@selector(shareViaSMS:)]) {
+        [self smsSent:result];
+    }
+    [controller dismissModalViewControllerAnimated:YES];
 
-
-- (void)shareWithSMS {
-    ;
 }
 
-- (void)shareWithEmail {
+- (void)shareViaSMS {
+    MFMessageComposeViewController *mc = [[MFMessageComposeViewController alloc] init];
+    mc.messageComposeDelegate = self;
+    [mc setTitle:[NSString stringWithFormat:@"Title:%@, Note:%@", self.detailItem.title, self.detailItem.note]];
+    [mc setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
+    if (mc) {
+        [self presentModalViewController:mc animated:YES];
+    }
+}
+
+- (void)shareViaEmail {
     MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
     mc.mailComposeDelegate = self;
     [mc setSubject:[NSString stringWithString:self.detailItem.title]];
@@ -91,7 +109,8 @@
 }
 
 - (void)copyToClipboard {
-    ;
+    UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+    [pasteboard setString:[NSString stringWithFormat:@"Title:%@, Note:%@", self.detailItem.title, self.detailItem.note]];
 }
 
 
@@ -130,7 +149,7 @@
 }
 
 - (IBAction)pressSendButton:(id)sender {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Send" message:@"msg" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"SMS", @"Facebook", nil];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Send" message:@"msg" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Share via Email",@"Send SMS", @"Copy to Clipboard", nil];
     [alert setTag:2001];
     [alert show];
 }
@@ -159,11 +178,12 @@
                 // cancel
                 break;
             case 1:
-                [self shareWithEmail];
+                [self shareViaEmail];
                 break;
             case 2:
-                // other
-                NSLog(@"Test alertview selection.");
+                [self shareViaSMS];
+            case 3:
+                [self copyToClipboard];
                 break;
                 
             default:
