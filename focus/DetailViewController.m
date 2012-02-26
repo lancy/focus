@@ -10,6 +10,7 @@
 #import "DetailViewController.h"
 #import "Item.h"
 
+
 @interface DetailViewController ()
 - (void)configureItem;
 - (NSString *)dateStringFromNSDate:(NSDate *)date;
@@ -31,6 +32,7 @@
 @synthesize datePickerTool = _datePickerTool;
 @synthesize durationPicker = _durationPicker;
 @synthesize durationPickerData = _durationPickerData;
+@synthesize mailDelegate = _mailDelegate;
 
 
 
@@ -53,6 +55,45 @@
     }
     return self;
 }
+
+#pragma mark - Alert methods
+#pragma mark Mail controller delegates
+
+- (void)mailSent:(MFMailComposeResult)result {
+    //manage mail result
+    NSLog(@"Mail %@ sent", (result == MFMailComposeResultSent)? @"" : @"NOT");
+}
+
+- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
+    
+    if (self.mailDelegate && [self.mailDelegate respondsToSelector:@selector(shareWithEmail:)]) {
+        [self mailSent:result];
+    }
+    [controller dismissModalViewControllerAnimated:YES];
+}
+
+
+
+- (void)shareWithSMS {
+    ;
+}
+
+- (void)shareWithEmail {
+    MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
+    mc.mailComposeDelegate = self;
+    [mc setSubject:[NSString stringWithString:self.detailItem.title]];
+    [mc setMessageBody:[NSString stringWithFormat:@"%@  \nThis Email was sent by focus.", self.detailItem.note] isHTML:NO];
+    
+    [mc setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
+    if (mc) {
+        [self presentModalViewController:mc animated:YES];
+    }
+}
+
+- (void)copyToClipboard {
+    ;
+}
+
 
 #pragma mark - Managing the detail item
 
@@ -118,7 +159,7 @@
                 // cancel
                 break;
             case 1:
-                // send sms
+                [self shareWithEmail];
                 break;
             case 2:
                 // other
@@ -132,6 +173,8 @@
 }
 
 
+
+
 #pragma mark - View lifecycleß
 
 - (void)viewDidLoad
@@ -140,7 +183,7 @@
     
     NSLog(@"%@", self.datePicker);
 	
-    NSArray *array = [[NSArray alloc] initWithObjects:@"1 day", @"2 days", @"3 days", @"5 days", @"1 week", @"1 month", @"3 month", nil];
+    NSArray *array = [[NSArray alloc] initWithObjects:@"less than one day", @"1 day", @"2 days", @"3 days", @"5 days", @"1 week", @"1 month", @"3 month", nil];
     self.durationPickerData = array;
 }
 
@@ -222,9 +265,9 @@
     if ([self.detailItem duration] != nil) {
         if ([self.detailItem.duration intValue] == 0)
             [self.durationTextField setText:@"less than one day"];
-        if ([self.detailItem.duration intValue] == 1)
+        else if ([self.detailItem.duration intValue] == 1)
             [self.durationTextField setText:[NSString stringWithFormat:@"1 day", [self.detailItem.duration intValue]]];
-        else 
+        else
             [self.durationTextField setText:[NSString stringWithFormat:@"%d days", [self.detailItem.duration intValue]]];
 
     } else 

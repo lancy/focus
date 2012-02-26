@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		290613BC14FA1E61002EC3C0 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 290613BB14FA1E61002EC3C0 /* MessageUI.framework */; };
 		32D004D214ED294A00F1E150 /* AppleClubLogo_sm.png in Resources */ = {isa = PBXBuildFile; fileRef = 32D004D114ED294A00F1E150 /* AppleClubLogo_sm.png */; };
 		BF0B61B514F62C9C00A2FEF8 /* ItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0B61B414F62C9C00A2FEF8 /* ItemCell.m */; };
 		BF51D7A414F78F3F00B0BFC3 /* backg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BF51D7A314F78F3F00B0BFC3 /* backg.jpg */; };
@@ -51,6 +52,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		290613BB14FA1E61002EC3C0 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		32D004D114ED294A00F1E150 /* AppleClubLogo_sm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppleClubLogo_sm.png; sourceTree = "<group>"; };
 		BF0B61B314F62C9C00A2FEF8 /* ItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemCell.h; sourceTree = "<group>"; };
 		BF0B61B414F62C9C00A2FEF8 /* ItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemCell.m; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				290613BC14FA1E61002EC3C0 /* MessageUI.framework in Frameworks */,
 				BF9724B114ECEA2800C42892 /* UIKit.framework in Frameworks */,
 				BF9724B314ECEA2800C42892 /* Foundation.framework in Frameworks */,
 				BF9724B514ECEA2800C42892 /* CoreGraphics.framework in Frameworks */,
@@ -191,6 +194,7 @@
 		BF9724AF14ECEA2800C42892 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				290613BB14FA1E61002EC3C0 /* MessageUI.framework */,
 				BF9724B014ECEA2800C42892 /* UIKit.framework */,
 				BF9724B214ECEA2800C42892 /* Foundation.framework */,
 				BF9724B414ECEA2800C42892 /* CoreGraphics.framework */,
