@@ -29,6 +29,8 @@
 @synthesize durationTextField = _durationTextField;
 @synthesize datePicker = _datePicker;
 @synthesize datePickerTool = _datePickerTool;
+@synthesize durationPicker = _durationPicker;
+@synthesize durationPickerData = _durationPickerData;
 
 
 
@@ -111,7 +113,9 @@
     [super viewDidLoad];
     
     NSLog(@"%@", self.datePicker);
-	// Do any additional setup after loading the view, typically from a nib.
+	
+    NSArray *array = [[NSArray alloc] initWithObjects:@"1 day", @"2 days", @"3 days", @"5 days", @"1 week", @"1 month", @"3 month", nil];
+    self.durationPickerData = array;
 }
 
 - (void)viewDidUnload
@@ -157,6 +161,32 @@
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
+
+#pragma mark Picker Data Source Methods
+/* returns the number of 'columns' to display.*/
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+    return 1;
+}
+
+// returns the # of rows in each component..
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+    return [self.durationPickerData count];
+}
+
+- (CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component
+{
+    return 52.0f;
+}
+
+#pragma mark Picker Delegate methods
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    return [self.durationPickerData objectAtIndex:row];
+}
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    [self.durationTextField setText:[self.durationPickerData objectAtIndex:row]];
+}
+
 #pragma mark - configure item
 - (void)updateDate
 {
@@ -176,6 +206,7 @@
     [self.titleTextField setText:[self.detailItem title]];
     [self.noteTextField setText:[self.detailItem note]];
     [self.prioritySegment setSelectedSegmentIndex:[self.detailItem.priority integerValue]];
+    [self.detailItem setStartDate:[NSDate date]];  // set startdate to today once loaded
     [self updateDate];
 }
 
@@ -221,6 +252,52 @@
         self.startDateTextField.text = [self dateStringFromNSDate:[self.datePicker date]];
         [self.startDateTextField resignFirstResponder];
     }
+    else if ([self.durationTextField isFirstResponder]) {
+        if ([self.durationTextField text] == nil) {
+            if ([self.detailItem startDate] != nil && [self.detailItem dueDate] == nil) {
+                [self.detailItem setDueDate:[NSDate date]];
+                [self updateDate];
+                [self.durationTextField setText:[NSString stringWithFormat:@"%@ days",self.detailItem.duration]];
+            }
+            if ([self.detailItem startDate] == nil && [self.detailItem dueDate] != nil) {
+                [self.detailItem setStartDate:[NSDate date]];
+                [self updateDate];
+                [self.durationTextField setText:[NSString stringWithFormat:@"%@ days",self.detailItem.duration]];
+            }
+        } else {
+            //@"1 day", @"2 days", @"3 days", @"5 days", @"1 week", @"1 month", @"3 month"
+            if (self.detailItem.startDate != nil) {
+                NSString *duration = [[NSString alloc] initWithString:[self.durationTextField text]];
+                if ([duration isEqualToString:@"1 day"]) {
+                    self.detailItem.dueDate = [NSDate dateWithTimeInterval:86400-1 sinceDate:self.detailItem.startDate];
+                }
+                if ([duration isEqualToString:@"2 days"]) {
+                    self.detailItem.dueDate = [NSDate dateWithTimeInterval:86400*2-1 sinceDate:self.detailItem.startDate];
+                }
+                if ([duration isEqualToString:@"3 days"]) {
+                    self.detailItem.dueDate = [NSDate dateWithTimeInterval:86400*3-1 sinceDate:self.detailItem.startDate];
+                }
+                if ([duration isEqualToString:@"5 days"]) {
+                    self.detailItem.dueDate = [NSDate dateWithTimeInterval:86400*5-1 sinceDate:self.detailItem.startDate];
+                }
+                if ([duration isEqualToString:@"1 week"]) {
+                    self.detailItem.dueDate = [NSDate dateWithTimeInterval:86400*7-1 sinceDate:self.detailItem.startDate];
+                }
+                if ([duration isEqualToString:@"1 month"]) {
+                    self.detailItem.dueDate = [NSDate dateWithTimeInterval:86400*30-1 sinceDate:self.detailItem.startDate];
+                }
+                if ([duration isEqualToString:@"3 month"]) {
+                    self.detailItem.dueDate = [NSDate dateWithTimeInterval:86400*91-1 sinceDate:self.detailItem.startDate];
+                }
+                [self updateDate];
+            }
+            if (self.detailItem.startDate == nil) {
+                [self.durationTextField setText:@""];
+            }
+        }
+        
+        [self.durationTextField resignFirstResponder];
+    }
 }
 
 - (IBAction)didDoneButton:(id)sender {
@@ -254,6 +331,19 @@
         }
         if (textField.inputAccessoryView == nil)
         {
+            textField.inputAccessoryView = self.datePickerTool;
+        }
+    }
+    else if (textField == [self durationTextField]){
+        if (textField.inputView == nil) {
+            [self.durationPicker setFrame:CGRectMake(0, 0, 216, 320)];
+            self.durationPicker.delegate = self;
+            self.durationPicker.dataSource = self;
+            self.durationPicker.showsSelectionIndicator = YES;
+            [self.durationTextField setText:@"1 days"];
+            textField.inputView = self.durationPicker;
+        }
+        if (textField.inputAccessoryView == nil) {
             textField.inputAccessoryView = self.datePickerTool;
         }
     }

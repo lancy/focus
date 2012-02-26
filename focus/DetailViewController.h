@@ -10,8 +10,10 @@
 #import "item.h"
 
 
-@interface DetailViewController : UITableViewController <UITextFieldDelegate, UIAlertViewDelegate> {    
+@interface DetailViewController : UITableViewController <UITextFieldDelegate, UIAlertViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource> {    
     UIDatePicker *_datePicker;
+    UIPickerView *_durationPicker;
+    NSArray *_durationPickerData;
 
 }
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
@@ -27,6 +29,9 @@
 
 @property (strong, nonatomic) IBOutlet UIDatePicker *datePicker;
 @property (strong, nonatomic) IBOutlet UIView *datePickerTool;
+@property (strong, nonatomic) IBOutlet UIPickerView *durationPicker;
+@property (strong, nonatomic) NSArray *durationPickerData;
+
 
 - (IBAction)changePriority:(id)sender;
 - (IBAction)changeTitle:(id)sender;
