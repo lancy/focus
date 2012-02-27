@@ -148,7 +148,8 @@
 
 - (void)hideScrollBar
 {
-    [UIView animateWithDuration:0.3 animations:^{
+    [UIView animateWithDuration:0.7
+                     animations:^{
         [self.scrollBar setAlpha:0];
     }completion:^(BOOL finished){
         [self.scrollBar setAlpha:1];

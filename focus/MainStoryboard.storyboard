@@ -1179,7 +1179,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="scaleToFill" directionalLockEnabled="YES" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" id="183" userLabel="mainScroll">
-                                <rect key="frame" x="10" y="53" width="291" height="387"/>
+                                <rect key="frame" x="10" y="44" width="291" height="396"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -1251,11 +1251,11 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="left" image="inbox.png" id="XTL-Jf-yjB">
-                                <rect key="frame" x="28" y="8" width="115" height="43"/>
+                                <rect key="frame" x="15" y="15" width="86" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="nsl-EB-XKE">
-                                <rect key="frame" x="262" y="15" width="30" height="30"/>
+                                <rect key="frame" x="270" y="13" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" image="add-normal.png">
@@ -1270,6 +1270,10 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                     <segue destination="INX-xq-m3w" kind="push" identifier="showAdd" id="4h6-ha-Z6c"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="line.png" id="sK4-CK-aIs">
+                                <rect key="frame" x="15" y="44" width="120" height="1"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -1402,6 +1406,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="inbox-down.png" width="50" height="44"/>
         <image name="inbox-normal.png" width="50" height="44"/>
         <image name="inbox.png" width="86" height="26"/>
+        <image name="line.png" width="304" height="1"/>
         <image name="section-bg.png" width="237" height="47"/>
         <image name="someday-down.png" width="50" height="44"/>
         <image name="someday-normal.png" width="50" height="44"/>
