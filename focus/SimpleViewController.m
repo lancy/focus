@@ -269,7 +269,8 @@
     if ([self.titleTextField isFirstResponder]) {
         [self.titleTextField resignFirstResponder];
     } 
-    if ([self.detailItem title] == nil)
+    if ([self.detailItem title] == nil
+        || [[self.detailItem title] isEqualToString:@""])
     {
         [self deleteItem];
     }

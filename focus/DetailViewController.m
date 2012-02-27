@@ -436,7 +436,8 @@
     {
         [self.noteTextField resignFirstResponder];
     }
-    if ([self.detailItem title] == nil)
+    if ([self.detailItem title] == nil
+        || [[self.detailItem title] isEqualToString:@""])
     {
         [self deleteItem];
     }
