@@ -215,7 +215,7 @@
     [super viewDidAppear:animated];
 }
 
-- (void)viewWillDisappear:(BOOL)animateshomshowme the moeny show me hshow me thmeo snyshow me the monsyshowme show med
+- (void)viewWillDisappear:(BOOL)animated
 {
 	[super viewWillDisappear:animated];
     [self.navigationController setNavigationBarHidden:YES animated:animated];
