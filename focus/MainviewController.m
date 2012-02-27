@@ -338,6 +338,16 @@
     
     cell.titleLabel.text = [[managedObject valueForKey:@"title"] description];
     cell.infoLabel.text = [[managedObject valueForKey:@"note"] description];
+    
+    if ([managedObject valueForKey:@"note"] == nil) {
+        CGRect frame = cell.titleLabel.frame;
+        [cell.titleLabel setFrame:CGRectMake(frame.origin.x, 11, frame.size.width, frame.size.height)];
+    } 
+    else
+    {
+        CGRect frame = cell.titleLabel.frame;
+        [cell.titleLabel setFrame:CGRectMake(frame.origin.x, 2, frame.size.width, frame.size.height)];
+    }
     [cell configureDuedateLabelFromDate:[managedObject valueForKey:@"dueDate"]];
     [cell configurePriority:[managedObject valueForKey:@"priority"]];
 }
