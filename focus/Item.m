@@ -39,6 +39,38 @@ const NSTimeInterval secondsPerDay = 24 * 60 * 60;
         return nil;
 }
 
+- (void)setTitle:(NSString *)title
+{
+    if ([title isEqualToString:@""]) {
+        [self willChangeValueForKey:@"title"];
+        [self setPrimitiveValue:nil forKey:@"title"];
+        [self didChangeValueForKey:@"title"];
+    } 
+    else
+    {
+        [self willChangeValueForKey:@"title"];
+        [self setPrimitiveValue:title forKey:@"title"];
+        [self didChangeValueForKey:@"title"];
+    }
+}
+
+- (void)setNote:(NSString *)note
+{
+    if ([note isEqualToString:@""]) {
+        [self willChangeValueForKey:@"note"];
+        [self setPrimitiveValue:nil forKey:@"note"];
+        [self didChangeValueForKey:@"note"];
+    } 
+    else
+    {
+        [self willChangeValueForKey:@"note"];
+        [self setPrimitiveValue:note forKey:@"note"];
+        [self didChangeValueForKey:@"note"];
+    }
+    
+}
+
+
 - (void)setDueDate:(NSDate *)dueDate
 // set dueDate and auto-set duration or startDate
 {
