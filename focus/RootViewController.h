@@ -13,8 +13,6 @@
 @interface RootViewController : UIViewController<UIScrollViewDelegate, UIGestureRecognizerDelegate> {
     UIScrollView *scrollView;
     UIPageControl *pageControl;
-    
-    UIImageView *dragView;
 }
 
 @property (strong, nonatomic) SimpleViewController *simpleViewController;
@@ -27,7 +25,6 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *titleImageView;
 
-@property (nonatomic, strong) UILabel *rangeStateLabel;
 @property (nonatomic, strong) IBOutlet UIImageView *inboxBarImageView;
 @property (nonatomic, strong) IBOutlet UIImageView *todayBarImageView;
 @property (nonatomic, strong) IBOutlet UIImageView *afterBarImageView;

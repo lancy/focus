@@ -13,14 +13,6 @@
 
 #import <CoreData/CoreData.h>
 
-@protocol handleDragIssue<NSObject>
-
-- (void)respondToRangeState:(CGPoint)centerPoint ofEclipseView:(UIView *)view WithExpiringLine:(BOOL)expiring;
-- (void)respondToTouchUpState:(CGPoint)centerPoint ofEclipseView:(UIView *)view WithExpiringLine:(BOOL)expiring;
-- (void)showScrollBar;
-- (void)hideScrollBar;
-
-@end
 
 @interface MainViewController : UITableViewController <NSFetchedResultsControllerDelegate,UIGestureRecognizerDelegate>
 {
@@ -28,8 +20,6 @@
     NSFetchedResultsController *__fetchedResultsController;
     NSManagedObjectContext *__managedObjectContext;
     
-    BOOL longPressDetected;
-    id<handleDragIssue> dragIssueDelegate;
 }
 
 
@@ -42,9 +32,6 @@
 @property (weak, nonatomic) UITextField *quickTextField;
 
 
-@property (nonatomic, retain) IBOutlet id<handleDragIssue>  dragIssueDelegate;
-@property (nonatomic, strong) UILabel *pointStateLabel; 
-@property (nonatomic, strong) IBOutlet UITableView *inboxTableView;
 
 
 @end
