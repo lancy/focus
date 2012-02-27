@@ -180,7 +180,8 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
-    return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+    return NO;
+//    return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
 - (void)updateDate

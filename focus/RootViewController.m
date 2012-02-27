@@ -255,6 +255,7 @@ const float GTRangeRightThreshold = 300.0;
     }
 }
 
+
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
     [self hideScrollBar];
