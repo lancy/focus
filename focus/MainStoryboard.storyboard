@@ -67,7 +67,6 @@
                                                         <segment title="Mid"/>
                                                         <segment title="High"/>
                                                     </segments>
-                                                    <color key="tintColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <connections>
                                                         <action selector="changePriority:" destination="INX-xq-m3w" eventType="valueChanged" id="bEA-oz-BFa"/>
                                                     </connections>
@@ -815,7 +814,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                                         <segment title="Mid"/>
                                                         <segment title="High"/>
                                                     </segments>
-                                                    <color key="tintColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <connections>
                                                         <action selector="changePriority:" destination="JEb-oi-vvg" eventType="valueChanged" id="7B9-2B-GmF"/>
                                                     </connections>

@@ -130,10 +130,11 @@ const float GTRangeRightThreshold = 300.0;
     SomedayViewController *somedayViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"someday"];
        
     
-    inboxViewController.dragIssueDelegate = self;
-    todayViewController.dragIssueDelegate = self;
-    afterViewController.dragIssueDelegate = self;
-    somedayViewController.dragIssueDelegate = self;
+//    inboxViewController.dragIssueDelegate = self;
+//    todayViewController.dragIssueDelegate = self;
+//    afterViewController.dragIssueDelegate = self;
+//    somedayViewController.dragIssueDelegate = self;
+    
     [self addChildViewController:inboxViewController];
     [self addChildViewController:todayViewController];
     [self addChildViewController:afterViewController];
