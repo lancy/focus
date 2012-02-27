@@ -228,7 +228,7 @@
     }
     NSManagedObject *selectedObject = [[self fetchedResultsController] objectAtIndexPath:indexPath];
     self.simpleViewController.isAdd = NO;
-    self.simpleViewController.detailItem = selectedObject;   
+    self.simpleViewController.detailItem =(Item *)selectedObject;   
     [self.navigationController pushViewController:self.simpleViewController animated:YES];
 }
 
