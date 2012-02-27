@@ -1174,7 +1174,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="book-bg@2x.png" id="5yJ-S7-mxP">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="book-bg.png" id="5yJ-S7-mxP">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -1191,27 +1191,27 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="section-bg.png" id="DMB-v6-0rX" userLabel="scrollbar background">
-                                        <rect key="frame" x="0.0" y="5" width="264" height="58"/>
+                                        <rect key="frame" x="12" y="10" width="237" height="47"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="inbox-normal.png" highlightedImage="inbox-down.png" id="Zxu-N5-SCI">
-                                        <rect key="frame" x="12" y="10" width="54" height="53"/>
+                                        <rect key="frame" x="20" y="12" width="50" height="44"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="today-normal.png" highlightedImage="today-down.png" id="ht5-h4-kPv">
-                                        <rect key="frame" x="74" y="10" width="54" height="53"/>
+                                        <rect key="frame" x="77" y="12" width="50" height="44"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="after-normal.png" highlightedImage="after-down.png" id="bHc-UE-vvc">
-                                        <rect key="frame" x="136" y="10" width="54" height="53"/>
+                                        <rect key="frame" x="134" y="12" width="50" height="44"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="someday-normal.png" highlightedImage="someday-down.png" id="VE0-7G-c3A">
-                                        <rect key="frame" x="198" y="10" width="54" height="53"/>
+                                        <rect key="frame" x="191" y="12" width="50" height="44"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="float.png" id="hsM-yg-zxT">
-                                        <rect key="frame" x="12" y="10" width="54" height="54"/>
+                                        <rect key="frame" x="18" y="13" width="54" height="45"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                 </subviews>
@@ -1224,7 +1224,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 <rect key="frame" x="10" y="436" width="18" height="19"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" size="button"/>
-                                <state key="normal" image="tool@x.png">
+                                <state key="normal" image="tool.png">
                                     <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -1258,12 +1258,12 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 <rect key="frame" x="262" y="15" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" image="add-normal@2x.png">
+                                <state key="normal" image="add-normal.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <state key="selected" image="add-down@2x.png"/>
-                                <state key="highlighted" image="add-down@2x.png">
+                                <state key="selected" image="add-down.png"/>
+                                <state key="highlighted" image="add-down.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -1391,24 +1391,129 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         </scene>
     </scenes>
     <resources>
-        <image name="add-down@2x.png" width="53" height="53"/>
-        <image name="add-normal@2x.png" width="53" height="53"/>
-        <image name="after-down.png" width="16" height="16"/>
-        <image name="after-normal.png" width="16" height="16"/>
-        <image name="book-bg@2x.png" width="640" height="960"/>
-        <image name="chechbox2.png" width="16" height="16"/>
+        <image name="add-down.png" width="27" height="27"/>
+        <image name="add-normal.png" width="27" height="27"/>
+        <image name="after-down.png" width="50" height="44"/>
+        <image name="after-normal.png" width="50" height="44"/>
+        <image name="book-bg.png" width="320" height="480"/>
+        <image name="chechbox2.png" width="17" height="17"/>
         <image name="checkbox.png" width="16" height="16"/>
-        <image name="float.png" width="16" height="16"/>
-        <image name="inbox-down.png" width="16" height="16"/>
-        <image name="inbox-normal.png" width="16" height="16"/>
-        <image name="inbox.png" width="16" height="16"/>
-        <image name="section-bg.png" width="16" height="16"/>
-        <image name="someday-down.png" width="16" height="16"/>
-        <image name="someday-normal.png" width="16" height="16"/>
-        <image name="today-down.png" width="16" height="16"/>
-        <image name="today-normal.png" width="16" height="16"/>
-        <image name="tool@x.png" width="36" height="36"/>
+        <image name="float.png" width="54" height="45"/>
+        <image name="inbox-down.png" width="50" height="44"/>
+        <image name="inbox-normal.png" width="50" height="44"/>
+        <image name="inbox.png" width="86" height="26"/>
+        <image name="section-bg.png" width="237" height="47"/>
+        <image name="someday-down.png" width="50" height="44"/>
+        <image name="someday-normal.png" width="50" height="44"/>
+        <image name="today-down.png" width="50" height="44"/>
+        <image name="today-normal.png" width="50" height="44"/>
+        <image name="tool.png" width="18" height="18"/>
     </resources>
+    <classes>
+        <class className="AboutViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AboutViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="backToMainView:"/>
+            </relationships>
+        </class>
+        <class className="AfterViewController" superclassName="MainViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AfterViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="quickAddItem:"/>
+            </relationships>
+        </class>
+        <class className="DetailViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DetailViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="changeDate:"/>
+                <relationship kind="action" name="changeNote:"/>
+                <relationship kind="action" name="changePriority:"/>
+                <relationship kind="action" name="changeTitle:"/>
+                <relationship kind="action" name="didDoneButton:"/>
+                <relationship kind="action" name="pressDeleteButton:"/>
+                <relationship kind="action" name="pressPickerDoneButton:"/>
+                <relationship kind="action" name="pressSaveButton:"/>
+                <relationship kind="action" name="pressSendButton:"/>
+                <relationship kind="outlet" name="datePicker" candidateClass="UIDatePicker"/>
+                <relationship kind="outlet" name="datePickerTool" candidateClass="UIView"/>
+                <relationship kind="outlet" name="dueDateTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="durationPicker" candidateClass="UIPickerView"/>
+                <relationship kind="outlet" name="durationTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="noteTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="prioritySegment" candidateClass="UISegmentedControl"/>
+                <relationship kind="outlet" name="startDateTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="titleTextField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="FinishViewController" superclassName="MainViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FinishViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="backToMainView:"/>
+            </relationships>
+        </class>
+        <class className="InboxViewController" superclassName="MainViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/InboxViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="quickAddItem:"/>
+            </relationships>
+        </class>
+        <class className="ItemCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ItemCell.h"/>
+            <relationships>
+                <relationship kind="action" name="changeCheckbox:"/>
+                <relationship kind="outlet" name="duedateLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="finishCheckbox" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="infoLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="priorityImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="MainViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MainViewController.h"/>
+        </class>
+        <class className="RootViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RootViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="afterBarImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="inboxBarImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="pageControl" candidateClass="UIPageControl"/>
+                <relationship kind="outlet" name="pointer" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="scrollBar" candidateClass="UIView"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="somedayBarImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="titleImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="todayBarImageView" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="SimpleViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SimpleViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="changeDate:"/>
+                <relationship kind="action" name="changePriority:"/>
+                <relationship kind="action" name="changeTitle:"/>
+                <relationship kind="action" name="didDoneButton:"/>
+                <relationship kind="action" name="pressDeleteButton:"/>
+                <relationship kind="action" name="pressPickerDoneButton:"/>
+                <relationship kind="outlet" name="datePicker" candidateClass="UIDatePicker"/>
+                <relationship kind="outlet" name="datePickerTool" candidateClass="UIView"/>
+                <relationship kind="outlet" name="dueDateTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="prioritySegment" candidateClass="UISegmentedControl"/>
+                <relationship kind="outlet" name="titleTextField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="SomedayViewController" superclassName="MainViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SomedayViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="quickAddItem:"/>
+            </relationships>
+        </class>
+        <class className="TodayViewController" superclassName="MainViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TodayViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="quickAddItem:"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

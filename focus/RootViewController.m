@@ -179,7 +179,7 @@
     if (self.pageControl.currentPage != page)
     {
         [UIView animateWithDuration:0.2 animations:^{
-            [self.pointer setCenter:CGPointMake(self.pointer.center.x + (page - self.pageControl.currentPage) * 62, self.pointer.center.y)];
+            [self.pointer setCenter:CGPointMake(self.pointer.center.x + (page - self.pageControl.currentPage) * 57, self.pointer.center.y)];
              } 
                          completion:^(BOOL finish){
                              

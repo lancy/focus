@@ -18,8 +18,8 @@
 
 - (void)customizeAppearance
 {
-    UIImage *navigationbg = [UIImage imageNamed:@"navigationbg.png"];
-    [[UINavigationBar appearance] setBackgroundImage:navigationbg forBarMetrics:UIBarMetricsDefault];
+//    UIImage *navigationbg = [UIImage imageNamed:@"detail_up.png"]
+//    [[UINavigationBar appearance] setBackgroundImage:navigationbg forBarMetrics:UIBarMetricsDefault];
     
 
 }
