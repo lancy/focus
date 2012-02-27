@@ -37,8 +37,9 @@
     [fetchRequest setPredicate:predicate];
     
     // Edit the sort key as appropriate.
+    NSSortDescriptor *priorityDescriptor = [[NSSortDescriptor alloc] initWithKey:@"priority" ascending:NO];
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"creatTime" ascending:YES];
-    NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+    NSArray *sortDescriptors = [[NSArray alloc] initWithObjects: priorityDescriptor, sortDescriptor, nil];
     
     [fetchRequest setSortDescriptors:sortDescriptors];
     

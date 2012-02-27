@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "SimpleViewController.h"
+#import "DetailViewController.h"
 
 @implementation AppDelegate
 
@@ -18,8 +20,14 @@
 
 - (void)customizeAppearance
 {
-//    UIImage *navigationbg = [UIImage imageNamed:@"detail_up.png"]
-//    [[UINavigationBar appearance] setBackgroundImage:navigationbg forBarMetrics:UIBarMetricsDefault];
+    UIImage *navigationbg = [UIImage imageNamed:@"navigation"];
+    [[UINavigationBar appearance] setBackgroundImage:navigationbg forBarMetrics:UIBarMetricsDefault];
+    
+    UIImage *rightPage = [UIImage imageNamed:@"rightpage"];
+    [[UITableView appearanceWhenContainedIn:[SimpleViewController class], nil] setBackgroundView:[[UIImageView alloc] initWithImage:rightPage]]; 
+    [[UITableView appearanceWhenContainedIn:[DetailViewController class], nil] setBackgroundView:[[UIImageView alloc] initWithImage:rightPage]];
+     
+
     
 
 }

@@ -90,6 +90,10 @@
 		BFC3522A14FB60F300A5BE7B /* type@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BFC351EE14FB60F300A5BE7B /* type@2x.png */; };
 		BFC3522D14FB644C00A5BE7B /* tool.png in Resources */ = {isa = PBXBuildFile; fileRef = BFC3522B14FB644B00A5BE7B /* tool.png */; };
 		BFC3522E14FB644C00A5BE7B /* tool@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BFC3522C14FB644B00A5BE7B /* tool@2x.png */; };
+		BFC3523714FB786B00A5BE7B /* rightpage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BFC3523314FB786B00A5BE7B /* rightpage@2x.png */; };
+		BFC3523814FB786B00A5BE7B /* navigation@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BFC3523414FB786B00A5BE7B /* navigation@2x.png */; };
+		BFC3523914FB786B00A5BE7B /* rightpage.png in Resources */ = {isa = PBXBuildFile; fileRef = BFC3523514FB786B00A5BE7B /* rightpage.png */; };
+		BFC3523A14FB786B00A5BE7B /* navigation.png in Resources */ = {isa = PBXBuildFile; fileRef = BFC3523614FB786B00A5BE7B /* navigation.png */; };
 		BFD1947F14F8E10500031883 /* SimpleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD1947E14F8E10500031883 /* SimpleViewController.m */; };
 		BFD1948214F8FFDA00031883 /* FromSimpleToDetailSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD1948114F8FFDA00031883 /* FromSimpleToDetailSegue.m */; };
 		BFE15F9C14FA27E400AF0114 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFE15F9B14FA27E400AF0114 /* MessageUI.framework */; };
@@ -197,6 +201,10 @@
 		BFC351EE14FB60F300A5BE7B /* type@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "type@2x.png"; sourceTree = "<group>"; };
 		BFC3522B14FB644B00A5BE7B /* tool.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tool.png; sourceTree = "<group>"; };
 		BFC3522C14FB644B00A5BE7B /* tool@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tool@2x.png"; sourceTree = "<group>"; };
+		BFC3523314FB786B00A5BE7B /* rightpage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rightpage@2x.png"; sourceTree = "<group>"; };
+		BFC3523414FB786B00A5BE7B /* navigation@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navigation@2x.png"; sourceTree = "<group>"; };
+		BFC3523514FB786B00A5BE7B /* rightpage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rightpage.png; sourceTree = "<group>"; };
+		BFC3523614FB786B00A5BE7B /* navigation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navigation.png; sourceTree = "<group>"; };
 		BFD1947D14F8E10500031883 /* SimpleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleViewController.h; sourceTree = "<group>"; };
 		BFD1947E14F8E10500031883 /* SimpleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleViewController.m; sourceTree = "<group>"; };
 		BFD1948014F8FFDA00031883 /* FromSimpleToDetailSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FromSimpleToDetailSegue.h; sourceTree = "<group>"; };
@@ -356,6 +364,10 @@
 		BFC351B214FB60F300A5BE7B /* image */ = {
 			isa = PBXGroup;
 			children = (
+				BFC3523314FB786B00A5BE7B /* rightpage@2x.png */,
+				BFC3523414FB786B00A5BE7B /* navigation@2x.png */,
+				BFC3523514FB786B00A5BE7B /* rightpage.png */,
+				BFC3523614FB786B00A5BE7B /* navigation.png */,
 				BFC351B314FB60F300A5BE7B /* add-down.png */,
 				BFC351B414FB60F300A5BE7B /* add-down@2x.png */,
 				BFC3522B14FB644B00A5BE7B /* tool.png */,
@@ -532,6 +544,10 @@
 				BFC3522A14FB60F300A5BE7B /* type@2x.png in Resources */,
 				BFC3522D14FB644C00A5BE7B /* tool.png in Resources */,
 				BFC3522E14FB644C00A5BE7B /* tool@2x.png in Resources */,
+				BFC3523714FB786B00A5BE7B /* rightpage@2x.png in Resources */,
+				BFC3523814FB786B00A5BE7B /* navigation@2x.png in Resources */,
+				BFC3523914FB786B00A5BE7B /* rightpage.png in Resources */,
+				BFC3523A14FB786B00A5BE7B /* navigation.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -181,6 +181,8 @@
 {
     [super viewDidLoad];
     
+    [self.navigationItem setHidesBackButton:YES];
+    
     NSLog(@"%@", self.datePicker);
 	
     NSArray *array = [[NSArray alloc] initWithObjects:@"less than one day", @"1 day", @"2 days", @"3 days", @"5 days", @"1 week", @"1 month", @"3 month", nil];

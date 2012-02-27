@@ -50,8 +50,9 @@
     
     // Edit the sort key as appropriate.
 //    NSSortDescriptor *finishDescriptor = [[NSSortDescriptor alloc] initWithKey:@"finished" ascending:YES];
-    NSSortDescriptor *priorityDescriptor = [[NSSortDescriptor alloc] initWithKey:@"priority" ascending:NO];
+
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"dueDate" ascending:YES];
+    NSSortDescriptor *priorityDescriptor = [[NSSortDescriptor alloc] initWithKey:@"priority" ascending:NO];
     NSArray *sortDescriptors = [[NSArray alloc] initWithObjects: priorityDescriptor, sortDescriptor, nil];
     
     [fetchRequest setSortDescriptors:sortDescriptors];

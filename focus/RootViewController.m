@@ -148,13 +148,23 @@
 
 - (void)hideScrollBar
 {
-    [UIView animateWithDuration:0.7
+    [UIView animateWithDuration:0.5
+                          delay:0
+                        options:UIViewAnimationCurveLinear 
                      animations:^{
         [self.scrollBar setAlpha:0];
     }completion:^(BOOL finished){
         [self.scrollBar setAlpha:1];
         [self.scrollBar setHidden:YES];
     }];
+        
+//    
+//    [UIView beginAnimations:nil context:NULL];
+//    [UIView setAnimationBeginsFromCurrentState:YES];
+//    [UIView setAnimationDuration:0.1];
+//    [UIView setAnimationCurve:UIViewAnimationCurveLinear];
+//    [self.scrollBar setAlpha:0];
+//    [UIView commitAnimations];
 }
 
 -(void)showScrollBar
@@ -179,7 +189,8 @@
     int page = floor((self.scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
     if (self.pageControl.currentPage != page)
     {
-        [UIView animateWithDuration:0.2 animations:^{
+        [UIView animateWithDuration:0.2 
+                         animations:^{
             [self.pointer setCenter:CGPointMake(self.pointer.center.x + (page - self.pageControl.currentPage) * 57, self.pointer.center.y)];
              } 
                          completion:^(BOOL finish){
