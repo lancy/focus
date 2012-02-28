@@ -108,7 +108,7 @@
 - (void)shareViaSMS {
     MFMessageComposeViewController *mc = [[MFMessageComposeViewController alloc] init];
     mc.messageComposeDelegate = self;
-    [mc setTitle:[NSString stringWithFormat:@"Title:%@, Note:%@", self.detailItem.title, self.detailItem.note]];
+    [mc setTitle:[self messageToSend]];
     [mc setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
     if (mc) {
         [self presentModalViewController:mc animated:YES];
@@ -119,7 +119,7 @@
     MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
     mc.mailComposeDelegate = self;
     [mc setSubject:[NSString stringWithString:self.detailItem.title]];
-    [mc setMessageBody:[NSString stringWithFormat:@"%@  \nThis Email was sent by focus.", self.detailItem.note] isHTML:NO];
+    [mc setMessageBody:[NSString stringWithFormat:@"%@  \nThis Email was sent by focus.", [self messageToSend]] isHTML:NO];
     
     [mc setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
     if (mc) {
@@ -129,7 +129,7 @@
 
 - (void)copyToClipboard {
     UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
-    [pasteboard setString:[NSString stringWithFormat:@"Title:%@, Note:%@", self.detailItem.title, self.detailItem.note]];
+    [pasteboard setString:[self messageToSend]];
 }
 
 
