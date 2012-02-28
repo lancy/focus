@@ -16,6 +16,7 @@
 - (NSString *)dateStringFromNSDate:(NSDate *)date;
 - (void)updateDate;
 - (void)deleteItem;
+- (NSString *)messageToSend;
 @end
 
 @implementation DetailViewController
@@ -59,6 +60,24 @@
 
 
 #pragma mark Mail/SMS controller delegates
+
+- (NSString *) messageToSend{
+    
+    NSMutableString *message = [[NSMutableString alloc] initWithFormat:@"Please finish the task: %@",[self detailItem].title ];
+    if ([self detailItem].dueDate != nil) {
+        [message appendFormat:@". The deadline is %@",  [self dateStringFromNSDate:[self detailItem].dueDate]];
+    }
+     
+    if ([self detailItem].note != nil)
+        [message appendFormat:@". Note: %@", [self detailItem].note];
+    
+    [message appendFormat:@"."];
+    
+    NSLog(@"%@", message);
+    return message;
+
+}
+
 
 - (void)mailSent:(MFMailComposeResult)result {
     //manage mail result
@@ -149,9 +168,14 @@
 }
 
 - (IBAction)pressSendButton:(id)sender {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Send" message:@"msg" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Share via Email",@"Send SMS", @"Copy to Clipboard", nil];
-    [alert setTag:2001];
-    [alert show];
+    
+    if ([self detailItem].title != nil) {
+    
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Send" message:@"msg" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Share via Email",@"Send SMS", @"Copy to Clipboard", nil];
+        [alert setTag:2001];
+        [alert show];
+        
+    }
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
@@ -173,6 +197,7 @@
         }
     }
     if (tag == 2001) {
+        [self messageToSend];
         switch (buttonIndex) {
             case 0:
                 // cancel
