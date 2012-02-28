@@ -108,7 +108,8 @@
 - (void)shareViaSMS {
     MFMessageComposeViewController *mc = [[MFMessageComposeViewController alloc] init];
     mc.messageComposeDelegate = self;
-    [mc setTitle:[self messageToSend]];
+    [mc setTitle:@"focus"];
+    [mc setBody:[self messageToSend]];
     [mc setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
     if (mc) {
         [self presentModalViewController:mc animated:YES];
