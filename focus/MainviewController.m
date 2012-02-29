@@ -7,6 +7,7 @@
 //
 
 #import "MainViewController.h"
+#import "FinishViewController.h"
 
 #import "SimpleViewController.h"
 
@@ -203,6 +204,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if ([self isKindOfClass:[FinishViewController class]]) {
+        return;
+    }
+    
     if (!self.simpleViewController) {   
         self.simpleViewController = [self.parentViewController.storyboard instantiateViewControllerWithIdentifier:@"simple"];
     }

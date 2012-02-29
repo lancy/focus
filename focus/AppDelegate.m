@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "SimpleViewController.h"
 #import "DetailViewController.h"
+#import "FinishViewController.h"
 
 @implementation AppDelegate
 
@@ -26,7 +27,7 @@
     UIImage *rightPage = [UIImage imageNamed:@"rightpage"];
     [[UITableView appearanceWhenContainedIn:[SimpleViewController class], nil] setBackgroundView:[[UIImageView alloc] initWithImage:rightPage]]; 
     [[UITableView appearanceWhenContainedIn:[DetailViewController class], nil] setBackgroundView:[[UIImageView alloc] initWithImage:rightPage]];
-     
+    [[UITableView appearanceWhenContainedIn:[FinishViewController class], nil] setBackgroundView:[[UIImageView alloc] initWithImage:rightPage]];
 
     
 
