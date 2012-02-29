@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		29DA087114FDEE93006CB7C8 /* duration.png in Resources */ = {isa = PBXBuildFile; fileRef = 29DA087014FDEE93006CB7C8 /* duration.png */; };
 		452311E114FD2AE20080629F /* due2.png in Resources */ = {isa = PBXBuildFile; fileRef = 452311AC14FD2AE20080629F /* due2.png */; };
 		452311E214FD2AE20080629F /* due2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 452311AD14FD2AE20080629F /* due2@2x.png */; };
 		452311E314FD2AE20080629F /* more option.png in Resources */ = {isa = PBXBuildFile; fileRef = 452311AE14FD2AE20080629F /* more option.png */; };
@@ -58,7 +59,6 @@
 		4523121214FD2AE20080629F /* send-down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 452311DE14FD2AE20080629F /* send-down@2x.png */; };
 		4523121314FD2AE20080629F /* send-nor.png in Resources */ = {isa = PBXBuildFile; fileRef = 452311DF14FD2AE20080629F /* send-nor.png */; };
 		4523121414FD2AE20080629F /* send-nor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 452311E014FD2AE20080629F /* send-nor@2x.png */; };
-		4523121A14FD478F0080629F /* duration.png in Resources */ = {isa = PBXBuildFile; fileRef = 4523121914FD478F0080629F /* duration.png */; };
 		BF0B61B514F62C9C00A2FEF8 /* ItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0B61B414F62C9C00A2FEF8 /* ItemCell.m */; };
 		BF51D7B614F7C78D00B0BFC3 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF51D7B514F7C78D00B0BFC3 /* AboutViewController.m */; };
 		BF51D7B914F7C90D00B0BFC3 /* FinishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF51D7B814F7C90D00B0BFC3 /* FinishViewController.m */; };
@@ -152,6 +152,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		29DA087014FDEE93006CB7C8 /* duration.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = duration.png; sourceTree = "<group>"; };
 		452311AC14FD2AE20080629F /* due2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = due2.png; sourceTree = "<group>"; };
 		452311AD14FD2AE20080629F /* due2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "due2@2x.png"; sourceTree = "<group>"; };
 		452311AE14FD2AE20080629F /* more option.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "more option.png"; sourceTree = "<group>"; };
@@ -203,7 +204,6 @@
 		452311DE14FD2AE20080629F /* send-down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "send-down@2x.png"; sourceTree = "<group>"; };
 		452311DF14FD2AE20080629F /* send-nor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "send-nor.png"; sourceTree = "<group>"; };
 		452311E014FD2AE20080629F /* send-nor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "send-nor@2x.png"; sourceTree = "<group>"; };
-		4523121914FD478F0080629F /* duration.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = duration.png; sourceTree = "<group>"; };
 		BF0B61B314F62C9C00A2FEF8 /* ItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemCell.h; sourceTree = "<group>"; };
 		BF0B61B414F62C9C00A2FEF8 /* ItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemCell.m; sourceTree = "<group>"; };
 		BF51D7B414F7C78D00B0BFC3 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
@@ -365,8 +365,8 @@
 				452311B814FD2AE20080629F /* delete-nor@2x.png */,
 				452311B914FD2AE20080629F /* due date.png */,
 				452311BA14FD2AE20080629F /* due date@2x.png */,
-				4523121914FD478F0080629F /* duration.png */,
 				452311BB14FD2AE20080629F /* duration@2x.png */,
+				29DA087014FDEE93006CB7C8 /* duration.png */,
 				452311BD14FD2AE20080629F /* edit.png */,
 				452311BE14FD2AE20080629F /* edit@2x.png */,
 				452311BF14FD2AE20080629F /* high-down.png */,
@@ -779,7 +779,7 @@
 				4523121214FD2AE20080629F /* send-down@2x.png in Resources */,
 				4523121314FD2AE20080629F /* send-nor.png in Resources */,
 				4523121414FD2AE20080629F /* send-nor@2x.png in Resources */,
-				4523121A14FD478F0080629F /* duration.png in Resources */,
+				29DA087114FDEE93006CB7C8 /* duration.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -848,7 +848,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F0D89979-AA68-41B0-847D-43BB875ACB43";
-				SDKROOT = iphoneos;
+				SDKROOT = iphoneos5.0;
 			};
 			name = Debug;
 		};
@@ -867,7 +867,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				SDKROOT = iphoneos;
+				SDKROOT = iphoneos5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
