@@ -26,6 +26,14 @@
 @property (strong, nonatomic) IBOutlet UIDatePicker *datePicker;
 @property (strong, nonatomic) IBOutlet UIView *datePickerTool;
 
+
+@property (weak, nonatomic) IBOutlet UIImageView *priority0Image;
+@property (weak, nonatomic) IBOutlet UIImageView *priority1Image;
+@property (weak, nonatomic) IBOutlet UIImageView *priority2Image;
+@property (weak, nonatomic) IBOutlet UIImageView *priority3Image;
+
+
+
 - (IBAction)changePriority:(id)sender;
 - (IBAction)changeTitle:(id)sender;
 - (IBAction)changeDate:(id)sender;

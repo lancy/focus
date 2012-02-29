@@ -17,6 +17,7 @@
 - (void)updateDate;
 - (void)deleteItem;
 - (NSString *)messageToSend;
+- (void)configurePriority;
 @end
 
 @implementation DetailViewController
@@ -35,7 +36,10 @@
 @synthesize durationPickerData = _durationPickerData;
 @synthesize mailDelegate = _mailDelegate;
 @synthesize msgDelegate = _msgDelegate;
-
+@synthesize priority0Image = _priority0Image;
+@synthesize priority1Image = _priority1Image;
+@synthesize priority2Image = _priority2Image;
+@synthesize priority3Image = _priority3Image;
 
 
 - (id)init
@@ -246,6 +250,10 @@
     [self setDurationTextField:nil];
     [self setDatePicker:nil];
     [self setDatePickerTool:nil];
+    [self setPriority0Image:nil];
+    [self setPriority1Image:nil];
+    [self setPriority2Image:nil];
+    [self setPriority3Image:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -328,11 +336,48 @@
     
 }
 
+- (void)configurePriority
+{
+    [self.priority0Image setHighlighted:NO];
+    [self.priority1Image setHighlighted:NO];
+    [self.priority2Image setHighlighted:NO];
+    [self.priority3Image setHighlighted:NO];
+    switch ([[self.detailItem priority] intValue]) {
+        case 0:
+            [self.priority0Image setHighlighted:YES];
+            [self.priority1Image setHighlighted:NO];
+            [self.priority2Image setHighlighted:NO];
+            [self.priority3Image setHighlighted:NO];
+            break;
+        case 1:
+            [self.priority0Image setHighlighted:NO];
+            [self.priority1Image setHighlighted:YES];
+            [self.priority2Image setHighlighted:NO];
+            [self.priority3Image setHighlighted:NO];
+            break;
+        case 2:
+            [self.priority0Image setHighlighted:NO];
+            [self.priority1Image setHighlighted:NO];
+            [self.priority2Image setHighlighted:YES];
+            [self.priority3Image setHighlighted:NO];
+            break;
+        case 3:
+            [self.priority0Image setHighlighted:NO];
+            [self.priority1Image setHighlighted:NO];
+            [self.priority2Image setHighlighted:NO];
+            [self.priority3Image setHighlighted:YES];
+            break;
+        default:
+            break;
+    }
+}
+
 - (void)configureItem
 {
     [self.titleTextField setText:[self.detailItem title]];
     [self.noteTextField setText:[self.detailItem note]];
-    [self.prioritySegment setSelectedSegmentIndex:[self.detailItem.priority integerValue]];
+    [self configurePriority];
+//    [self.prioritySegment setSelectedSegmentIndex:[self.detailItem.priority integerValue]];
     //[self.detailItem setStartDate:[NSDate date]];  // set startdate to today once loaded
     [self updateDate];
 }

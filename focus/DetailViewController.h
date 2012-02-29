@@ -24,6 +24,12 @@
 @property (strong, nonatomic) Item* detailItem;
 
 
+@property (weak, nonatomic) IBOutlet UIImageView *priority0Image;
+@property (weak, nonatomic) IBOutlet UIImageView *priority1Image;
+@property (weak, nonatomic) IBOutlet UIImageView *priority2Image;
+@property (weak, nonatomic) IBOutlet UIImageView *priority3Image;
+
+
 @property (weak, nonatomic) IBOutlet UITextField *titleTextField;
 @property (weak, nonatomic) IBOutlet UITextField *noteTextField;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *prioritySegment;

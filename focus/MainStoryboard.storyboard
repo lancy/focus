@@ -48,25 +48,46 @@
                             </tableViewSection>
                             <tableViewSection id="CnN-HP-7QK">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="I4Q-1b-Tmr">
-                                        <rect key="frame" x="0.0" y="71" width="320" height="45"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="40" id="I4Q-1b-Tmr">
+                                        <rect key="frame" x="0.0" y="71" width="320" height="41"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="1" width="300" height="43"/>
+                                            <rect key="frame" x="10" y="1" width="300" height="39"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" momentary="YES" id="jFF-J2-ZRL">
-                                                    <rect key="frame" x="30" y="0.0" width="254" height="30"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="zhongyaodu-bg.png" id="F6l-zQ-J6P">
+                                                    <rect key="frame" x="40" y="0.0" width="233" height="40"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="none-nor.png" highlightedImage="none-down.png" id="Fl8-CZ-sAP">
+                                                    <rect key="frame" x="44" y="7" width="53" height="26"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="low-nor.png" highlightedImage="low-down.png" id="VwE-OG-deb">
+                                                    <rect key="frame" x="101" y="7" width="53" height="26"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="mid-nor.png" highlightedImage="mid-down.png" id="dPY-Ht-KZF">
+                                                    <rect key="frame" x="158" y="7" width="53" height="26"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="high-nor.png" highlightedImage="high-down.png" id="VWI-Av-Jog">
+                                                    <rect key="frame" x="215" y="7" width="53" height="26"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <segmentedControl opaque="NO" alpha="0.02" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" momentary="YES" id="aea-eP-ZZO">
+                                                    <rect key="frame" x="40" y="-2" width="233" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <segments>
                                                         <segment title="" image="none-nor.png"/>
-                                                        <segment title="" image="low-nor.png"/>
-                                                        <segment title="" image="mid-nor.png"/>
-                                                        <segment title="" image="high-nor.png"/>
+                                                        <segment title=""/>
+                                                        <segment title=""/>
+                                                        <segment title=""/>
                                                     </segments>
                                                     <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <connections>
-                                                        <action selector="changePriority:" destination="INX-xq-m3w" eventType="valueChanged" id="bEA-oz-BFa"/>
+                                                        <action selector="changePriority:" destination="INX-xq-m3w" eventType="valueChanged" id="rBI-JN-zx3"/>
                                                     </connections>
                                                 </segmentedControl>
                                             </subviews>
@@ -79,7 +100,7 @@
                             <tableViewSection id="OhN-Wy-rNc">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="42" id="ioM-ZD-13U">
-                                        <rect key="frame" x="0.0" y="136" width="320" height="43"/>
+                                        <rect key="frame" x="0.0" y="132" width="320" height="43"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="300" height="41"/>
@@ -105,7 +126,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="37" id="lsE-iD-1Vp">
-                                        <rect key="frame" x="0.0" y="179" width="320" height="37"/>
+                                        <rect key="frame" x="0.0" y="175" width="320" height="37"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="300" height="36"/>
@@ -122,7 +143,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Wze-Oc-CWs">
-                                        <rect key="frame" x="0.0" y="216" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="212" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="300" height="43"/>
@@ -153,7 +174,7 @@
                             <tableViewSection id="G5L-pM-NSS">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="28" id="KeC-If-u06">
-                                        <rect key="frame" x="0.0" y="280" width="320" height="29"/>
+                                        <rect key="frame" x="0.0" y="276" width="320" height="29"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="300" height="27"/>
@@ -243,7 +264,11 @@
                         <outlet property="datePicker" destination="5yT-gb-cwn" id="YWp-Pm-3zv"/>
                         <outlet property="datePickerTool" destination="pkS-bB-OPr" id="wCo-72-Eai"/>
                         <outlet property="dueDateTextField" destination="G7B-FJ-kEX" id="vGJ-Aa-4Wv"/>
-                        <outlet property="prioritySegment" destination="jFF-J2-ZRL" id="R6j-it-8Al"/>
+                        <outlet property="priority0Image" destination="Fl8-CZ-sAP" id="lz5-W5-bAQ"/>
+                        <outlet property="priority1Image" destination="VwE-OG-deb" id="8dR-nt-t2o"/>
+                        <outlet property="priority2Image" destination="dPY-Ht-KZF" id="bNe-vc-h49"/>
+                        <outlet property="priority3Image" destination="VWI-Av-Jog" id="PUS-VM-vUu"/>
+                        <outlet property="prioritySegment" destination="aea-eP-ZZO" id="xwf-YE-Fnx"/>
                         <outlet property="titleTextField" destination="nbK-LH-Gy6" id="qGX-bp-1G8"/>
                     </connections>
                 </tableViewController>
@@ -817,25 +842,46 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                             </tableViewSection>
                             <tableViewSection id="Vxf-iK-JXW">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="30" id="yIz-Q6-t9F">
-                                        <rect key="frame" x="0.0" y="99" width="320" height="31"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="40" id="QlC-ud-y3D">
+                                        <rect key="frame" x="0.0" y="99" width="320" height="41"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="1" width="300" height="29"/>
+                                            <rect key="frame" x="10" y="1" width="300" height="39"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" momentary="YES" id="oid-zl-yof">
-                                                    <rect key="frame" x="30" y="0.0" width="250" height="30"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="zhongyaodu-bg.png" id="QYq-cu-ahA">
+                                                    <rect key="frame" x="40" y="0.0" width="233" height="40"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="none-nor.png" highlightedImage="none-down.png" id="OGv-hE-5PM">
+                                                    <rect key="frame" x="44" y="7" width="53" height="26"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="low-nor.png" highlightedImage="low-down.png" id="dIu-Ye-Ubc">
+                                                    <rect key="frame" x="101" y="7" width="53" height="26"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="mid-nor.png" highlightedImage="mid-down.png" id="Vqw-bk-4mc">
+                                                    <rect key="frame" x="158" y="7" width="53" height="26"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="high-nor.png" highlightedImage="high-down.png" id="JTI-Bl-a9a">
+                                                    <rect key="frame" x="215" y="7" width="53" height="26"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <segmentedControl opaque="NO" alpha="0.019999999552965164" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" momentary="YES" id="M8c-fw-Og5">
+                                                    <rect key="frame" x="40" y="-2" width="233" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <segments>
-                                                        <segment title="" image="none-down.png"/>
-                                                        <segment title="" image="low-down.png"/>
-                                                        <segment title="" image="mid-down.png"/>
-                                                        <segment title="" image="high-down.png"/>
+                                                        <segment title="" image="none-nor.png"/>
+                                                        <segment title=""/>
+                                                        <segment title=""/>
+                                                        <segment title=""/>
                                                     </segments>
-                                                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <connections>
-                                                        <action selector="changePriority:" destination="JEb-oi-vvg" eventType="valueChanged" id="7B9-2B-GmF"/>
+                                                        <action selector="changePriority:" destination="JEb-oi-vvg" eventType="valueChanged" id="BJF-aw-HbW"/>
                                                     </connections>
                                                 </segmentedControl>
                                             </subviews>
@@ -848,7 +894,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                             <tableViewSection id="0Ip-cQ-rOq">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="48" id="HUc-z1-yMB">
-                                        <rect key="frame" x="0.0" y="150" width="320" height="49"/>
+                                        <rect key="frame" x="0.0" y="160" width="320" height="49"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="300" height="47"/>
@@ -874,7 +920,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="46" id="oqf-dP-o26">
-                                        <rect key="frame" x="0.0" y="199" width="320" height="46"/>
+                                        <rect key="frame" x="0.0" y="209" width="320" height="46"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="300" height="45"/>
@@ -900,7 +946,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="45" id="wnu-vp-zvL">
-                                        <rect key="frame" x="0.0" y="245" width="320" height="45"/>
+                                        <rect key="frame" x="0.0" y="255" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="300" height="44"/>
@@ -930,7 +976,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                             <tableViewSection id="wHV-Kn-9zc">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="39" id="Nrj-jv-ziQ">
-                                        <rect key="frame" x="0.0" y="310" width="320" height="40"/>
+                                        <rect key="frame" x="0.0" y="320" width="320" height="40"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="300" height="38"/>
@@ -950,7 +996,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                             <tableViewSection id="Biy-gC-U03">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="9zJ-4t-xZK">
-                                        <rect key="frame" x="0.0" y="370" width="320" height="45"/>
+                                        <rect key="frame" x="0.0" y="380" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="300" height="43"/>
@@ -1043,7 +1089,11 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <outlet property="durationPicker" destination="oTL-Fy-A2N" id="76A-kk-dis"/>
                         <outlet property="durationTextField" destination="mme-kM-lk1" id="0VY-r5-YgX"/>
                         <outlet property="noteTextField" destination="B11-jt-HE4" id="6U2-Q7-tGD"/>
-                        <outlet property="prioritySegment" destination="oid-zl-yof" id="sdI-mc-kpV"/>
+                        <outlet property="priority0Image" destination="OGv-hE-5PM" id="gxW-Sh-3ZY"/>
+                        <outlet property="priority1Image" destination="dIu-Ye-Ubc" id="KUx-3a-6tb"/>
+                        <outlet property="priority2Image" destination="Vqw-bk-4mc" id="O8d-hx-b4F"/>
+                        <outlet property="priority3Image" destination="JTI-Bl-a9a" id="dwL-I6-0TV"/>
+                        <outlet property="prioritySegment" destination="M8c-fw-Og5" id="xsL-IZ-mZl"/>
                         <outlet property="startDateTextField" destination="XZA-Iy-FO6" id="zAc-NM-R0h"/>
                         <outlet property="titleTextField" destination="4kH-ul-vLV" id="auV-PP-FoL"/>
                     </connections>
@@ -1480,6 +1530,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="today-down.png" width="50" height="44"/>
         <image name="today-normal.png" width="50" height="44"/>
         <image name="tool.png" width="18" height="18"/>
+        <image name="zhongyaodu-bg.png" width="233" height="40"/>
     </resources>
     <classes>
         <class className="AboutViewController" superclassName="UIViewController">
@@ -1512,6 +1563,10 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 <relationship kind="outlet" name="durationPicker" candidateClass="UIPickerView"/>
                 <relationship kind="outlet" name="durationTextField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="noteTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="priority0Image" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="priority1Image" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="priority2Image" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="priority3Image" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="prioritySegment" candidateClass="UISegmentedControl"/>
                 <relationship kind="outlet" name="startDateTextField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="titleTextField" candidateClass="UITextField"/>
@@ -1570,6 +1625,10 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 <relationship kind="outlet" name="datePicker" candidateClass="UIDatePicker"/>
                 <relationship kind="outlet" name="datePickerTool" candidateClass="UIView"/>
                 <relationship kind="outlet" name="dueDateTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="priority0Image" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="priority1Image" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="priority2Image" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="priority3Image" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="prioritySegment" candidateClass="UISegmentedControl"/>
                 <relationship kind="outlet" name="titleTextField" candidateClass="UITextField"/>
             </relationships>

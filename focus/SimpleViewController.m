@@ -15,6 +15,7 @@
 - (void)creatNewItem;
 - (void)deleteItem;
 - (void)updateDate;
+- (void)configurePriority;
 @end
 
 @implementation SimpleViewController
@@ -27,6 +28,10 @@
 @synthesize dueDateTextField = _dueDateTextField;
 @synthesize datePicker = _datePicker;
 @synthesize datePickerTool = _datePickerTool;
+@synthesize priority0Image = _priority0Image;
+@synthesize priority1Image = _priority1Image;
+@synthesize priority2Image = _priority2Image;
+@synthesize priority3Image = _priority3Image;
 
 
 
@@ -141,6 +146,10 @@
     [self setDueDateTextField:nil];
     [self setDatePicker:nil];
     [self setDatePickerTool:nil];
+    [self setPriority0Image:nil];
+    [self setPriority1Image:nil];
+    [self setPriority2Image:nil];
+    [self setPriority3Image:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -190,11 +199,48 @@
     [self.dueDateTextField setText:[self dateStringFromNSDate:[self.detailItem dueDate]]];
 }
 
+- (void)configurePriority
+{
+    [self.priority0Image setHighlighted:NO];
+    [self.priority1Image setHighlighted:NO];
+    [self.priority2Image setHighlighted:NO];
+    [self.priority3Image setHighlighted:NO];
+    switch ([[self.detailItem priority] intValue]) {
+        case 0:
+            [self.priority0Image setHighlighted:YES];
+            [self.priority1Image setHighlighted:NO];
+            [self.priority2Image setHighlighted:NO];
+            [self.priority3Image setHighlighted:NO];
+            break;
+        case 1:
+            [self.priority0Image setHighlighted:NO];
+            [self.priority1Image setHighlighted:YES];
+            [self.priority2Image setHighlighted:NO];
+            [self.priority3Image setHighlighted:NO];
+            break;
+        case 2:
+            [self.priority0Image setHighlighted:NO];
+            [self.priority1Image setHighlighted:NO];
+            [self.priority2Image setHighlighted:YES];
+            [self.priority3Image setHighlighted:NO];
+            break;
+        case 3:
+            [self.priority0Image setHighlighted:NO];
+            [self.priority1Image setHighlighted:NO];
+            [self.priority2Image setHighlighted:NO];
+            [self.priority3Image setHighlighted:YES];
+            break;
+        default:
+            break;
+    }
+}
+
 - (void)configureItem
 {
     [self.titleTextField setText:[self.detailItem title]];
 //    [self.noteTextField setText:[self.detailItem note]];
-    [self.prioritySegment setSelectedSegmentIndex:[self.detailItem.priority integerValue]];
+//    [self.prioritySegment setSelectedSegmentIndex:[self.detailItem.priority integerValue]];
+    [self configurePriority];
     [self updateDate];
 }
 
@@ -203,6 +249,7 @@
 
 - (IBAction)changePriority:(id)sender {
     [self.detailItem setPriority:[NSNumber numberWithInteger:[self.prioritySegment selectedSegmentIndex]]];
+    [self configurePriority];
     NSLog(@"%@", self.detailItem.priority);
 }
 
