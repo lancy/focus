@@ -8,6 +8,8 @@
 
 #import "FromSimpleToDetailSegue.h"
 
+#import "SimpleViewController.h"
+
 @interface FromSimpleToDetailSegue()
 @end
 
@@ -16,11 +18,11 @@
 - (void)perform
 {
     UIViewController *dvc = [self destinationViewController];
-    UIViewController *svc = [self sourceViewController];
+    UIViewController *svc = (SimpleViewController *)[self sourceViewController];
     [dvc viewWillAppear:NO];
     [dvc viewDidAppear:NO];
     
-    [dvc.view setAlpha:0];
+//    [dvc.view setAlpha:0];
     
     [svc.view addSubview:dvc.view];
     dvc.view.frame = CGRectMake(svc.view.frame.origin.x, svc.view.frame.origin.y, dvc.view.frame.size.width, dvc.view.frame.size.height);
@@ -28,7 +30,8 @@
     
     [UIView animateWithDuration:0.5 
                      animations:^{
-                         [dvc.view setAlpha:1];
+
+//                         [dvc.view setAlpha:1];
                      }completion:^(BOOL finish){
                          [dvc.navigationController popViewControllerAnimated:NO];
                          [svc.navigationController pushViewController:dvc animated:NO];
