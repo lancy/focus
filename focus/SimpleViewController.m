@@ -38,6 +38,8 @@
 @synthesize priority1Image = _priority1Image;
 @synthesize priority2Image = _priority2Image;
 @synthesize priority3Image = _priority3Image;
+@synthesize mailDelegate = _mailDelegate;
+@synthesize msgDelegate = _msgDelegate;
 
 
 
@@ -60,6 +62,95 @@
     }
     return self;
 }
+
+#pragma mark - Mail/SMS controller delegates
+
+- (NSString *) messageToSend{
+    
+    NSMutableString *message = [[NSMutableString alloc] initWithFormat:@"Please finish the task: %@",[self detailItem].title ];
+    if ([self detailItem].dueDate != nil) {
+        [message appendFormat:@". The deadline is %@",  [self dateStringFromNSDate:[self detailItem].dueDate]];
+    }
+    
+    if ([self detailItem].note != nil)
+        [message appendFormat:@". Note: %@", [self detailItem].note];
+    
+    [message appendFormat:@"."];
+    
+    NSLog(@"%@", message);
+    return message;
+    
+}
+
+
+- (void)mailSent:(MFMailComposeResult)result {
+    //manage mail result
+    NSLog(@"Mail %@ sent", (result == MFMailComposeResultSent)? @"" : @"NOT");
+}
+
+- (void)smsSent:(MessageComposeResult)result {
+    //manage mail result
+    NSLog(@"Mail %@ sent", (result == MFMailComposeResultSent)? @"" : @"NOT");
+}
+
+- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
+    
+    if (self.mailDelegate && [self.mailDelegate respondsToSelector:@selector(shareWithEmail:)]) {
+        [self mailSent:result];
+    }
+    // fixed the navagation bar;
+    UIImage *navigationbg = [UIImage imageNamed:@"navigation"];
+    [[UINavigationBar appearance] setBackgroundImage:navigationbg forBarMetrics:UIBarMetricsDefault];
+    
+    [controller dismissModalViewControllerAnimated:YES];
+}
+
+- (void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result {
+    if (self.msgDelegate && [self.msgDelegate respondsToSelector:@selector(shareViaSMS:)]) {
+        [self smsSent:result];
+    }
+    // fixed the navagation bar;
+    UIImage *navigationbg = [UIImage imageNamed:@"navigation"];
+    [[UINavigationBar appearance] setBackgroundImage:navigationbg forBarMetrics:UIBarMetricsDefault];
+    [controller dismissModalViewControllerAnimated:YES];
+}
+
+- (void)shareViaSMS {
+    MFMessageComposeViewController *mc = [[MFMessageComposeViewController alloc] init];
+    mc.messageComposeDelegate = self;
+    [mc setTitle:@"focus"];
+    [mc setBody:[self messageToSend]];
+    [mc setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
+    if (mc) {
+        // fixed the navagation bar;
+        [[UINavigationBar appearance] setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
+        
+        [self presentModalViewController:mc animated:YES];
+    }
+}
+
+- (void)shareViaEmail {
+    MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
+    mc.mailComposeDelegate = self;
+    [mc setSubject:[NSString stringWithString:self.detailItem.title]];
+    [mc setMessageBody:[NSString stringWithFormat:@"%@  \nThis Email was sent by focus.", [self messageToSend]] isHTML:NO];
+    
+    [mc setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
+    if (mc) {
+        
+        // fixed the navagation bar;
+        [[UINavigationBar appearance] setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
+        
+        [self presentModalViewController:mc animated:YES];
+    }
+}
+
+- (void)copyToClipboard {
+    UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+    [pasteboard setString:[self messageToSend]];
+}
+
+
 
 #pragma mark - Managing the detail item
 
@@ -302,93 +393,6 @@
 //    [self.prioritySegment setSelectedSegmentIndex:[self.detailItem.priority integerValue]];
     [self configurePriority];
     [self updateDate];
-}
-
-#pragma mark Mail/SMS controller delegates
-
-- (NSString *) messageToSend{
-    
-    NSMutableString *message = [[NSMutableString alloc] initWithFormat:@"Please finish the task: %@",[self detailItem].title ];
-    if ([self detailItem].dueDate != nil) {
-        [message appendFormat:@". The deadline is %@",  [self dateStringFromNSDate:[self detailItem].dueDate]];
-    }
-    
-    if ([self detailItem].note != nil)
-        [message appendFormat:@". Note: %@", [self detailItem].note];
-    
-    [message appendFormat:@"."];
-    
-    NSLog(@"%@", message);
-    return message;
-    
-}
-
-
-- (void)mailSent:(MFMailComposeResult)result {
-    //manage mail result
-    NSLog(@"Mail %@ sent", (result == MFMailComposeResultSent)? @"" : @"NOT");
-}
-
-- (void)smsSent:(MessageComposeResult)result {
-    //manage mail result
-    NSLog(@"Mail %@ sent", (result == MFMailComposeResultSent)? @"" : @"NOT");
-}
-
-- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
-    
-    if (self.mailDelegate && [self.mailDelegate respondsToSelector:@selector(shareWithEmail:)]) {
-        [self mailSent:result];
-    }
-    // fixed the navagation bar;
-    UIImage *navigationbg = [UIImage imageNamed:@"navigation"];
-    [[UINavigationBar appearance] setBackgroundImage:navigationbg forBarMetrics:UIBarMetricsDefault];
-
-    [controller dismissModalViewControllerAnimated:YES];
-}
-
-- (void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result {
-    if (self.msgDelegate && [self.msgDelegate respondsToSelector:@selector(shareViaSMS:)]) {
-        [self smsSent:result];
-    }
-    // fixed the navagation bar;
-    UIImage *navigationbg = [UIImage imageNamed:@"navigation"];
-    [[UINavigationBar appearance] setBackgroundImage:navigationbg forBarMetrics:UIBarMetricsDefault];
-    [controller dismissModalViewControllerAnimated:YES];
-}
-
-- (void)shareViaSMS {
-    MFMessageComposeViewController *mc = [[MFMessageComposeViewController alloc] init];
-    mc.messageComposeDelegate = self;
-    [mc setTitle:@"focus"];
-    [mc setBody:[self messageToSend]];
-    [mc setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
-    if (mc) {
-        // fixed the navagation bar;
-        [[UINavigationBar appearance] setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
-
-        [self presentModalViewController:mc animated:YES];
-    }
-}
-
-- (void)shareViaEmail {
-    MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
-    mc.mailComposeDelegate = self;
-    [mc setSubject:[NSString stringWithString:self.detailItem.title]];
-    [mc setMessageBody:[NSString stringWithFormat:@"%@  \nThis Email was sent by focus.", [self messageToSend]] isHTML:NO];
-    
-    [mc setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
-    if (mc) {
-        
-        // fixed the navagation bar;
-        [[UINavigationBar appearance] setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
-
-        [self presentModalViewController:mc animated:YES];
-    }
-}
-
-- (void)copyToClipboard {
-    UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
-    [pasteboard setString:[self messageToSend]];
 }
 
 
