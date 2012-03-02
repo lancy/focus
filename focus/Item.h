@@ -24,6 +24,7 @@
 @property (nonatomic, retain) NSString * title;
 @property (nonatomic, retain) NSManagedObject *belongToProject;
 @property (nonatomic, retain) NSSet *tags;
+@property (nonatomic, retain) UILocalNotification *alarm;
 @end
 
 @interface Item (CoreDataGeneratedAccessors)

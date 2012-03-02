@@ -108,32 +108,50 @@
     return [[self.fetchedResultsController sections] count] + 1;
 }
 
+-(CGFloat) tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{    
+    if ([[self.fetchedResultsController sections] count] == section 
+        || [[[[self.fetchedResultsController sections] objectAtIndex:section] name] isEqualToString:@""])
+    {
+        return 0;
+    }
+    else {
+        return 24;
+    }
 
-//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-//{
-//    if ([[self.fetchedResultsController sections] count] == section 
-//        || [[[[self.fetchedResultsController sections] objectAtIndex:section] name] isEqualToString:@""])
-//            return nil;
-//    
-//    UIImage *imgae = [UIImage imageNamed:@"sectionheader.png"];
-//    UIImageView *sectionHeaderView = [[UIImageView alloc] initWithImage:imgae];
-//    UILabel *sectionLabel = [[UILabel alloc] init];
-//    sectionLabel.text = [[[self.fetchedResultsController sections] objectAtIndex:section] name];
-//    [sectionLabel setFrame:CGRectMake(10, 0, 200, 20)];
-//    [sectionLabel setBackgroundColor:[UIColor clearColor]];
-////    NSLog(@"%@", sectionLabel.text);
-//    [sectionHeaderView addSubview:sectionLabel];
-//    return sectionHeaderView;
-//}
-
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-{
-    // Display title as section headings.
-    if ([[self.fetchedResultsController sections] count] == section)
-        return nil;
-    
-    return [[[self.fetchedResultsController sections] objectAtIndex:section] name];
 }
+
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    if ([[self.fetchedResultsController sections] count] == section 
+        || [[[[self.fetchedResultsController sections] objectAtIndex:section] name] isEqualToString:@""])
+    {
+        UIView *empty = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 200, 1)];
+        [empty setBackgroundColor:[UIColor brownColor]];
+        return empty;
+    }
+    
+    UIView *sectionHeaderView = [[UIImageView alloc] init];
+    [sectionHeaderView setBackgroundColor:[UIColor brownColor]];
+    UILabel *sectionLabel = [[UILabel alloc] init];
+    [sectionLabel setTextColor:[UIColor whiteColor]];
+    sectionLabel.text = [[[self.fetchedResultsController sections] objectAtIndex:section] name];
+    [sectionLabel setFrame:CGRectMake(10, 0, 200, 20)];
+    [sectionLabel setBackgroundColor:[UIColor clearColor]];
+//    NSLog(@"%@", sectionLabel.text);
+    [sectionHeaderView addSubview:sectionLabel];
+    return sectionHeaderView;
+}
+
+//- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+//{
+//    // Display title as section headings.
+//    if ([[self.fetchedResultsController sections] count] == section)
+//        return nil;
+//    
+//    return [[[self.fetchedResultsController sections] objectAtIndex:section] name];
+//}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {

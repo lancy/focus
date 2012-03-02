@@ -36,10 +36,12 @@
 @property (weak, nonatomic) IBOutlet UITextField *startDateTextField;
 @property (weak, nonatomic) IBOutlet UITextField *dueDateTextField;
 @property (weak, nonatomic) IBOutlet UITextField *durationTextField;
+@property (weak, nonatomic) IBOutlet UITextField *notificationTextField;
 
 @property (strong, nonatomic) IBOutlet UIDatePicker *datePicker;
 @property (strong, nonatomic) IBOutlet UIView *datePickerTool;
 @property (strong, nonatomic) IBOutlet UIPickerView *durationPicker;
+@property (strong, nonatomic) IBOutlet UIDatePicker *notificationDatePicker;
 @property (strong, nonatomic) NSArray *durationPickerData;
 @property (nonatomic, strong) id<MFMailComposeViewControllerDelegate> mailDelegate;
 @property (nonatomic, strong) id<MFMessageComposeViewControllerDelegate> msgDelegate;

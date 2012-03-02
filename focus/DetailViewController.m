@@ -14,10 +14,13 @@
 @interface DetailViewController ()
 - (void)configureItem;
 - (NSString *)dateStringFromNSDate:(NSDate *)date;
+- (NSString *)timeStringFromNSDate:(NSDate *)date;
 - (void)updateDate;
 - (void)deleteItem;
 - (NSString *)messageToSend;
 - (void)configurePriority;
+- (void) scheduleAlarm:(NSDate *) aDate;
+
 @end
 
 @implementation DetailViewController
@@ -30,9 +33,11 @@
 @synthesize startDateTextField = _startDateTextField;
 @synthesize dueDateTextField = _dueDateTextField;
 @synthesize durationTextField = _durationTextField;
+@synthesize notificationTextField = _notificationTextField;
 @synthesize datePicker = _datePicker;
 @synthesize datePickerTool = _datePickerTool;
 @synthesize durationPicker = _durationPicker;
+@synthesize notificationDatePicker = _notificationDatePicker;
 @synthesize durationPickerData = _durationPickerData;
 @synthesize mailDelegate = _mailDelegate;
 @synthesize msgDelegate = _msgDelegate;
@@ -98,6 +103,10 @@
     if (self.mailDelegate && [self.mailDelegate respondsToSelector:@selector(shareWithEmail:)]) {
         [self mailSent:result];
     }
+    // fixed the navagation bar;
+    UIImage *navigationbg = [UIImage imageNamed:@"navigation"];
+    [[UINavigationBar appearance] setBackgroundImage:navigationbg forBarMetrics:UIBarMetricsDefault];
+    
     [controller dismissModalViewControllerAnimated:YES];
 }
 
@@ -105,8 +114,10 @@
     if (self.msgDelegate && [self.msgDelegate respondsToSelector:@selector(shareViaSMS:)]) {
         [self smsSent:result];
     }
+    // fixed the navagation bar;
+    UIImage *navigationbg = [UIImage imageNamed:@"navigation"];
+    [[UINavigationBar appearance] setBackgroundImage:navigationbg forBarMetrics:UIBarMetricsDefault];
     [controller dismissModalViewControllerAnimated:YES];
-
 }
 
 - (void)shareViaSMS {
@@ -116,6 +127,9 @@
     [mc setBody:[self messageToSend]];
     [mc setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
     if (mc) {
+        // fixed the navagation bar;
+        [[UINavigationBar appearance] setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
+        
         [self presentModalViewController:mc animated:YES];
     }
 }
@@ -128,6 +142,10 @@
     
     [mc setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
     if (mc) {
+        
+        // fixed the navagation bar;
+        [[UINavigationBar appearance] setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
+        
         [self presentModalViewController:mc animated:YES];
     }
 }
@@ -149,6 +167,9 @@
 - (void)deleteItem
 {
     // Delete the managed object for the given index path
+    if ([self.detailItem alarm] != nil) {
+        [[UIApplication sharedApplication] cancelLocalNotification:[self.detailItem alarm]];
+    }
     NSManagedObjectContext *context = self.managedObjectContext;
     [context deleteObject:self.detailItem];
     
@@ -254,6 +275,8 @@
     [self setPriority1Image:nil];
     [self setPriority2Image:nil];
     [self setPriority3Image:nil];
+    [self setNotificationTextField:nil];
+    [self setNotificationDatePicker:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -333,7 +356,7 @@
     {
         [self.durationTextField setText:nil];
     }
-    
+    [self.notificationTextField setText:[self timeStringFromNSDate:[[self.detailItem alarm] valueForKey:@"fireDate"]]];
 }
 
 - (void)configurePriority
@@ -453,12 +476,65 @@
         }
         [self.durationTextField resignFirstResponder];
     }
+    if ([self.notificationTextField isFirstResponder]) {
+        [self scheduleAlarm:[self.notificationDatePicker date]];
+        [self.notificationTextField resignFirstResponder];
+    }
     [self updateDate];
 }
 
 - (IBAction)didDoneButton:(id)sender {
     [self resignFirstResponder];
 }
+
+#pragma mark - notification
+- (void) scheduleAlarm:(NSDate *) aDate
+{
+	NSCalendar *calendar = [NSCalendar autoupdatingCurrentCalendar];
+	
+	// Break the date up into components
+	NSDateComponents *dateComponents = [calendar components:( NSYearCalendarUnit | NSMonthCalendarUnit |  NSDayCalendarUnit ) 
+												   fromDate:aDate];
+	NSDateComponents *timeComponents = [calendar components:( NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit ) 
+												   fromDate:aDate];
+	
+	// Set up the fire time
+    NSDateComponents *dateComps = [[NSDateComponents alloc] init];
+    [dateComps setDay:[dateComponents day]];
+    [dateComps setMonth:[dateComponents month]];
+    [dateComps setYear:[dateComponents year]];
+    [dateComps setHour:[timeComponents hour]];
+	// Notification will fire in one minute
+    [dateComps setMinute:[timeComponents minute]];
+	[dateComps setSecond:[timeComponents second]];
+    NSDate *itemDate = [calendar dateFromComponents:dateComps];
+	
+    UILocalNotification *localNotif = [[UILocalNotification alloc] init];
+    if (localNotif == nil)
+        return;
+    localNotif.fireDate = itemDate;
+    localNotif.timeZone = [NSTimeZone defaultTimeZone];
+	
+	// Notification details
+    localNotif.alertBody = [NSString stringWithFormat:@"%@\n%@", [self.detailItem title], [self.detailItem note]];
+	// Set the action button
+    localNotif.alertAction = @"Focus";
+	
+    localNotif.soundName = UILocalNotificationDefaultSoundName;
+//    localNotif.applicationIconBadgeNumber = 1;
+	
+	// Specify custom data for the notification
+    NSDictionary *infoDict = [NSDictionary dictionaryWithObject:@"someValue" forKey:@"someKey"];
+    localNotif.userInfo = infoDict;
+	
+	// Schedule the notification
+    if ([self.detailItem alarm] != nil) {
+        [[UIApplication sharedApplication] cancelLocalNotification:[self.detailItem alarm]];
+    }
+    [[UIApplication sharedApplication] scheduleLocalNotification:localNotif];
+    [self.detailItem setAlarm:localNotif];
+}
+
 
 
 #pragma mark - textfield delegate
@@ -504,6 +580,19 @@
             textField.inputAccessoryView = self.datePickerTool;
         }
     }
+    else if (textField == [self notificationTextField])
+    {
+        if (textField.inputView == nil) {
+            textField.inputView = self.notificationDatePicker;
+            if ([self.detailItem dueDate] != nil) {
+                [self.notificationDatePicker setDate:[self.detailItem dueDate] animated:YES];
+            }
+        }
+        if (textField.inputAccessoryView == nil)
+        {
+            textField.inputAccessoryView = self.datePickerTool;
+        }
+    }
     return YES;
 }
 
@@ -514,7 +603,16 @@
     [dayFormatter setLocale:[NSLocale currentLocale]];
     [dayFormatter setDateStyle:NSDateFormatterMediumStyle];
     [dayFormatter setDoesRelativeDateFormatting:YES];
-    
+    return [dayFormatter stringFromDate:date];
+}
+
+- (NSString *)timeStringFromNSDate:(NSDate *)date
+{
+    NSDateFormatter *dayFormatter = [[NSDateFormatter alloc]init];
+    [dayFormatter setLocale:[NSLocale currentLocale]];
+    [dayFormatter setDateStyle:NSDateFormatterShortStyle];
+    [dayFormatter setTimeStyle:NSDateFormatterShortStyle];
+    [dayFormatter setDoesRelativeDateFormatting:YES];
     return [dayFormatter stringFromDate:date];
 }
 

@@ -25,6 +25,7 @@ const NSTimeInterval secondsPerDay = 24 * 60 * 60;
 @dynamic title;
 @dynamic belongToProject;
 @dynamic tags;
+@dynamic alarm;
 
 
 

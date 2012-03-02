@@ -148,7 +148,7 @@
 
 - (void)hideScrollBar
 {
-    [UIView animateWithDuration:0.5
+    [UIView animateWithDuration:0.4
                           delay:0
                         options:UIViewAnimationCurveLinear 
                      animations:^{

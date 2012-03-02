@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="872" systemVersion="11D50b" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1415" systemVersion="12A128p" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Item" representedClassName="Item" syncable="YES">
+        <attribute name="alarm" optional="YES" attributeType="Transformable" syncable="YES"/>
         <attribute name="creatTime" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="dueDate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="duration" optional="YES" attributeType="Integer 16" syncable="YES"/>
@@ -26,7 +27,7 @@
         <relationship name="itemList" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Item" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Item" positionX="160" positionY="192" width="128" height="225"/>
+        <element name="Item" positionX="160" positionY="192" width="128" height="240"/>
         <element name="Project" positionX="160" positionY="192" width="128" height="120"/>
         <element name="Tag" positionX="160" positionY="192" width="128" height="75"/>
     </elements>

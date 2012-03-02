@@ -10,6 +10,8 @@
 
 @interface FinishViewController : MainViewController
 
+@property (weak, nonatomic) IBOutlet UIButton *editButton;
+- (IBAction)pressEditButton:(id)sender;
 
 - (IBAction)backToMainView:(id)sender;
 @end

@@ -12,10 +12,14 @@
 @interface SimpleViewController ()
 - (void)configureItem;
 - (NSString *)dateStringFromNSDate:(NSDate *)date;
+- (NSString *)timeStringFromNSDate:(NSDate *)date;
 - (void)creatNewItem;
 - (void)deleteItem;
 - (void)updateDate;
 - (void)configurePriority;
+- (NSString *)messageToSend;
+- (void) scheduleAlarm:(NSDate *) aDate;
+
 @end
 
 @implementation SimpleViewController
@@ -26,8 +30,10 @@
 @synthesize titleTextField = _titleTextField;
 @synthesize prioritySegment = _prioritySegment;
 @synthesize dueDateTextField = _dueDateTextField;
+@synthesize notificationTextField = _notificationTextField;
 @synthesize datePicker = _datePicker;
 @synthesize datePickerTool = _datePickerTool;
+@synthesize notificationDatePicker = _notificationDatePicker;
 @synthesize priority0Image = _priority0Image;
 @synthesize priority1Image = _priority1Image;
 @synthesize priority2Image = _priority2Image;
@@ -88,6 +94,9 @@
 - (void)deleteItem
 {
     // Delete the managed object for the given index path
+    if ([self.detailItem alarm] != nil) {
+        [[UIApplication sharedApplication] cancelLocalNotification:[self.detailItem alarm]];
+    }
     NSManagedObjectContext *context = self.managedObjectContext;
     [context deleteObject:self.detailItem];
     
@@ -105,28 +114,76 @@
     }
 }
 
+- (IBAction)pressSaveButton:(id)sender {
+    if ([self.titleTextField isFirstResponder]) {
+        [self.titleTextField resignFirstResponder];
+    } 
+    if ([self.detailItem title] == nil
+        || [[self.detailItem title] isEqualToString:@""])
+    {
+        [self deleteItem];
+    }
+    [self.navigationController popViewControllerAnimated:YES];
+    NSLog(@"%@", self.detailItem);
+}
+
+- (IBAction)pressSendButton:(id)sender {
+    
+    if ([self detailItem].title != nil) {
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Send" message:@"msg" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Share via Email",@"Send SMS", @"Copy to Clipboard", nil];
+        [alert setTag:2001];
+        [alert show];
+        
+    }
+}
+
 - (IBAction)pressDeleteButton:(id)sender {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Delete Item" message:@"Are You Sure?" delegate:self cancelButtonTitle:@"Cancle" otherButtonTitles:@"Delete", nil];
+    [alert setTag:2000];
     [alert show];
     
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    switch (buttonIndex) {
-        case 0:
-            //cancle
-            break;
-        case 1:
-            //delete item
-            [self deleteItem];
-            [self.navigationController popToRootViewControllerAnimated:YES];
-            break;
-            
-        default:
-            break;
+    int tag = alertView.tag;
+    if (tag == 2000) {
+        switch (buttonIndex) {
+            case 0:
+                //cancle
+                break;
+            case 1:
+                //delete item
+                [self deleteItem];
+                [self.navigationController popToRootViewControllerAnimated:YES];
+                break;
+                
+            default:
+                break;
+        }
+    }
+    if (tag == 2001) {
+        [self messageToSend];
+        switch (buttonIndex) {
+            case 0:
+                // cancel
+                break;
+            case 1:
+                [self shareViaEmail];
+                break;
+            case 2:
+                [self shareViaSMS];
+            case 3:
+                [self copyToClipboard];
+                break;
+                
+            default:
+                break;
+        }
     }
 }
+
 
 
 #pragma mark - View lifecycleß
@@ -150,6 +207,8 @@
     [self setPriority1Image:nil];
     [self setPriority2Image:nil];
     [self setPriority3Image:nil];
+    [self setNotificationDatePicker:nil];
+    [self setNotificationTextField:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -197,6 +256,7 @@
 - (void)updateDate
 {
     [self.dueDateTextField setText:[self dateStringFromNSDate:[self.detailItem dueDate]]];
+    [self.notificationTextField setText:[self timeStringFromNSDate:[[self.detailItem alarm] valueForKey:@"fireDate"]]];
 }
 
 - (void)configurePriority
@@ -244,6 +304,94 @@
     [self updateDate];
 }
 
+#pragma mark Mail/SMS controller delegates
+
+- (NSString *) messageToSend{
+    
+    NSMutableString *message = [[NSMutableString alloc] initWithFormat:@"Please finish the task: %@",[self detailItem].title ];
+    if ([self detailItem].dueDate != nil) {
+        [message appendFormat:@". The deadline is %@",  [self dateStringFromNSDate:[self detailItem].dueDate]];
+    }
+    
+    if ([self detailItem].note != nil)
+        [message appendFormat:@". Note: %@", [self detailItem].note];
+    
+    [message appendFormat:@"."];
+    
+    NSLog(@"%@", message);
+    return message;
+    
+}
+
+
+- (void)mailSent:(MFMailComposeResult)result {
+    //manage mail result
+    NSLog(@"Mail %@ sent", (result == MFMailComposeResultSent)? @"" : @"NOT");
+}
+
+- (void)smsSent:(MessageComposeResult)result {
+    //manage mail result
+    NSLog(@"Mail %@ sent", (result == MFMailComposeResultSent)? @"" : @"NOT");
+}
+
+- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
+    
+    if (self.mailDelegate && [self.mailDelegate respondsToSelector:@selector(shareWithEmail:)]) {
+        [self mailSent:result];
+    }
+    // fixed the navagation bar;
+    UIImage *navigationbg = [UIImage imageNamed:@"navigation"];
+    [[UINavigationBar appearance] setBackgroundImage:navigationbg forBarMetrics:UIBarMetricsDefault];
+
+    [controller dismissModalViewControllerAnimated:YES];
+}
+
+- (void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result {
+    if (self.msgDelegate && [self.msgDelegate respondsToSelector:@selector(shareViaSMS:)]) {
+        [self smsSent:result];
+    }
+    // fixed the navagation bar;
+    UIImage *navigationbg = [UIImage imageNamed:@"navigation"];
+    [[UINavigationBar appearance] setBackgroundImage:navigationbg forBarMetrics:UIBarMetricsDefault];
+    [controller dismissModalViewControllerAnimated:YES];
+}
+
+- (void)shareViaSMS {
+    MFMessageComposeViewController *mc = [[MFMessageComposeViewController alloc] init];
+    mc.messageComposeDelegate = self;
+    [mc setTitle:@"focus"];
+    [mc setBody:[self messageToSend]];
+    [mc setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
+    if (mc) {
+        // fixed the navagation bar;
+        [[UINavigationBar appearance] setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
+
+        [self presentModalViewController:mc animated:YES];
+    }
+}
+
+- (void)shareViaEmail {
+    MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
+    mc.mailComposeDelegate = self;
+    [mc setSubject:[NSString stringWithString:self.detailItem.title]];
+    [mc setMessageBody:[NSString stringWithFormat:@"%@  \nThis Email was sent by focus.", [self messageToSend]] isHTML:NO];
+    
+    [mc setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
+    if (mc) {
+        
+        // fixed the navagation bar;
+        [[UINavigationBar appearance] setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
+
+        [self presentModalViewController:mc animated:YES];
+    }
+}
+
+- (void)copyToClipboard {
+    UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+    [pasteboard setString:[self messageToSend]];
+}
+
+
 
 #pragma mark - change item
 
@@ -272,11 +420,65 @@
         self.dueDateTextField.text = [self dateStringFromNSDate:[self.datePicker date]];
         [self.dueDateTextField resignFirstResponder];
     }
+    if ([self.notificationTextField isFirstResponder]) {
+        [self scheduleAlarm:[self.notificationDatePicker date]];
+        [self.notificationTextField resignFirstResponder];
+    }
+    [self updateDate];
 }
 
 - (IBAction)didDoneButton:(id)sender {
     [self resignFirstResponder];
 }
+
+#pragma mark - notification
+- (void) scheduleAlarm:(NSDate *) aDate
+{
+	NSCalendar *calendar = [NSCalendar autoupdatingCurrentCalendar];
+	
+	// Break the date up into components
+	NSDateComponents *dateComponents = [calendar components:( NSYearCalendarUnit | NSMonthCalendarUnit |  NSDayCalendarUnit ) 
+												   fromDate:aDate];
+	NSDateComponents *timeComponents = [calendar components:( NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit ) 
+												   fromDate:aDate];
+	
+	// Set up the fire time
+    NSDateComponents *dateComps = [[NSDateComponents alloc] init];
+    [dateComps setDay:[dateComponents day]];
+    [dateComps setMonth:[dateComponents month]];
+    [dateComps setYear:[dateComponents year]];
+    [dateComps setHour:[timeComponents hour]];
+	// Notification will fire in one minute
+    [dateComps setMinute:[timeComponents minute]];
+	[dateComps setSecond:[timeComponents second]];
+    NSDate *itemDate = [calendar dateFromComponents:dateComps];
+	
+    UILocalNotification *localNotif = [[UILocalNotification alloc] init];
+    if (localNotif == nil)
+        return;
+    localNotif.fireDate = itemDate;
+    localNotif.timeZone = [NSTimeZone defaultTimeZone];
+	
+	// Notification details
+    localNotif.alertBody = [NSString stringWithFormat:@"%@\n%@", [self.detailItem title], [self.detailItem note]];
+	// Set the action button
+    localNotif.alertAction = @"Focus";
+	
+    localNotif.soundName = UILocalNotificationDefaultSoundName;
+    //    localNotif.applicationIconBadgeNumber = 1;
+	
+	// Specify custom data for the notification
+    NSDictionary *infoDict = [NSDictionary dictionaryWithObject:@"someValue" forKey:@"someKey"];
+    localNotif.userInfo = infoDict;
+	
+	// Schedule the notification
+    if ([self.detailItem alarm] != nil) {
+        [[UIApplication sharedApplication] cancelLocalNotification:[self.detailItem alarm]];
+    }
+    [[UIApplication sharedApplication] scheduleLocalNotification:localNotif];
+    [self.detailItem setAlarm:localNotif];
+}
+
 
 
 #pragma mark - textfield delegate
@@ -295,6 +497,19 @@
             textField.inputAccessoryView = self.datePickerTool;
         }
     } 
+    else if (textField == [self notificationTextField])
+    {
+        if (textField.inputView == nil) {
+            textField.inputView = self.notificationDatePicker;
+            if ([self.detailItem dueDate] != nil) {
+                [self.notificationDatePicker setDate:[self.detailItem dueDate] animated:YES];
+            }
+        }
+        if (textField.inputAccessoryView == nil)
+        {
+            textField.inputAccessoryView = self.datePickerTool;
+        }
+    }
 
     return YES;
 }
@@ -311,20 +526,21 @@
 }
 
 
+- (NSString *)timeStringFromNSDate:(NSDate *)date
+{
+    NSDateFormatter *dayFormatter = [[NSDateFormatter alloc]init];
+    [dayFormatter setLocale:[NSLocale currentLocale]];
+    [dayFormatter setDateStyle:NSDateFormatterShortStyle];
+    [dayFormatter setTimeStyle:NSDateFormatterShortStyle];
+    [dayFormatter setDoesRelativeDateFormatting:YES];
+    return [dayFormatter stringFromDate:date];
+}
+
+
+
 
 #pragma mark - view transition
-- (IBAction)pressSaveButton:(id)sender {
-    if ([self.titleTextField isFirstResponder]) {
-        [self.titleTextField resignFirstResponder];
-    } 
-    if ([self.detailItem title] == nil
-        || [[self.detailItem title] isEqualToString:@""])
-    {
-        [self deleteItem];
-    }
-    [self.navigationController popViewControllerAnimated:YES];
-    NSLog(@"%@", self.detailItem);
-}
+
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {

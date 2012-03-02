@@ -9,11 +9,13 @@
 #import "FinishViewController.h"
 
 @implementation FinishViewController
+@synthesize editButton;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [self.navigationItem setHidesBackButton:YES];
+//    self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -77,8 +79,18 @@
     
     return __fetchedResultsController;
 }   
+- (IBAction)pressEditButton:(id)sender {
+    if ([self isEditing])
+    {
+        [self setEditing:NO animated:YES];
+    }
+    else {
+        [self setEditing:YES animated:YES];
+    }
+}
+
 - (IBAction)backToMainView:(id)sender {
-    [self dismissModalViewControllerAnimated:YES];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 // Customize the number of sections in the table view.
@@ -94,4 +106,8 @@
 }
 
 
+- (void)viewDidUnload {
+    [self setEditButton:nil];
+    [super viewDidUnload];
+}
 @end
