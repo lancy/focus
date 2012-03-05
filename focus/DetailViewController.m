@@ -638,6 +638,12 @@
     return YES;
 }
 
+//- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+//{
+//    NSUInteger newLength = [textField.text length] + [string length] - range.length;
+//    return (newLength > 25) ? NO : YES;
+//}
+
 #pragma mark - transform methods
 - (NSString *)dateStringFromNSDate:(NSDate *)date
 {

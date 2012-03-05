@@ -403,5 +403,17 @@
     }
 }
 
+#pragma mark - textfield delegate
+//-(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+//    //limit the size :
+//    if (textField.text.length >= 4 && range.length == 0)
+//    {
+//        return NO; // return NO to not change text
+//    }
+//    else
+//    {
+//        return YES;
+//    }
+//}
 
 @end

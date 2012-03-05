@@ -14,7 +14,7 @@
 #import <CoreData/CoreData.h>
 
 
-@interface MainViewController : UITableViewController <NSFetchedResultsControllerDelegate,UIGestureRecognizerDelegate>
+@interface MainViewController : UITableViewController <NSFetchedResultsControllerDelegate,UIGestureRecognizerDelegate, UITextFieldDelegate>
 {
     SimpleViewController *_simpleViewController;
     NSFetchedResultsController *__fetchedResultsController;
