@@ -447,6 +447,23 @@
     [self updateDate];
 }
 
+- (IBAction)pressPickerStopButton:(id)sender {
+    if ([self.dueDateTextField isFirstResponder]) {
+        [self.detailItem setDueDate:nil];
+        [self.dueDateTextField resignFirstResponder];
+    }
+    else if ([self.notificationTextField isFirstResponder]) {
+        if ([self.detailItem alarm] != nil) {
+            [[UIApplication sharedApplication] cancelLocalNotification:[self.detailItem alarm]];
+        }
+        [self.detailItem setAlarm:nil];
+        
+        [self.notificationTextField resignFirstResponder];
+    }
+    [self updateDate];
+}
+
+
 - (IBAction)didDoneButton:(id)sender {
     [self resignFirstResponder];
 }

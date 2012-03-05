@@ -500,6 +500,31 @@
     [self updateDate];
 }
 
+- (IBAction)pressPickerStopButton:(id)sender {
+    if ([self.dueDateTextField isFirstResponder]) {
+        [self.detailItem setDueDate:nil];
+        [self.dueDateTextField resignFirstResponder];
+    }
+    else if([self.startDateTextField isFirstResponder])
+    {
+        [self.detailItem setStartDate:nil];
+        [self.startDateTextField resignFirstResponder];
+    }
+    else if ([self.durationTextField isFirstResponder]) {
+        [self.detailItem setDuration:nil];
+        [self.durationTextField resignFirstResponder];
+    }
+    if ([self.notificationTextField isFirstResponder]) {
+        if ([self.detailItem alarm] != nil) {
+            [[UIApplication sharedApplication] cancelLocalNotification:[self.detailItem alarm]];
+        }
+        [self.detailItem setAlarm:nil];
+        
+        [self.notificationTextField resignFirstResponder];
+    }
+    [self updateDate];
+}
+
 - (IBAction)didDoneButton:(id)sender {
     [self resignFirstResponder];
 }

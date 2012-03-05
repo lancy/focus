@@ -58,6 +58,7 @@
 - (IBAction)changeSomeday:(id)sender;
 
 - (IBAction)pressPickerDoneButton:(id)sender;
+- (IBAction)pressPickerStopButton:(id)sender;
 
 
 - (IBAction)didDoneButton:(id)sender;

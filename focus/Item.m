@@ -79,7 +79,10 @@ const NSTimeInterval secondsPerDay = 24 * 60 * 60;
     [self willChangeValueForKey:@"dueDate"];
     [self setPrimitiveValue:dueDate forKey:@"dueDate"];
     [self didChangeValueForKey:@"dueDate"];
-    if (self.startDate != nil) 
+    if (dueDate == nil) {
+        return;
+    }
+    else if (self.startDate != nil) 
         // if startDate existed then change the primitive value of duration
     {
         // if dueDate early then startDate then change startDate to dueDate
@@ -112,7 +115,10 @@ const NSTimeInterval secondsPerDay = 24 * 60 * 60;
     [self willChangeValueForKey:@"startDate"];
     [self setPrimitiveValue:startDate forKey:@"startDate"];
     [self didChangeValueForKey:@"startDate"];
-    if (self.dueDate != nil)
+    if (startDate == nil) {
+        return;
+    } 
+    else if (self.dueDate != nil)
     {
         // if dueDate early then startDate then change dueDate to startDate
         if ([self.dueDate compare:startDate] == NSOrderedAscending)
@@ -143,7 +149,10 @@ const NSTimeInterval secondsPerDay = 24 * 60 * 60;
     [self willChangeValueForKey:@"duration"];
     [self setPrimitiveValue:duration forKey:@"duration"];
     [self didChangeValueForKey:@"duration"];
-    if (self.dueDate != nil)
+    if (duration == nil) {
+        return;
+    }
+    else if (self.dueDate != nil)
     {
         NSTimeInterval durationTimeInterval = [self.duration doubleValue] * secondsPerDay;
         NSDate *startDate = [NSDate dateWithTimeInterval:-durationTimeInterval sinceDate:self.dueDate];
