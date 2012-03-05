@@ -615,7 +615,7 @@
             self.durationPicker.dataSource = self;
             self.durationPicker.showsSelectionIndicator = YES;
             [self.durationPicker selectRow:0 inComponent:0 animated:YES];
-            [self.durationTextField setText:@"less than 1 day"];
+            [self.durationTextField setText:@"less than one day"];
             textField.inputView = self.durationPicker;
         }
         if (textField.inputAccessoryView == nil) {
