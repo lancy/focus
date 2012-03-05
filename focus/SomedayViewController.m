@@ -33,7 +33,7 @@
     [fetchRequest setFetchBatchSize:20];
     
     // Set the predicate
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(finished == 0) && (isSomeday == 1) && (startDate == nil) && (dueDate == nil)"];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(finished == 0) && (isSomeday == 1)"];
     [fetchRequest setPredicate:predicate];
     
     // Edit the sort key as appropriate.

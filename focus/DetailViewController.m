@@ -34,6 +34,8 @@
 @synthesize dueDateTextField = _dueDateTextField;
 @synthesize durationTextField = _durationTextField;
 @synthesize notificationTextField = _notificationTextField;
+@synthesize finishedButton = _finishedButton;
+@synthesize SomedayButton = _SomedayButton;
 @synthesize datePicker = _datePicker;
 @synthesize datePickerTool = _datePickerTool;
 @synthesize durationPicker = _durationPicker;
@@ -277,6 +279,8 @@
     [self setPriority3Image:nil];
     [self setNotificationTextField:nil];
     [self setNotificationDatePicker:nil];
+    [self setFinishedButton:nil];
+    [self setSomedayButton:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -399,9 +403,9 @@
 {
     [self.titleTextField setText:[self.detailItem title]];
     [self.noteTextField setText:[self.detailItem note]];
+    [self.finishedButton setSelected:[[self.detailItem finished] boolValue]];
+    [self.SomedayButton setSelected:[[self.detailItem isSomeday] boolValue]];
     [self configurePriority];
-//    [self.prioritySegment setSelectedSegmentIndex:[self.detailItem.priority integerValue]];
-    //[self.detailItem setStartDate:[NSDate date]];  // set startdate to today once loaded
     [self updateDate];
 }
 
@@ -434,6 +438,18 @@
         self.startDateTextField.text = [self dateStringFromNSDate:[sender date]];
     }
     [self updateDate];
+}
+
+- (IBAction)changeFinished:(id)sender {
+    BOOL toggle = ![[self.detailItem finished] boolValue];
+    [self.detailItem setFinished:[NSNumber numberWithBool:toggle]];
+    [self configureItem];
+}
+
+- (IBAction)changeSomeday:(id)sender {
+    BOOL toggle = ![[self.detailItem isSomeday] boolValue];
+    [self.detailItem setIsSomeday:[NSNumber numberWithBool:toggle]];
+    [self configureItem];
 }
 
 - (IBAction)pressPickerDoneButton:(id)sender {

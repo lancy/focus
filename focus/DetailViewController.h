@@ -37,6 +37,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *dueDateTextField;
 @property (weak, nonatomic) IBOutlet UITextField *durationTextField;
 @property (weak, nonatomic) IBOutlet UITextField *notificationTextField;
+@property (weak, nonatomic) IBOutlet UIButton *finishedButton;
+@property (weak, nonatomic) IBOutlet UIButton *SomedayButton;
 
 @property (strong, nonatomic) IBOutlet UIDatePicker *datePicker;
 @property (strong, nonatomic) IBOutlet UIView *datePickerTool;
@@ -52,6 +54,8 @@
 - (IBAction)changeTitle:(id)sender;
 - (IBAction)changeNote:(id)sender;
 - (IBAction)changeDate:(id)sender;
+- (IBAction)changeFinished:(id)sender;
+- (IBAction)changeSomeday:(id)sender;
 
 - (IBAction)pressPickerDoneButton:(id)sender;
 

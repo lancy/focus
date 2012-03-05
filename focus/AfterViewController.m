@@ -42,7 +42,7 @@
     // notice: there is a bug with time zone.
     
     // Set the predicate
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(finished == 0) && (dueDate > %@)", endOfToday];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(isSomeday == 0) && (finished == 0) && (dueDate > %@)", endOfToday];
     [fetchRequest setPredicate:predicate];
     
     // Edit the sort key as appropriate.

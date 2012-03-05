@@ -44,8 +44,66 @@
                                         </view>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" rowHeight="40" id="cJA-rj-tmP">
+                                        <rect key="frame" x="0.0" y="55" width="320" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="1" width="300" height="39"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Finished:" lineBreakMode="tailTruncation" minimumFontSize="10" id="s7h-97-CZY">
+                                                    <rect key="frame" x="41" y="8" width="69" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.60000002384185791" green="0.40000000596046448" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Someday:" lineBreakMode="tailTruncation" minimumFontSize="10" id="qgu-kH-cdi">
+                                                    <rect key="frame" x="174" y="8" width="77" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="gnW-sa-QK3">
+                                                    <rect key="frame" x="105" y="2" width="35" height="35"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <state key="normal" image="checkbox.png">
+                                                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <state key="selected" image="chechbox2.png"/>
+                                                    <state key="highlighted">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="changeFinished:" destination="INX-xq-m3w" eventType="touchUpInside" id="Mfz-Dr-qGQ"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Cqd-pZ-LQf">
+                                                    <rect key="frame" x="245" y="2" width="35" height="35"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <state key="normal" image="checkbox.png">
+                                                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <state key="selected" image="chechbox2.png"/>
+                                                    <state key="highlighted">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="changeSomeday:" destination="INX-xq-m3w" eventType="touchUpInside" id="RIC-RP-RSC"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="44" id="I4Q-1b-Tmr">
-                                        <rect key="frame" x="0.0" y="55" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="95" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="300" height="43"/>
@@ -92,7 +150,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="42" id="ioM-ZD-13U">
-                                        <rect key="frame" x="0.0" y="99" width="320" height="42"/>
+                                        <rect key="frame" x="0.0" y="139" width="320" height="42"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="300" height="41"/>
@@ -118,7 +176,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="37" id="lsE-iD-1Vp">
-                                        <rect key="frame" x="0.0" y="141" width="320" height="37"/>
+                                        <rect key="frame" x="0.0" y="181" width="320" height="37"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="300" height="36"/>
@@ -145,7 +203,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Wze-Oc-CWs">
-                                        <rect key="frame" x="0.0" y="178" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="218" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="300" height="43"/>
@@ -172,7 +230,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="28" id="KeC-If-u06">
-                                        <rect key="frame" x="0.0" y="222" width="320" height="28"/>
+                                        <rect key="frame" x="0.0" y="262" width="320" height="28"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="300" height="27"/>
@@ -262,9 +320,11 @@
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="SomedayButton" destination="Cqd-pZ-LQf" id="ktC-yQ-7XI"/>
                         <outlet property="datePicker" destination="5yT-gb-cwn" id="YWp-Pm-3zv"/>
                         <outlet property="datePickerTool" destination="pkS-bB-OPr" id="wCo-72-Eai"/>
                         <outlet property="dueDateTextField" destination="G7B-FJ-kEX" id="vGJ-Aa-4Wv"/>
+                        <outlet property="finishedButton" destination="gnW-sa-QK3" id="d5C-vk-gS1"/>
                         <outlet property="notificationDatePicker" destination="Duj-0p-vlj" id="5nt-2d-jSt"/>
                         <outlet property="notificationTextField" destination="bfs-Ce-cGt" id="169-TC-4Qs"/>
                         <outlet property="priority0Image" destination="Fl8-CZ-sAP" id="lz5-W5-bAQ"/>
@@ -911,8 +971,67 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                         </view>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" rowHeight="40" id="Km2-2y-PIh">
+                                        <rect key="frame" x="0.0" y="79" width="320" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="1" width="300" height="39"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Finished:" lineBreakMode="tailTruncation" minimumFontSize="10" id="aDP-aQ-45p">
+                                                    <rect key="frame" x="41" y="8" width="69" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Someday:" lineBreakMode="tailTruncation" minimumFontSize="10" id="0AG-Nk-83H">
+                                                    <rect key="frame" x="174" y="8" width="77" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="0ew-fh-iJk">
+                                                    <rect key="frame" x="105" y="2" width="35" height="35"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <state key="normal" image="checkbox.png">
+                                                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <state key="selected" image="chechbox2.png"/>
+                                                    <state key="highlighted">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="changeFinished:" destination="JEb-oi-vvg" eventType="touchUpInside" id="6sw-kL-Uzk"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="0T3-iV-7D1">
+                                                    <rect key="frame" x="245" y="2" width="35" height="35"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <state key="normal" image="checkbox.png">
+                                                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <state key="selected" image="chechbox2.png"/>
+                                                    <state key="highlighted">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="changeSomeday:" destination="JEb-oi-vvg" eventType="touchUpInside" id="8T9-vR-cy8"/>
+                                                        <action selector="changeSomeday:" destination="INX-xq-m3w" eventType="touchUpInside" id="Wdi-Gn-436"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="44" id="QlC-ud-y3D">
-                                        <rect key="frame" x="0.0" y="79" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="119" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="300" height="43"/>
@@ -959,7 +1078,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="48" id="HUc-z1-yMB">
-                                        <rect key="frame" x="0.0" y="123" width="320" height="48"/>
+                                        <rect key="frame" x="0.0" y="163" width="320" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="300" height="47"/>
@@ -985,7 +1104,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="46" id="oqf-dP-o26">
-                                        <rect key="frame" x="0.0" y="171" width="320" height="46"/>
+                                        <rect key="frame" x="0.0" y="211" width="320" height="46"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="300" height="45"/>
@@ -1011,7 +1130,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="45" id="wnu-vp-zvL">
-                                        <rect key="frame" x="0.0" y="217" width="320" height="45"/>
+                                        <rect key="frame" x="0.0" y="257" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="300" height="44"/>
@@ -1037,7 +1156,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="50" id="Nrj-jv-ziQ">
-                                        <rect key="frame" x="0.0" y="262" width="320" height="50"/>
+                                        <rect key="frame" x="0.0" y="302" width="320" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="300" height="49"/>
@@ -1063,7 +1182,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="44" id="9zJ-4t-xZK">
-                                        <rect key="frame" x="0.0" y="312" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="352" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="300" height="43"/>
@@ -1150,11 +1269,13 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="SomedayButton" destination="0T3-iV-7D1" id="dhB-3b-Pme"/>
                         <outlet property="datePicker" destination="KkY-uw-WtS" id="dcM-zm-vil"/>
                         <outlet property="datePickerTool" destination="VEF-Qd-THC" id="l6I-98-n8H"/>
                         <outlet property="dueDateTextField" destination="WQq-Ny-x1C" id="VCu-B1-0vW"/>
                         <outlet property="durationPicker" destination="oTL-Fy-A2N" id="76A-kk-dis"/>
                         <outlet property="durationTextField" destination="mme-kM-lk1" id="0VY-r5-YgX"/>
+                        <outlet property="finishedButton" destination="0ew-fh-iJk" id="ojc-ad-fQH"/>
                         <outlet property="noteTextField" destination="B11-jt-HE4" id="6U2-Q7-tGD"/>
                         <outlet property="notificationDatePicker" destination="Ygq-Fu-cfP" id="LJy-X9-8SI"/>
                         <outlet property="notificationTextField" destination="DEo-IP-UBC" id="G9m-Un-S8J"/>
@@ -1605,7 +1726,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="inbox-normal.png" width="50" height="44"/>
         <image name="inbox.png" width="86" height="26"/>
         <image name="line.png" width="77" height="2"/>
-        <image name="line@2x.png" width="154" height="3"/>
+        <image name="line@2x.png" width="607" height="2"/>
         <image name="low-down.png" width="53" height="26"/>
         <image name="low-nor.png" width="53" height="26"/>
         <image name="mid-down.png" width="53" height="26"/>
@@ -1648,19 +1769,23 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DetailViewController.h"/>
             <relationships>
                 <relationship kind="action" name="changeDate:"/>
+                <relationship kind="action" name="changeFinished:"/>
                 <relationship kind="action" name="changeNote:"/>
                 <relationship kind="action" name="changePriority:"/>
+                <relationship kind="action" name="changeSomeday:"/>
                 <relationship kind="action" name="changeTitle:"/>
                 <relationship kind="action" name="didDoneButton:"/>
                 <relationship kind="action" name="pressDeleteButton:"/>
                 <relationship kind="action" name="pressPickerDoneButton:"/>
                 <relationship kind="action" name="pressSaveButton:"/>
                 <relationship kind="action" name="pressSendButton:"/>
+                <relationship kind="outlet" name="SomedayButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="datePicker" candidateClass="UIDatePicker"/>
                 <relationship kind="outlet" name="datePickerTool" candidateClass="UIView"/>
                 <relationship kind="outlet" name="dueDateTextField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="durationPicker" candidateClass="UIPickerView"/>
                 <relationship kind="outlet" name="durationTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="finishedButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="noteTextField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="notificationDatePicker" candidateClass="UIDatePicker"/>
                 <relationship kind="outlet" name="notificationTextField" candidateClass="UITextField"/>
@@ -1719,16 +1844,20 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SimpleViewController.h"/>
             <relationships>
                 <relationship kind="action" name="changeDate:"/>
+                <relationship kind="action" name="changeFinished:"/>
                 <relationship kind="action" name="changePriority:"/>
+                <relationship kind="action" name="changeSomeday:"/>
                 <relationship kind="action" name="changeTitle:"/>
                 <relationship kind="action" name="didDoneButton:"/>
                 <relationship kind="action" name="pressDeleteButton:"/>
                 <relationship kind="action" name="pressPickerDoneButton:"/>
                 <relationship kind="action" name="pressSaveButton:"/>
                 <relationship kind="action" name="pressSendButton:"/>
+                <relationship kind="outlet" name="SomedayButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="datePicker" candidateClass="UIDatePicker"/>
                 <relationship kind="outlet" name="datePickerTool" candidateClass="UIView"/>
                 <relationship kind="outlet" name="dueDateTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="finishedButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="notificationDatePicker" candidateClass="UIDatePicker"/>
                 <relationship kind="outlet" name="notificationTextField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="priority0Image" candidateClass="UIImageView"/>

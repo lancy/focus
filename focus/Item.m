@@ -162,41 +162,41 @@ const NSTimeInterval secondsPerDay = 24 * 60 * 60;
 }
 
 
-- (void)moveToInbox
-// move item to inbox and reset the date
-{
-    self.startDate = nil;
-    self.dueDate = nil;
-    [self setIsSomeday:[[NSNumber alloc] initWithBool:NO]];
-}
-
-- (void)moveToToday
-// move item to today and set the dueDate
-{
-    self.dueDate = [NSDate date];
-    [self setIsSomeday:[[NSNumber alloc] initWithBool:NO]];
-}
-
-- (void)moveToTomorrow
-// set dureDate of item to tomorrow
-{
-    NSDate *tomorrow = [[NSDate alloc] initWithTimeIntervalSinceNow:secondsPerDay];
-    self.dueDate = tomorrow;
-    [self setIsSomeday:[[NSNumber alloc] initWithBool:NO]];
-}
-
-- (void)moveToAfter
-// move item to after and set the dueDate
-{
-    [self moveToTomorrow];
-}
-
-- (void)moveToSomeday
-{
-    self.startDate = nil;
-    self.dueDate = nil;
-    [self setIsSomeday:[[NSNumber alloc] initWithBool:YES]];
-}
+//- (void)moveToInbox
+//// move item to inbox and reset the date
+//{
+//    self.startDate = nil;
+//    self.dueDate = nil;
+//    [self setIsSomeday:[[NSNumber alloc] initWithBool:NO]];
+//}
+//
+//- (void)moveToToday
+//// move item to today and set the dueDate
+//{
+//    self.dueDate = [NSDate date];
+//    [self setIsSomeday:[[NSNumber alloc] initWithBool:NO]];
+//}
+//
+//- (void)moveToTomorrow
+//// set dureDate of item to tomorrow
+//{
+//    NSDate *tomorrow = [[NSDate alloc] initWithTimeIntervalSinceNow:secondsPerDay];
+//    self.dueDate = tomorrow;
+//    [self setIsSomeday:[[NSNumber alloc] initWithBool:NO]];
+//}
+//
+//- (void)moveToAfter
+//// move item to after and set the dueDate
+//{
+//    [self moveToTomorrow];
+//}
+//
+//- (void)moveToSomeday
+//{
+//    self.startDate = nil;
+//    self.dueDate = nil;
+//    [self setIsSomeday:[[NSNumber alloc] initWithBool:YES]];
+//}
 
 - (NSString *)dueDateStr
 // dueDateStr use to divide items into sections.
