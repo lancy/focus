@@ -410,6 +410,7 @@
 
 - (IBAction)changePriority:(id)sender {
     [self.detailItem setPriority:[NSNumber numberWithInteger:[self.prioritySegment selectedSegmentIndex]]];
+    [self configurePriority];
     NSLog(@"%@", self.detailItem.priority);
 }
 
