@@ -27,6 +27,8 @@
 		2991275C14FF8929007E82B4 /* edit-norm@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2991275114FF8929007E82B4 /* edit-norm@2x.png */; };
 		2991275D14FF8929007E82B4 /* finished.png in Resources */ = {isa = PBXBuildFile; fileRef = 2991275214FF8929007E82B4 /* finished.png */; };
 		2991275E14FF8929007E82B4 /* finished@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2991275314FF8929007E82B4 /* finished@2x.png */; };
+		29B7DC6F150739F7000013B8 /* focus@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 29B7DC6E150739F7000013B8 /* focus@2x.png */; };
+		29B7DC7115073A6E000013B8 /* focus.png in Resources */ = {isa = PBXBuildFile; fileRef = 29B7DC7015073A6E000013B8 /* focus.png */; };
 		29D55FAD1506FF4E00328766 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29D55FAC1506FF4E00328766 /* QuartzCore.framework */; };
 		29DA087114FDEE93006CB7C8 /* duration.png in Resources */ = {isa = PBXBuildFile; fileRef = 29DA087014FDEE93006CB7C8 /* duration.png */; };
 		452311E114FD2AE20080629F /* due2.png in Resources */ = {isa = PBXBuildFile; fileRef = 452311AC14FD2AE20080629F /* due2.png */; };
@@ -193,6 +195,8 @@
 		2991275114FF8929007E82B4 /* edit-norm@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "edit-norm@2x.png"; sourceTree = "<group>"; };
 		2991275214FF8929007E82B4 /* finished.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = finished.png; sourceTree = "<group>"; };
 		2991275314FF8929007E82B4 /* finished@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "finished@2x.png"; sourceTree = "<group>"; };
+		29B7DC6E150739F7000013B8 /* focus@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "focus@2x.png"; sourceTree = "<group>"; };
+		29B7DC7015073A6E000013B8 /* focus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = focus.png; sourceTree = "<group>"; };
 		29D55FAC1506FF4E00328766 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		29DA087014FDEE93006CB7C8 /* duration.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = duration.png; sourceTree = "<group>"; };
 		452311AC14FD2AE20080629F /* due2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = due2.png; sourceTree = "<group>"; };
@@ -527,6 +531,8 @@
 		BF9724A114ECEA2800C42892 = {
 			isa = PBXGroup;
 			children = (
+				29B7DC7015073A6E000013B8 /* focus.png */,
+				29B7DC6E150739F7000013B8 /* focus@2x.png */,
 				BF9724B814ECEA2800C42892 /* focus */,
 				BF9724AF14ECEA2800C42892 /* Frameworks */,
 				BF9724AD14ECEA2800C42892 /* Products */,
@@ -876,6 +882,8 @@
 				2991275E14FF8929007E82B4 /* finished@2x.png in Resources */,
 				29597B3E1504A0440063DA2C /* line.png in Resources */,
 				29597B3F1504A0440063DA2C /* line@2x.png in Resources */,
+				29B7DC6F150739F7000013B8 /* focus@2x.png in Resources */,
+				29B7DC7115073A6E000013B8 /* focus.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
