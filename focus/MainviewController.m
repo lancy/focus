@@ -404,8 +404,13 @@
 }
 
 #pragma mark - textfield delegate
-//-(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
-//    //limit the size :
+-(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    //limit the size :
+    if ([textField.text length] >= 25)
+    {
+        [textField setText:[textField.text substringToIndex:25]];
+    }
+    return YES;
 //    if (textField.text.length >= 4 && range.length == 0)
 //    {
 //        return NO; // return NO to not change text
@@ -414,6 +419,6 @@
 //    {
 //        return YES;
 //    }
-//}
+}
 
 @end

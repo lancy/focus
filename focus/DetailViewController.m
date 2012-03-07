@@ -638,11 +638,22 @@
     return YES;
 }
 
-//- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
-//{
-//    NSUInteger newLength = [textField.text length] + [string length] - range.length;
-//    return (newLength > 25) ? NO : YES;
-//}
+-(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    //limit the size :
+    if ([textField.text length] >= 25)
+    {
+        [textField setText:[textField.text substringToIndex:25]];
+    }
+    return YES;
+    //    if (textField.text.length >= 4 && range.length == 0)
+    //    {
+    //        return NO; // return NO to not change text
+    //    }
+    //    else
+    //    {
+    //        return YES;
+    //    }
+}
 
 #pragma mark - transform methods
 - (NSString *)dateStringFromNSDate:(NSDate *)date
