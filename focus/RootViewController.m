@@ -168,7 +168,7 @@
 
 - (void)hideScrollBar
 {
-
+    [self.scrollBar setHidden:NO];
     [self.scrollBar setAlpha:1];
     [self.scrollBar.layer removeAllAnimations];
     [UIView animateWithDuration:1
@@ -178,10 +178,13 @@
         [self.scrollBar setAlpha:0.02];
 //        [self.scrollBar setHidden:YES];
     }completion:^(BOOL finished){
-//            [self.scrollBar setAlpha:1];
-//            [self.scrollBar setHidden:YES];
+        if (finished == true) {
+            [self.scrollBar setAlpha:1];
+            [self.scrollBar setHidden:YES];
+        }
     }];
-        
+
+    
 //    
 //    [UIView beginAnimations:nil context:NULL];
 //    [UIView setAnimationBeginsFromCurrentState:YES];
