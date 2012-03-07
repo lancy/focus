@@ -16,6 +16,7 @@
 #import "UIView+Badge.h"
 
 
+
 @interface RootViewController()
 
 
@@ -153,14 +154,18 @@
 
 - (void)hideScrollBar
 {
-    [UIView animateWithDuration:0.4
-                          delay:0
+
+    [self.scrollBar setAlpha:1];
+    [self.scrollBar.layer removeAllAnimations];
+    [UIView animateWithDuration:1
+                          delay:1
                         options:UIViewAnimationCurveLinear 
                      animations:^{
         [self.scrollBar setAlpha:0];
+//        [self.scrollBar setHidden:YES];
     }completion:^(BOOL finished){
-        [self.scrollBar setAlpha:1];
-        [self.scrollBar setHidden:YES];
+//            [self.scrollBar setAlpha:1];
+//            [self.scrollBar setHidden:YES];
     }];
         
 //    
@@ -175,6 +180,7 @@
 -(void)showScrollBar
 {
     [self.scrollBar setHidden:NO];
+    [self.scrollBar setAlpha:1];
 }
 
 - (void)updateBadge
