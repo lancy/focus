@@ -24,7 +24,7 @@
 - (void)configureScrollView;
 - (void)configureScrollBar;
 - (void)updateBadge;
-
+- (void)scrollToPage:(NSUInteger) index animation:(BOOL)animation;
 
 @end
 
@@ -72,6 +72,7 @@
     [self configureMainViewControllers];
     [self configureScrollView];
     [self configureScrollBar];
+    [self scrollToPage:1 animation:NO];
     
 //    rangeStateLabel = [[UILabel alloc] initWithFrame:CGRectMake(30,250,260,20)];
 //    [self.view addSubview:rangeStateLabel];
@@ -152,16 +153,29 @@
 
 #pragma mark - Scroll Bar Methods
 
+- (void)scrollToPage:(NSUInteger) index animation:(BOOL)animation
+{
+    [self.scrollView scrollRectToVisible:CGRectMake(self.scrollView.frame.size.width * index, 0, self.scrollView.frame.size.width, self.scrollView.frame.size.height) animated:animation];
+}
+
+
+- (IBAction)pressScrollBarIcon:(id)sender {
+    NSUInteger index = [sender tag];
+    index -= 10;
+    [self scrollToPage:index animation:YES];
+}
+
+
 - (void)hideScrollBar
 {
 
     [self.scrollBar setAlpha:1];
     [self.scrollBar.layer removeAllAnimations];
     [UIView animateWithDuration:1
-                          delay:1
+                          delay:1.5
                         options:UIViewAnimationCurveLinear 
                      animations:^{
-        [self.scrollBar setAlpha:0];
+        [self.scrollBar setAlpha:0.02];
 //        [self.scrollBar setHidden:YES];
     }completion:^(BOOL finished){
 //            [self.scrollBar setAlpha:1];
@@ -254,6 +268,10 @@
     }
 }
 
+- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView
+{
+    [self hideScrollBar];
+}
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {

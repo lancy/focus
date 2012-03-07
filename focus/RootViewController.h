@@ -32,4 +32,7 @@
 
 - (void)updateBadge;
 
+- (IBAction)pressScrollBarIcon:(id)sender;
+
+
 @end

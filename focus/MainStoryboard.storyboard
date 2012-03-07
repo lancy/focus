@@ -1536,7 +1536,71 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="float.png" id="hsM-yg-zxT">
                                         <rect key="frame" x="18" y="13" width="54" height="45"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <accessibilityTraits key="traits" none="YES" button="YES" image="YES"/>
+                                            <integer key="isElement" value="1"/>
+                                        </accessibility>
                                     </imageView>
+                                    <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="fZQ-pk-9Ec">
+                                        <rect key="frame" x="20" y="12" width="50" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="pressScrollBarIcon:" destination="161" eventType="touchUpInside" id="vez-TA-mfJ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="9je-n0-Qms">
+                                        <rect key="frame" x="77" y="12" width="50" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="pressScrollBarIcon:" destination="161" eventType="touchUpInside" id="Cis-01-n1P"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="5P4-aP-gff">
+                                        <rect key="frame" x="134" y="12" width="50" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="pressScrollBarIcon:" destination="161" eventType="touchUpInside" id="X7G-2M-Otc"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="2nd-BL-Zvr">
+                                        <rect key="frame" x="191" y="12" width="50" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="pressScrollBarIcon:" destination="161" eventType="touchUpInside" id="Yw8-OB-Ik3"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </view>
                             <pageControl opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" defersCurrentPageDisplay="YES" numberOfPages="4" id="7yR-d4-Xlm">
@@ -1609,15 +1673,15 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="afterBarImageView" destination="bHc-UE-vvc" id="Pw7-eT-1KP"/>
-                        <outlet property="inboxBarImageView" destination="Zxu-N5-SCI" id="rg8-4o-FpB"/>
+                        <outlet property="afterBarImageView" destination="bHc-UE-vvc" id="uUi-CM-axy"/>
+                        <outlet property="inboxBarImageView" destination="Zxu-N5-SCI" id="Qqn-ZA-XeI"/>
                         <outlet property="pageControl" destination="7yR-d4-Xlm" id="eNz-k7-nxr"/>
                         <outlet property="pointer" destination="hsM-yg-zxT" id="QzV-TO-l7W"/>
                         <outlet property="scrollBar" destination="zXW-yG-JsB" id="rjc-qv-yIo"/>
                         <outlet property="scrollView" destination="183" id="184"/>
-                        <outlet property="somedayBarImageView" destination="VE0-7G-c3A" id="XtF-IC-J6s"/>
+                        <outlet property="somedayBarImageView" destination="VE0-7G-c3A" id="zFb-sV-ABw"/>
                         <outlet property="titleImageView" destination="XTL-Jf-yjB" id="8el-5z-hQN"/>
-                        <outlet property="todayBarImageView" destination="ht5-h4-kPv" id="Hh0-z3-tDY"/>
+                        <outlet property="todayBarImageView" destination="ht5-h4-kPv" id="Bqa-19-uFp"/>
                     </connections>
                 </viewController>
             </objects>
@@ -1744,7 +1808,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="inbox-normal.png" width="50" height="44"/>
         <image name="inbox.png" width="86" height="26"/>
         <image name="line.png" width="77" height="2"/>
-        <image name="line@2x.png" width="154" height="3"/>
+        <image name="line@2x.png" width="240" height="4"/>
         <image name="low-down.png" width="53" height="26"/>
         <image name="low-nor.png" width="53" height="26"/>
         <image name="mid-down.png" width="53" height="26"/>
@@ -1770,6 +1834,140 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="tool.png" width="18" height="18"/>
         <image name="zhongyaodu-bg.png" width="233" height="40"/>
     </resources>
+    <classes>
+        <class className="AboutViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AboutViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="backToMainView:"/>
+            </relationships>
+        </class>
+        <class className="AfterViewController" superclassName="MainViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AfterViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="quickAddItem:"/>
+            </relationships>
+        </class>
+        <class className="DetailViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DetailViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="changeDate:"/>
+                <relationship kind="action" name="changeFinished:"/>
+                <relationship kind="action" name="changeNote:"/>
+                <relationship kind="action" name="changePriority:"/>
+                <relationship kind="action" name="changeSomeday:"/>
+                <relationship kind="action" name="changeTitle:"/>
+                <relationship kind="action" name="didDoneButton:"/>
+                <relationship kind="action" name="pressDeleteButton:"/>
+                <relationship kind="action" name="pressPickerDoneButton:"/>
+                <relationship kind="action" name="pressPickerStopButton:"/>
+                <relationship kind="action" name="pressSaveButton:"/>
+                <relationship kind="action" name="pressSendButton:"/>
+                <relationship kind="outlet" name="SomedayButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="datePicker" candidateClass="UIDatePicker"/>
+                <relationship kind="outlet" name="datePickerTool" candidateClass="UIView"/>
+                <relationship kind="outlet" name="dueDateTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="durationPicker" candidateClass="UIPickerView"/>
+                <relationship kind="outlet" name="durationTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="finishedButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="noteTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="notificationDatePicker" candidateClass="UIDatePicker"/>
+                <relationship kind="outlet" name="notificationTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="priority0Image" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="priority1Image" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="priority2Image" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="priority3Image" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="prioritySegment" candidateClass="UISegmentedControl"/>
+                <relationship kind="outlet" name="startDateTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="titleImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="titleTextField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="FinishViewController" superclassName="MainViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FinishViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="backToMainView:"/>
+                <relationship kind="action" name="pressEditButton:"/>
+                <relationship kind="outlet" name="editButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="InboxViewController" superclassName="MainViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/InboxViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="quickAddItem:"/>
+            </relationships>
+        </class>
+        <class className="ItemCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ItemCell.h"/>
+            <relationships>
+                <relationship kind="action" name="changeCheckbox:"/>
+                <relationship kind="outlet" name="duedateLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="finishCheckbox" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="infoLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="priorityImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="MainViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MainViewController.h"/>
+        </class>
+        <class className="RootViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RootViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="pressScrollBarIcon:"/>
+                <relationship kind="outlet" name="afterBarImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="inboxBarImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="pageControl" candidateClass="UIPageControl"/>
+                <relationship kind="outlet" name="pointer" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="scrollBar" candidateClass="UIView"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="somedayBarImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="titleImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="todayBarImageView" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="SimpleViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SimpleViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="changeDate:"/>
+                <relationship kind="action" name="changeFinished:"/>
+                <relationship kind="action" name="changePriority:"/>
+                <relationship kind="action" name="changeSomeday:"/>
+                <relationship kind="action" name="changeTitle:"/>
+                <relationship kind="action" name="didDoneButton:"/>
+                <relationship kind="action" name="pressDeleteButton:"/>
+                <relationship kind="action" name="pressPickerDoneButton:"/>
+                <relationship kind="action" name="pressPickerStopButton:"/>
+                <relationship kind="action" name="pressSaveButton:"/>
+                <relationship kind="action" name="pressSendButton:"/>
+                <relationship kind="outlet" name="SomedayButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="datePicker" candidateClass="UIDatePicker"/>
+                <relationship kind="outlet" name="datePickerTool" candidateClass="UIView"/>
+                <relationship kind="outlet" name="dueDateTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="finishedButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="notificationDatePicker" candidateClass="UIDatePicker"/>
+                <relationship kind="outlet" name="notificationTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="priority0Image" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="priority1Image" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="priority2Image" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="priority3Image" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="prioritySegment" candidateClass="UISegmentedControl"/>
+                <relationship kind="outlet" name="titleImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="titleTextField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="SomedayViewController" superclassName="MainViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SomedayViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="quickAddItem:"/>
+            </relationships>
+        </class>
+        <class className="TodayViewController" superclassName="MainViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TodayViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="quickAddItem:"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
