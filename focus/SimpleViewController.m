@@ -7,6 +7,7 @@
 //
 
 #import "SimpleViewController.h"
+#import "DetailViewController.h"
 #import "Item.h"
 
 @interface SimpleViewController ()
@@ -27,6 +28,7 @@
 @synthesize isAdd = _isAdd;
 @synthesize managedObjectContext;
 @synthesize detailItem = _detailItem;
+@synthesize titleImageView = _titleImageView;
 @synthesize titleTextField = _titleTextField;
 @synthesize prioritySegment = _prioritySegment;
 @synthesize dueDateTextField = _dueDateTextField;
@@ -304,6 +306,7 @@
     [self setNotificationTextField:nil];
     [self setFinishedButton:nil];
     [self setSomedayButton:nil];
+    [self setTitleImageView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -317,7 +320,13 @@
     NSLog(@"%d", self.isAdd);
     if (self.isAdd == NO)
     {
+        // highlighted is add title image
+        [self.titleImageView setHighlighted:NO];
         [self configureItem];
+    } 
+    else
+    {
+        [self.titleImageView setHighlighted:YES];
     }
 }
 
@@ -600,6 +609,8 @@
 {
     if ([segue.identifier isEqualToString:@"moreOptions"])
     {
+        DetailViewController *svc = segue.destinationViewController;
+        svc.isAdd = self.isAdd;
         [segue.destinationViewController setValue:self.detailItem forKey:@"detailItem"];
     }
 }

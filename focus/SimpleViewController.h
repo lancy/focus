@@ -21,6 +21,7 @@
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (strong, nonatomic) Item* detailItem;
 
+@property (weak, nonatomic) IBOutlet UIImageView *titleImageView;
 @property (weak, nonatomic) IBOutlet UITextField *titleTextField;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *prioritySegment;
 @property (weak, nonatomic) IBOutlet UITextField *dueDateTextField;

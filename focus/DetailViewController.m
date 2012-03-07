@@ -25,6 +25,7 @@
 
 @implementation DetailViewController
 
+@synthesize isAdd = _isAdd;
 @synthesize managedObjectContext;
 @synthesize detailItem = _detailItem;
 @synthesize titleTextField = _titleTextField;
@@ -47,6 +48,7 @@
 @synthesize priority1Image = _priority1Image;
 @synthesize priority2Image = _priority2Image;
 @synthesize priority3Image = _priority3Image;
+@synthesize titleImageView = _titleImageView;
 
 
 - (id)init
@@ -281,6 +283,7 @@
     [self setNotificationDatePicker:nil];
     [self setFinishedButton:nil];
     [self setSomedayButton:nil];
+    [self setTitleImageView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -291,7 +294,17 @@
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:NO animated:NO];
     [self configureItem];
+    if (self.isAdd == NO)
+    {
+        // highlighted is add title image
+        [self.titleImageView setHighlighted:NO];
+    } 
+    else
+    {
+        [self.titleImageView setHighlighted:YES];
+    }
 }
+
 
 - (void)viewDidAppear:(BOOL)animated
 {
