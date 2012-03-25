@@ -12,6 +12,8 @@
 #import "FinishViewController.h"
 #import "Macros.h"
 
+#define Enable_ICLOUD NO
+
 @implementation AppDelegate
 
 @synthesize window = _window;
@@ -115,7 +117,7 @@
     
     if (coordinator != nil)
     {
-        if (IOS_VERSION_GREATER_THAN_OR_EQUAL_TO(@"5.0")) {
+        if (IOS_VERSION_GREATER_THAN_OR_EQUAL_TO(@"5.0") && Enable_ICLOUD) {
             NSManagedObjectContext* moc = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
             
             [moc performBlockAndWait:^{
@@ -165,7 +167,7 @@
     
     NSPersistentStoreCoordinator* psc = __persistentStoreCoordinator;
     
-    if (IOS_VERSION_GREATER_THAN_OR_EQUAL_TO(@"5.0")) {
+    if (IOS_VERSION_GREATER_THAN_OR_EQUAL_TO(@"5.0") && Enable_ICLOUD) {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             NSFileManager *fileManager = [NSFileManager defaultManager];
             

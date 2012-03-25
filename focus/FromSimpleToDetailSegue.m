@@ -9,6 +9,7 @@
 #import "FromSimpleToDetailSegue.h"
 
 #import "SimpleViewController.h"
+#import "DetailViewController.h"
 
 @interface FromSimpleToDetailSegue()
 @end
@@ -17,25 +18,45 @@
 
 - (void)perform
 {
-    UIViewController *dvc = [self destinationViewController];
-    UIViewController *svc = (SimpleViewController *)[self sourceViewController];
+    DetailViewController *dvc = (DetailViewController *)[self destinationViewController];
+    SimpleViewController *svc = (SimpleViewController *)[self sourceViewController];
+    NSLog(@"%@", dvc);
     [dvc viewWillAppear:NO];
-    [dvc viewDidAppear:NO];
     
-//    [dvc.view setAlpha:0];
-    
-    [svc.view addSubview:dvc.view];
-    dvc.view.frame = CGRectMake(svc.view.frame.origin.x, svc.view.frame.origin.y, dvc.view.frame.size.width, dvc.view.frame.size.height);
+    UITableViewCell *cell = [dvc.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
+    [cell setFrame:CGRectMake(cell.frame.origin.x, cell.frame.origin.y + 34, cell.frame.size.width, cell.frame.size.height)];
+
+    [dvc viewDidAppear:NO];    
+
+    [svc.navigationController pushViewController:dvc animated:NO];    
 
     
+
+    
+    
+ 
     [UIView animateWithDuration:0.5 
                      animations:^{
 
-//                         [dvc.view setAlpha:1];
-                     }completion:^(BOOL finish){
-                         [dvc.navigationController popViewControllerAnimated:NO];
-                         [svc.navigationController pushViewController:dvc animated:NO];
+
+
+                     } completion:^(BOOL finish){
+
                      }];
+                         
+
+
+
+//    dvc.view.frame = CGRectMake(svc.view.frame.origin.x, svc.view.frame.origin.y, dvc.view.frame.size.width, dvc.view.frame.size.height);
+//
+//    
+//    [UIView animateWithDuration:0.5 
+//                     animations:^{
+//                         [dvc.view setAlpha:1];
+//                     }completion:^(BOOL finish){
+//                         [dvc.navigationController popViewControllerAnimated:NO];
+//                         [svc.navigationController pushViewController:dvc animated:NO];
+//                     }];
     
 }
 

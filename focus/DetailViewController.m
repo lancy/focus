@@ -303,6 +303,7 @@
     {
         [self.titleImageView setHighlighted:YES];
     }
+    
 }
 
 

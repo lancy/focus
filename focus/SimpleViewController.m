@@ -288,6 +288,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     [self.navigationItem setHidesBackButton:YES];
+    
 }
 
 - (void)viewDidUnload
@@ -328,6 +329,7 @@
     {
         [self.titleImageView setHighlighted:YES];
     }
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated

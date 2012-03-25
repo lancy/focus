@@ -268,15 +268,15 @@
 		BF51D7B514F7C78D00B0BFC3 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		BF51D7B714F7C90C00B0BFC3 /* FinishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinishViewController.h; sourceTree = "<group>"; };
 		BF51D7B814F7C90D00B0BFC3 /* FinishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinishViewController.m; sourceTree = "<group>"; };
-		BF9724AC14ECEA2800C42892 /* focus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = focus.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF9724AC14ECEA2800C42892 /* UFocus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UFocus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF9724B014ECEA2800C42892 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BF9724B214ECEA2800C42892 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BF9724B414ECEA2800C42892 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		BF9724B614ECEA2800C42892 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		BF9724BA14ECEA2800C42892 /* focus-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "focus-Info.plist"; sourceTree = "<group>"; };
+		BF9724BA14ECEA2800C42892 /* UFocus-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UFocus-Info.plist"; sourceTree = "<group>"; };
 		BF9724BC14ECEA2800C42892 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		BF9724BE14ECEA2800C42892 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		BF9724C014ECEA2800C42892 /* focus-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "focus-Prefix.pch"; sourceTree = "<group>"; };
+		BF9724C014ECEA2800C42892 /* UFocus-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UFocus-Prefix.pch"; sourceTree = "<group>"; };
 		BF9724C514ECEA2800C42892 /* focus.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = focus.xcdatamodel; sourceTree = "<group>"; };
 		BF9724DA14ECEA8600C42892 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BF9724DB14ECEA8600C42892 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -556,7 +556,7 @@
 		BF9724AD14ECEA2800C42892 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BF9724AC14ECEA2800C42892 /* focus.app */,
+				BF9724AC14ECEA2800C42892 /* UFocus.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -594,10 +594,10 @@
 			isa = PBXGroup;
 			children = (
 				BFC351B214FB60F300A5BE7B /* image */,
-				BF9724BA14ECEA2800C42892 /* focus-Info.plist */,
+				BF9724BA14ECEA2800C42892 /* UFocus-Info.plist */,
 				BF9724BB14ECEA2800C42892 /* InfoPlist.strings */,
 				BF9724BE14ECEA2800C42892 /* main.m */,
-				BF9724C014ECEA2800C42892 /* focus-Prefix.pch */,
+				BF9724C014ECEA2800C42892 /* UFocus-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -717,9 +717,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BF9724AB14ECEA2800C42892 /* focus */ = {
+		BF9724AB14ECEA2800C42892 /* UFocus */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BF9724C914ECEA2800C42892 /* Build configuration list for PBXNativeTarget "focus" */;
+			buildConfigurationList = BF9724C914ECEA2800C42892 /* Build configuration list for PBXNativeTarget "UFocus" */;
 			buildPhases = (
 				BF9724A814ECEA2800C42892 /* Sources */,
 				BF9724A914ECEA2800C42892 /* Frameworks */,
@@ -729,9 +729,9 @@
 			);
 			dependencies = (
 			);
-			name = focus;
+			name = UFocus;
 			productName = focus;
-			productReference = BF9724AC14ECEA2800C42892 /* focus.app */;
+			productReference = BF9724AC14ECEA2800C42892 /* UFocus.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -742,7 +742,7 @@
 			attributes = {
 				LastUpgradeCheck = 0420;
 			};
-			buildConfigurationList = BF9724A614ECEA2800C42892 /* Build configuration list for PBXProject "focus" */;
+			buildConfigurationList = BF9724A614ECEA2800C42892 /* Build configuration list for PBXProject "UFocus" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -754,7 +754,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BF9724AB14ECEA2800C42892 /* focus */,
+				BF9724AB14ECEA2800C42892 /* UFocus */,
 			);
 		};
 /* End PBXProject section */
@@ -1005,9 +1005,9 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = focus/focus.entitlements;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "focus/focus-Prefix.pch";
-				INFOPLIST_FILE = "focus/focus-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "focus/UFocus-Prefix.pch";
+				INFOPLIST_FILE = "focus/UFocus-Info.plist";
+				PRODUCT_NAME = UFocus;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -1018,9 +1018,9 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = focus/focus.entitlements;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "focus/focus-Prefix.pch";
-				INFOPLIST_FILE = "focus/focus-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "focus/UFocus-Prefix.pch";
+				INFOPLIST_FILE = "focus/UFocus-Info.plist";
+				PRODUCT_NAME = UFocus;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -1029,7 +1029,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BF9724A614ECEA2800C42892 /* Build configuration list for PBXProject "focus" */ = {
+		BF9724A614ECEA2800C42892 /* Build configuration list for PBXProject "UFocus" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BF9724C714ECEA2800C42892 /* Debug */,
@@ -1038,7 +1038,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BF9724C914ECEA2800C42892 /* Build configuration list for PBXNativeTarget "focus" */ = {
+		BF9724C914ECEA2800C42892 /* Build configuration list for PBXNativeTarget "UFocus" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BF9724CA14ECEA2800C42892 /* Debug */,

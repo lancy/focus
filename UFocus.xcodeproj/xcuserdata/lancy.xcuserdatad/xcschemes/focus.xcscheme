@@ -15,8 +15,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "BF9724AB14ECEA2800C42892"
                BuildableName = "focus.app"
-               BlueprintName = "focus"
-               ReferencedContainer = "container:focus.xcodeproj">
+               BlueprintName = "UFocus"
+               ReferencedContainer = "container:UFocus.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,8 +33,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BF9724AB14ECEA2800C42892"
             BuildableName = "focus.app"
-            BlueprintName = "focus"
-            ReferencedContainer = "container:focus.xcodeproj">
+            BlueprintName = "UFocus"
+            ReferencedContainer = "container:UFocus.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -52,8 +52,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BF9724AB14ECEA2800C42892"
             BuildableName = "focus.app"
-            BlueprintName = "focus"
-            ReferencedContainer = "container:focus.xcodeproj">
+            BlueprintName = "UFocus"
+            ReferencedContainer = "container:UFocus.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -70,8 +70,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BF9724AB14ECEA2800C42892"
             BuildableName = "focus.app"
-            BlueprintName = "focus"
-            ReferencedContainer = "container:focus.xcodeproj">
+            BlueprintName = "UFocus"
+            ReferencedContainer = "container:UFocus.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
